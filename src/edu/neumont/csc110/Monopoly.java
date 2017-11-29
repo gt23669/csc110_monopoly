@@ -3,6 +3,7 @@ package edu.neumont.csc110;
 import java.io.IOException;
 
 public class Monopoly {
+	PlayerToken pt = new PlayerToken();
 	Player[] playerList = null;
 	int firstPlayer;
 
@@ -36,13 +37,21 @@ public class Monopoly {
 				} while (firstRoll[i] == maxRoll);
 			}
 			System.out.println(playerList[i].name + " your roll was " + firstRoll[i]);
+			System.out.println();
 		}
-		System.out.println(playerList[firstPlayer].name);
+		System.out.println(playerList[firstPlayer].name+", you are first player.");
+		System.out.println();
+//		System.out.println("Please choose your token");
+//		for(int i=8;i>=playerList.length;i--) {
+//			
+//		}
+		
+		
 
 		System.out.println("Which game would you like to play?");
 		String gameChoice = ConsoleUI.promptForInput("Normal(1) or speedplay(2)?", false);
-		if (gameChoice.equalsIgnoreCase("normal") || gameChoice.equals(1)) {
-			normalGame();
+		if (gameChoice.equalsIgnoreCase("normal") || gameChoice.equals("1")) {
+			normalGame(d);
 		} else {
 			speedPlay();
 		}
@@ -54,8 +63,9 @@ public class Monopoly {
 
 	}
 
-	private void normalGame() {
-		// TODO Auto-generated method stub
-
+	private void normalGame(Dice d) {
+		System.out.println("Okay "+playerList[firstPlayer].name+", the first roll is yours.");
+		d.rollDice(playerList[firstPlayer].name);
+//		need to add code to move piece after every roll, regardless if doubles
 	}
 }

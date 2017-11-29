@@ -13,7 +13,7 @@ public class Dice {
 		return rollValue;
 	}
 
-	public int rollDice(Player p) {
+	public int rollDice(String name) {
 		boolean jail = false;
 		boolean doubleRoll = false;
 		int doubleCount = 0;
@@ -33,7 +33,7 @@ public class Dice {
 				jail();
 				break;
 			}
-			System.out.println(p.name+" Your roll was a " + die1 + " and " + die2 + ".");
+			System.out.println(name+" Your roll was a " + die1 + " and " + die2 + ".");
 			if (die1 == die2) {
 				doubleRoll = true;
 				doubleCount++;

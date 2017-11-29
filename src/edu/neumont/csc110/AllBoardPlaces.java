@@ -40,8 +40,7 @@ public enum AllBoardPlaces {
 	CHANCE3("Chance",0,0,0,0,0,0,0,0,0,0,0),
 	PARK("Park Place",350,35,175,500,1100,1300,1500,175,175,200,200),
 	TAX("Lutury Tax",0,0,0,0,0,0,0,0,0,0,0),
-	BOARDWALK("Boardwalk",400,50,200,600,1400,1700,2000,200,200,200,200),
-	;
+	BOARDWALK("Boardwalk",400,50,200,600,1400,1700,2000,200,200,200,200);
 	
 	// name(name, buyPrice, baseRent, 1HsRent, 2HsRent, 3HsRent, 4HsRent,
 	// hotelRent, mortgageValue, mortgageBuybackPrice, houseCost, hotelCost)

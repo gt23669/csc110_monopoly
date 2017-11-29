@@ -4,8 +4,8 @@ public class Bank {
 
 	public void bank() {
 		
-		int house = 0;
-		int hotel = 0;
+		int house = 32;
+		int hotel = 12;
 		
 	}
 	

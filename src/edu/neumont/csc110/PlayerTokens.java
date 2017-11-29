@@ -10,7 +10,7 @@ public enum PlayerTokens {
 	MEW,
 	MEWTWO,
 	POKEBALL,
-	MASTERBALL,
+	MASTERBALL
 	
 	
 	

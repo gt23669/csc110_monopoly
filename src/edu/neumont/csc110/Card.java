@@ -1,4 +1,4 @@
-package edu.neuont.csc110;
+package edu.neumont.csc110;
 
 
 public class Card {

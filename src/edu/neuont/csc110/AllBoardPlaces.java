@@ -5,41 +5,41 @@ public enum AllBoardPlaces {
 	MEDITERRANEAN("Mediterranean Avenue", 60,2,10,30,90,190,250,30,30,50,50),
 	COMMUNITY1("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 	BALIC("Balic Avenu", 60,4,20,60,180,320,450,50,50,50,50),
-	//INCOME("Income Tax"),
-	//RAILROAD1("Reading Railroad"),
+	INCOME("Income Tax",0,0,0,0,0,0,0,0,0,0,0),
+	READING("Reading Railroad",200,25,0,50,100,200,0,100,100,0,0),
 	ORIENTAL("Oriental Avenenu",100,6,30,90,270,400,550,50,50,50,50),
-	//CHANCE(),
+	CHANCE1("Chance",0,0,0,0,0,0,0,0,0,0,0),
 	VERMONT("Vermont Avenue",100,6,30,90,270,400,550,50,50,50,50),
 	CONNECTICUT("Connecticut Avenue",120,8,40,100,300,450,600,60,60,50,50),
-	//JAIL("Jail"),
+	JAIL("Jail",0,0,0,0,0,0,0,0,0,0,0),
 	CHARLES("St.Charles Place",140,10,50,150,450,625,750,70,70,100,100),
-	//ELECTRIC("Electric Company",150),
+	ELECTRIC("Electric Company",150,0,0,0,0,0,0,0,0,0,0),
 	STATES("States Avenue",140,10,50,150,450,625,750,70,70,100,100),
-	//RAILROAD2("Pennsylvania Railraod"),
+	PENNSYLVANIARR("Pennsylvania Railraod",200,25,0,50,100,200,0,100,100,0,0),
 	VIRGINIA("Virginia Avenue",160,12,60,180,500,700,900,80,80,100,100),
 	COMMUNITY2("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 	JAMES("St.James Pllace",180,14,70,200,550,750,950,90,90,100,100),
 	TENNESSEE("Tennessee Avenue",180,14,70,200,550,750,950,90,90,100,100),
-	//FREE("Free Parking"),
+	FREE("Free Parking",0,0,0,0,0,0,0,0,0,0,0),
 	NEWYORK("New York Avenue", 200,16,220,600,800,1000,100,100,100,100,100),
-	//CHANCE(),
+	CHANCE2("Chance",0,0,0,0,0,0,0,0,0,0,0),
 	KENTUCKY("Kentucky Avenue",220,18,90,250,700,875,1050,110,110,150,150),
 	INDIANA("Indiana Avenue",220,18,90,250,700,875,1050,110,110,150,150),
-	//RAILROAD3("B & O Railroad"),
+	BANDO("B & O Railroad",200,25,0,50,100,200,0,100,100,0,0),
 	ILLINOIS("Illinois Avenue",240,20,100,300,750,925,1100,120,120,150,150),
 	ATLANTIC("Atlatic Avenue",260,22,110,330,800,975,1150,130,130,150,150),
-	//WATER("Water Works"),
+	WATER("Water Works",150,0,0,0,0,0,0,0,0,0,0),
 	VENTNOR("Ventnor Avenue",260,22,110,330,800,975,1150,130,130,150,150),
 	MARVIN("Marvin Gardens",280,24,120,360,850,1025,1200,140,140,150,150),
-	//JAIL("Jail"),
+	GOTJAIL("Go To Jail",0,0,0,0,0,0,0,0,0,0,0),
 	PACIFIC("Pacific Avenue",300,26,130,390,900,110,1275,150,150,200,200),
 	NCAROLINA("North Carolina Avenue",300,26,130,390,900,1100,1275,150,150,200,200),
 	COMMUNITY3("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 	PENNSYLVANIA("Pennsylvania Avenue",320,28,150,450,1000,1200,1400,160,160,200,200),
-	//RAILROAD4("Short Line"),
-	//CHANCE(""),
+	SHORT("Short Line",200,25,0,50,100,200,0,100,100,0,0),
+	CHANCE3("Chance",0,0,0,0,0,0,0,0,0,0,0),
 	PARK("Park Place",350,35,175,500,1100,1300,1500,175,175,200,200),
-	//TAX("Lutury Tax"),
+	TAX("Lutury Tax",0,0,0,0,0,0,0,0,0,0,0),
 	BOARDWALK("Boardwalk",400,50,200,600,1400,1700,2000,200,200,200,200),
 	;
 	
@@ -127,14 +127,6 @@ public enum AllBoardPlaces {
 
 	public int getHotelCost() {
 		return hotelCost;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setCardPrice(int cardPrice) {
-		this.cardPrice = cardPrice;
 	} 	
 
 }

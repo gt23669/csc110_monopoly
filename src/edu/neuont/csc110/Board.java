@@ -4,6 +4,15 @@ import java.util.ArrayList;
 
 public class Board {
 
+	public static void main(String[] args) {
+	
+		Board b = new Board();
+		
+		// for each card in the list 
+			
+			// print the card details
+			//System.out.println(card.toString());
+	}
 	
 	ArrayList<Card> board = new ArrayList<>();
 	

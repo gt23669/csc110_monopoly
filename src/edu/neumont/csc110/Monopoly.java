@@ -112,7 +112,7 @@ public class Monopoly {
 			}
 			//else put up for action
 		}
-		if(p.location == 2) {
+		if(p.location == 2) { //COMMUNITY1("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(2);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -120,7 +120,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 3) {
+		if(p.location == 3) {//BALIC("Balic Avenu", 60,4,20,60,180,320,450,50,50,50,50),
 			AllBoardPlaces abp = b.getCardAt(3);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -128,7 +128,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 4) {
+		if(p.location == 4) {//INCOME("Income Tax",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(4);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -136,7 +136,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 5) {
+		if(p.location == 5) {//READING("Reading Railroad",200,25,0,50,100,200,0,100,100,0,0),
 			AllBoardPlaces abp = b.getCardAt(5);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -144,7 +144,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 6) {
+		if(p.location == 6) {//ORIENTAL("Oriental Avenenu",100,6,30,90,270,400,550,50,50,50,50),
 			AllBoardPlaces abp = b.getCardAt(6);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -152,7 +152,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 7) {
+		if(p.location == 7) {//CHANCE1("Chance",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(7);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -160,7 +160,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 8) {
+		if(p.location == 8) {//VERMONT("Vermont Avenue",100,6,30,90,270,400,550,50,50,50,50),
 			AllBoardPlaces abp = b.getCardAt(8);	
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -168,7 +168,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 9) {
+		if(p.location == 9) {//CONNECTICUT("Connecticut Avenue",120,8,40,100,300,450,600,60,60,50,50),
 			AllBoardPlaces abp = b.getCardAt(9);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -176,7 +176,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 10) {
+		if(p.location == 10) {//JAIL("Jail",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(10);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -184,7 +184,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 11) {
+		if(p.location == 11) {//CHARLES("St.Charles Place",140,10,50,150,450,625,750,70,70,100,100),
 			AllBoardPlaces abp = b.getCardAt(11);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -192,7 +192,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 12) {
+		if(p.location == 12) {//ELECTRIC("Electric Company",150,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(12);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -200,7 +200,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 13) {
+		if(p.location == 13) {//STATES("States Avenue",140,10,50,150,450,625,750,70,70,100,100),
 			AllBoardPlaces abp = b.getCardAt(13);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -208,7 +208,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 14) {
+		if(p.location == 14) {//PENNSYLVANIARR("Pennsylvania Railraod",200,25,0,50,100,200,0,100,100,0,0),
 			AllBoardPlaces abp = b.getCardAt(14);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -216,7 +216,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 15) {
+		if(p.location == 15) {//VIRGINIA("Virginia Avenue",160,12,60,180,500,700,900,80,80,100,100),
 			AllBoardPlaces abp = b.getCardAt(15);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -224,7 +224,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 16) {
+		if(p.location == 16) {//COMMUNITY2("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(16);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -232,7 +232,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 17) {
+		if(p.location == 17) {//JAMES("St.James Pllace",180,14,70,200,550,750,950,90,90,100,100),
 			AllBoardPlaces abp = b.getCardAt(18);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -240,7 +240,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 18) {
+		if(p.location == 18) {//TENNESSEE("Tennessee Avenue",180,14,70,200,550,750,950,90,90,100,100),
 			AllBoardPlaces abp = b.getCardAt(18);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -248,7 +248,8 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 19) {
+		if(p.location == 19) {//NEWYORK("New York Avenue", 200,16,220,600,800,1000,100,100,100,100,100),
+
 			AllBoardPlaces abp = b.getCardAt(19);	
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -256,7 +257,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 20) {
+		if(p.location == 20) {//FREE("Free Parking",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(20);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -264,7 +265,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 21) {
+		if(p.location == 21) {//KENTUCKY("Kentucky Avenue",220,18,90,250,700,875,1050,110,110,150,150),
 			AllBoardPlaces abp = b.getCardAt(21);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -272,7 +273,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 22) {
+		if(p.location == 22) {//CHANCE2("Chance",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(22);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -280,7 +281,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 23) {
+		if(p.location == 23) {//INDIANA("Indiana Avenue",220,18,90,250,700,875,1050,110,110,150,150),
 			AllBoardPlaces abp = b.getCardAt(23);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -288,7 +289,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 24) {
+		if(p.location == 24) {//ILLINOIS("Illinois Avenue",240,20,100,300,750,925,1100,120,120,150,150),
 			AllBoardPlaces abp = b.getCardAt(24);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -296,7 +297,7 @@ public class Monopoly {
 				p.cash =- 60;
 			}
 		}
-		if(p.location == 25) {
+		if(p.location == 25) {//BANDO("B & O Railroad",200,25,0,50,100,200,0,100,100,0,0),
 			AllBoardPlaces abp = b.getCardAt(25);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
@@ -432,7 +433,7 @@ public class Monopoly {
 
 	}
 
-	private void normalGame(Dice d) {
+	private void normalGame(Dice d) throws IOException {
 		playerList[firstPlayer].printPlayer();
 		System.out.println();
 		System.out.println("Okay " + playerList[firstPlayer].name + ", the first roll is yours.");

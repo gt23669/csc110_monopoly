@@ -1,14 +1,28 @@
 package edu.neumont.csc110;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Monopoly {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4b6669f457fbc461b8fa0ce5c902851b66d19e1b
 	Player[] playerList = null;
 	int firstPlayer;
-
-
+	ArrayList<PlayerTokens> tokenList = new ArrayList();
+	
 
 	public void gameSetUp(Dice d) throws IOException {
+		tokenList.add(PlayerTokens.VENUSAUR);
+		tokenList.add(PlayerTokens.CHARIZARD);
+		tokenList.add(PlayerTokens.BLASTOISE);
+		tokenList.add(PlayerTokens.MEW);
+		tokenList.add(PlayerTokens.MEWTWO);
+		tokenList.add(PlayerTokens.PIKACHU);
+		tokenList.add(PlayerTokens.POKEBALL);
+		tokenList.add(PlayerTokens.MASTERBALL);
+		
 
 		System.out.println("Hello, and welcome to Monopoly!");
 		System.out.println("How many players are there? You must have 2 or more players to play.");
@@ -20,6 +34,22 @@ public class Monopoly {
 		for (int i = 0; i < playerList.length; i++) {
 			playerList[i] = new Player();
 			playerList[i].name = ConsoleUI.promptForInput("Player " + (i + 1) + " enter your name.", false);
+			System.out.println("Your choices are");
+			for(int j =0;j<tokenList.size();j++) {
+				System.out.println((j+1)+""+tokenList.get(j));
+			}
+			boolean goodToken = true;
+		
+			System.out.println("You can enter a number for the respective token choice.");
+			
+			int chosenIndex = ConsoleUI.promptForInt("What token would you like?", 1, tokenList.size());
+			playerList[i].token=tokenList.get(chosenIndex-1);
+			tokenList.remove(chosenIndex-1);
+			System.out.println(playerList[i].token);
+		
+		
+			
+			
 			firstRoll[i] = d.firstRoll(playerList[i]);
 			if (firstRoll[i] > maxRoll) {
 				maxRoll = firstRoll[i];
@@ -66,8 +96,9 @@ public class Monopoly {
 	}
 
 	private void normalGame(Dice d) {
-		System.out.println("Okay "+playerList[firstPlayer].name+", the first roll is yours.");
+		playerList[firstPlayer].printPlayer();
+		System.out.println("Okay " + playerList[firstPlayer].name + ", the first roll is yours.");
 		d.rollDice(playerList[firstPlayer].name);
-//		need to add code to move piece after every roll, regardless if doubles
+		// need to add code to move piece after every roll, regardless if doubles
 	}
 }

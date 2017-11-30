@@ -6,9 +6,15 @@ public class PlayMonopoly {
 
 	public static void main(String[] args) throws IOException {
 		
-		Monopoly m = new Monopoly();
-		Dice d = new Dice();
-		
+
+//		Monopoly m = new Monopoly();
+//		Board bd = new Board();
+//		Dice d = new Dice();
+//		
+//		m.gameSetUp(d);
+//		this is a test comment for tortusgit
+
+		System.out.println(AllBoardPlaces.GO.toString());
 		m.gameSetUp(d);
 	}
 

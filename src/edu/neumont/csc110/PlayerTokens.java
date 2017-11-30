@@ -2,6 +2,10 @@ package edu.neumont.csc110;
 
 public enum PlayerTokens {
 
+<<<<<<< HEAD
+	VENUSAUR, CHARIZARD, BLASTOISE, PIKACHU, MEW, MEWTWO, POKEBALL, MASTERBALL,
+
+=======
 	
 	VENUSAUR,
 	CHARIZARD,
@@ -14,4 +18,5 @@ public enum PlayerTokens {
 	
 	
 	
+>>>>>>> 4b6669f457fbc461b8fa0ce5c902851b66d19e1b
 }

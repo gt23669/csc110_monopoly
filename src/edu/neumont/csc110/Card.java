@@ -1,13 +1,14 @@
 package edu.neumont.csc110;
 
+import edu.neumont.csc110.AllBoardPlaces;
 
 public class Card {
-
+	
 	private AllBoardPlaces cardValue;
-	
-	
+
+
 	public Card(AllBoardPlaces cardValue) {
-	
+		
 		this.cardValue = cardValue;
 	}
 
@@ -20,14 +21,9 @@ public class Card {
 	public int getCardPrice() {
 		return cardValue.getCardPrice();
 	}
-	
-	
-	@Override
-	public String toString() {
-		// build the string that represents the card object
-		
-		// return the string
-		return null;
-	}
-	
+
+
+
+
+
 }

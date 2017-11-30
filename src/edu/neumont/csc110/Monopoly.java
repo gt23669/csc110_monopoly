@@ -390,13 +390,23 @@ public class Monopoly {
 	}
 
 	private void normalGame(Dice d) throws IOException {
+		boolean gameWin=false;
+		int currentPlayer = firstPlayer;
 		playerList[firstPlayer].printPlayer();
 		System.out.println();
 		System.out.println("Okay " + playerList[firstPlayer].name + ", the first roll is yours.");
-		p.location = p.location + d.rollDice(playerList[firstPlayer].name);
+		p.location = p.location + d.rollDice(playerList[firstPlayer]);
 		System.out.println(p.location);
 		onMe();
-		
+		do {
+			for(int i = 0;i<playerList.length;i++) {
+				currentPlayer=firstPlayer+i;
+				if(currentPlayer >= playerList.length) {
+					currentPlayer=currentPlayer-playerList.length;
+				}
+				playerList[currentPlayer].printPlayer();
+			}
+		}while(gameWin==false);
 		// need to add code to move piece after every roll, regardless if doubles
 	}
 }

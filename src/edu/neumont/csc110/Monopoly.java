@@ -96,6 +96,36 @@ public class Monopoly {
 		if(p.location == 0) {
 			AllBoardPlaces abp = b.getCardAt(0);
 		}
+		if(p.location == 1) {
+			AllBoardPlaces abp = b.getCardAt(1);
+		}
+		if(p.location == 2) {
+			AllBoardPlaces abp = b.getCardAt(2);
+		}
+		if(p.location == 3) {
+			AllBoardPlaces abp = b.getCardAt(3);
+		}
+		if(p.location == 4) {
+			AllBoardPlaces abp = b.getCardAt(4);
+		}
+		if(p.location == 5) {
+			AllBoardPlaces abp = b.getCardAt(5);
+		}
+		if(p.location == 6) {
+			AllBoardPlaces abp = b.getCardAt(6);
+		}
+		if(p.location == 7) {
+			AllBoardPlaces abp = b.getCardAt(7);
+		}
+		if(p.location == 8) {
+			AllBoardPlaces abp = b.getCardAt(8);	
+		}
+		if(p.location == 9) {
+			AllBoardPlaces abp = b.getCardAt(9);
+		}
+		if(p.location == 10) {
+			AllBoardPlaces abp = b.getCardAt(10);
+		}
 	}
 
 	private void speedPlay() {

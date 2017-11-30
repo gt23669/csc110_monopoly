@@ -8,24 +8,24 @@ public class Dice {
 
 	public int firstRoll(Player p) {
 		boolean doubleRoll = false;
-			doubleRoll=false;
-			int die1 = gen.nextInt(5) + 1;
-		
-//		System.out.println(die1+"Random first die");
+		doubleRoll = false;
+		int die1 = gen.nextInt(5) + 1;
+
+		// System.out.println(die1+"Random first die");
 		int die2 = gen.nextInt(5) + 1;
-//		System.out.println(die2+"random second die");
-		int rollValue = die1+die2;
-		do{
-		if(die1==die2) {
-//			System.out.println("do while loop, first roll*********************");
-			doubleRoll = true;
-			die1 = gen.nextInt(5) + 1;
-			die2 = gen.nextInt(5) + 1;
-			rollValue=die1+die2;
+		// System.out.println(die2+"random second die");
+		int rollValue = die1 + die2;
+		do {
+			if (die1 == die2) {
+				// System.out.println("do while loop, first roll*********************");
+				doubleRoll = true;
+				die1 = gen.nextInt(5) + 1;
+				die2 = gen.nextInt(5) + 1;
+				rollValue = die1 + die2;
+				return rollValue;
+			}
 			return rollValue;
-		}
-		return rollValue;
-		}while(doubleRoll == true);
+		} while (doubleRoll == true);
 	}
 
 	public int rollDice(String name) {

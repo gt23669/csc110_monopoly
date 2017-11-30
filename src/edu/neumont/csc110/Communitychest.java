@@ -15,7 +15,6 @@ public class Communitychest {
 		} while (!usedListCC.contains(num));
 		usedListCC.add(num);
 
-		
 		return num;
 
 	}

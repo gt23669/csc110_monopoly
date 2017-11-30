@@ -21,16 +21,16 @@ public enum AllBoardPlaces {
 	COMMUNITY2("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 	JAMES("St.James Pllace",180,14,70,200,550,750,950,90,90,100,100),
 	TENNESSEE("Tennessee Avenue",180,14,70,200,550,750,950,90,90,100,100),
-	FREE("Free Parking",0,0,0,0,0,0,0,0,0,0,0),
 	NEWYORK("New York Avenue", 200,16,220,600,800,1000,100,100,100,100,100),
-	CHANCE2("Chance",0,0,0,0,0,0,0,0,0,0,0),
+	FREE("Free Parking",0,0,0,0,0,0,0,0,0,0,0),
 	KENTUCKY("Kentucky Avenue",220,18,90,250,700,875,1050,110,110,150,150),
+	CHANCE2("Chance",0,0,0,0,0,0,0,0,0,0,0),
 	INDIANA("Indiana Avenue",220,18,90,250,700,875,1050,110,110,150,150),
-	BANDO("B & O Railroad",200,25,0,50,100,200,0,100,100,0,0),
 	ILLINOIS("Illinois Avenue",240,20,100,300,750,925,1100,120,120,150,150),
+	BANDO("B & O Railroad",200,25,0,50,100,200,0,100,100,0,0),
 	ATLANTIC("Atlatic Avenue",260,22,110,330,800,975,1150,130,130,150,150),
-	WATER("Water Works",150,0,0,0,0,0,0,0,0,0,0),
 	VENTNOR("Ventnor Avenue",260,22,110,330,800,975,1150,130,130,150,150),
+	WATER("Water Works",150,0,0,0,0,0,0,0,0,0,0),
 	MARVIN("Marvin Gardens",280,24,120,360,850,1025,1200,140,140,150,150),
 	GOTJAIL("Go To Jail",0,0,0,0,0,0,0,0,0,0,0),
 	PACIFIC("Pacific Avenue",300,26,130,390,900,110,1275,150,150,200,200),
@@ -137,7 +137,7 @@ public enum AllBoardPlaces {
 		stb.append(" Two House Rent "+getTwoHsRent());
 		stb.append(" Three House Rent "+getThreeHsRent());
 		stb.append(" Four House Rent"+getFourHsRent());
-		stb.append(" Hotel Rent"+getHotelRent());
+		stb.append(" Hotel Rent "+getHotelRent());
 		stb.append(" Morgage "+getMortgageValue());
 		stb.append(" Buy Back Morgagae "+getMortgageBuybackPrice());
 		stb.append(" House Cost "+getHouseCost());

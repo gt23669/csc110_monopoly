@@ -126,6 +126,96 @@ public class Monopoly {
 		if(p.location == 10) {
 			AllBoardPlaces abp = b.getCardAt(10);
 		}
+		if(p.location == 11) {
+			AllBoardPlaces abp = b.getCardAt(11);
+		}
+		if(p.location == 12) {
+			AllBoardPlaces abp = b.getCardAt(12);
+		}
+		if(p.location == 13) {
+			AllBoardPlaces abp = b.getCardAt(13);
+		}
+		if(p.location == 14) {
+			AllBoardPlaces abp = b.getCardAt(14);
+		}
+		if(p.location == 15) {
+			AllBoardPlaces abp = b.getCardAt(15);
+		}
+		if(p.location == 16) {
+			AllBoardPlaces abp = b.getCardAt(16);
+		}
+		if(p.location == 17) {
+			AllBoardPlaces abp = b.getCardAt(18);
+		}
+		if(p.location == 18) {
+			AllBoardPlaces abp = b.getCardAt(18);
+		}
+		if(p.location == 19) {
+			AllBoardPlaces abp = b.getCardAt(19);	
+		}
+		if(p.location == 20) {
+			AllBoardPlaces abp = b.getCardAt(20);
+		}
+		if(p.location == 21) {
+			AllBoardPlaces abp = b.getCardAt(21);
+		}
+		if(p.location == 22) {
+			AllBoardPlaces abp = b.getCardAt(22);
+		}
+		if(p.location == 23) {
+			AllBoardPlaces abp = b.getCardAt(23);
+		}
+		if(p.location == 24) {
+			AllBoardPlaces abp = b.getCardAt(24);
+		}
+		if(p.location == 25) {
+			AllBoardPlaces abp = b.getCardAt(25);
+		}
+		if(p.location == 26) {
+			AllBoardPlaces abp = b.getCardAt(26);
+		}
+		if(p.location == 27) {
+			AllBoardPlaces abp = b.getCardAt(27);
+		}
+		if(p.location == 28) {
+			AllBoardPlaces abp = b.getCardAt(28);
+		}
+		if(p.location == 29) {
+			AllBoardPlaces abp = b.getCardAt(29);
+		}
+		if(p.location == 30) {
+			AllBoardPlaces abp = b.getCardAt(30);
+		}
+		if(p.location == 31) {
+			AllBoardPlaces abp = b.getCardAt(31);
+		}
+		if(p.location == 32) {
+			AllBoardPlaces abp = b.getCardAt(32);
+		}
+		if(p.location == 33) {
+			AllBoardPlaces abp = b.getCardAt(33);
+		}
+		if(p.location == 34) {
+			AllBoardPlaces abp = b.getCardAt(34);
+		}
+		if(p.location == 35) {
+			AllBoardPlaces abp = b.getCardAt(35);
+		}
+		if(p.location == 36) {
+			AllBoardPlaces abp = b.getCardAt(36);
+		}
+		if(p.location == 37) {
+			AllBoardPlaces abp = b.getCardAt(37);
+		}
+		if(p.location == 38) {
+			AllBoardPlaces abp = b.getCardAt(38);	
+		}
+		if(p.location == 39) {
+			AllBoardPlaces abp = b.getCardAt(39);
+		}
+		if(p.location == 40) {
+			AllBoardPlaces abp = b.getCardAt(40);
+		}
 	}
 
 	private void speedPlay() {

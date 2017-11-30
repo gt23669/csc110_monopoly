@@ -98,30 +98,39 @@ public class Monopoly {
 		}
 		if(p.location == 1) {
 			AllBoardPlaces abp = b.getCardAt(1);
+			System.out.println(abp);
 		}
 		if(p.location == 2) {
 			AllBoardPlaces abp = b.getCardAt(2);
+			System.out.println(abp);
 		}
 		if(p.location == 3) {
 			AllBoardPlaces abp = b.getCardAt(3);
+			System.out.println(abp);
 		}
 		if(p.location == 4) {
 			AllBoardPlaces abp = b.getCardAt(4);
+			System.out.println(abp);
 		}
 		if(p.location == 5) {
 			AllBoardPlaces abp = b.getCardAt(5);
+			System.out.println(abp);
 		}
 		if(p.location == 6) {
 			AllBoardPlaces abp = b.getCardAt(6);
+			System.out.println(abp);
 		}
 		if(p.location == 7) {
 			AllBoardPlaces abp = b.getCardAt(7);
+			System.out.println(abp);
 		}
 		if(p.location == 8) {
 			AllBoardPlaces abp = b.getCardAt(8);	
+			System.out.println(abp);
 		}
 		if(p.location == 9) {
 			AllBoardPlaces abp = b.getCardAt(9);
+			System.out.println(abp);
 		}
 		if(p.location == 10) {
 			AllBoardPlaces abp = b.getCardAt(10);
@@ -226,8 +235,9 @@ public class Monopoly {
 	private void normalGame(Dice d) {
 		playerList[firstPlayer].printPlayer();
 		System.out.println("Okay " + playerList[firstPlayer].name + ", the first roll is yours.");
-		int location = p.location + d.rollDice(playerList[firstPlayer].name);
-		p.location = location;
+		p.location = p.location + d.rollDice(playerList[firstPlayer].name);
+		System.out.println(p.location);
+		onMe();
 		
 		// need to add code to move piece after every roll, regardless if doubles
 	}

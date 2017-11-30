@@ -49,6 +49,7 @@ public class Dice {
 				break;
 			}
 			System.out.println(name + " Your roll was a " + die1 + " and " + die2 + ".");
+			rolledValue = die1 + die2;
 			if (die1 == die2) {
 				doubleRoll = true;
 				doubleCount++;

@@ -32,7 +32,7 @@ public class Dice {
 		boolean jail = false;
 		boolean doubleRoll = false;
 		int doubleCount = 0;
-		int testRoll = 0;
+//		int testRoll = 0;
 		int die1 = 0;
 		int die2 = 0;
 		int rolledValue = die1 + die2;
@@ -41,7 +41,7 @@ public class Dice {
 			doubleRoll = false;
 			die1 = gen.nextInt(5) + 1;
 			die2 = gen.nextInt(5) + 1;
-			testRoll++;
+//			testRoll++;
 			// die1 = 1;
 			// die2 = 1;
 			if (doubleCount == 3) {
@@ -53,8 +53,16 @@ public class Dice {
 			if (die1 == die2) {
 				doubleRoll = true;
 				doubleCount++;
+				if(doubleCount==1) {
+					int doubleValue1=rolledValue;
+					System.out.println(doubleValue1+" doublevalue1");
+				}if(doubleCount==2) {
+					int doubleValue2=rolledValue;
+					System.out.println(doubleValue2+" doublevalue2");
+				}
 			}
 		} while (doubleRoll == true);
+		System.out.println(rolledValue+" rolled value");
 		return rolledValue;
 
 	}

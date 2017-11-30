@@ -6,10 +6,11 @@ public class PlayMonopoly {
 
 	public static void main(String[] args) throws IOException {
 
-		Monopoly m = new Monopoly();
+//		Monopoly m = new Monopoly();
 		Dice d = new Dice();
+		d.rollDice(null);
 
-		m.gameSetUp(d);
+//		m.gameSetUp(d);
 	}
 
 }

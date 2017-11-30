@@ -32,18 +32,24 @@ public class Monopoly {
 		for (int i = 0; i < playerList.length; i++) {
 			playerList[i] = new Player();
 			playerList[i].name = ConsoleUI.promptForInput("Player " + (i + 1) + " enter your name.", false);
+			System.out.println();
 			System.out.println("Your choices are");
+			System.out.println();
 			for(int j =0;j<tokenList.size();j++) {
 				System.out.println((j+1)+""+tokenList.get(j));
+				System.out.println();
 			}
 			boolean goodToken = true;
 		
 			System.out.println("You can enter a number for the respective token choice.");
+			System.out.println();
 			
 			int chosenIndex = ConsoleUI.promptForInt("What token would you like?", 1, tokenList.size());
+			System.out.println();
 			playerList[i].token=tokenList.get(chosenIndex-1);
 			tokenList.remove(chosenIndex-1);
 			System.out.println(playerList[i].token);
+			System.out.println();
 		
 		
 			
@@ -234,6 +240,7 @@ public class Monopoly {
 
 	private void normalGame(Dice d) {
 		playerList[firstPlayer].printPlayer();
+		System.out.println();
 		System.out.println("Okay " + playerList[firstPlayer].name + ", the first roll is yours.");
 		p.location = p.location + d.rollDice(playerList[firstPlayer].name);
 		System.out.println(p.location);

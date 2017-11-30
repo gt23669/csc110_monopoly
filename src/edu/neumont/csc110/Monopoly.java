@@ -8,6 +8,7 @@ public class Monopoly {
 	int firstPlayer;
 	ArrayList<PlayerTokens> tokenList = new ArrayList();
 	Board b = new Board();
+	Player p = new Player();
 	
 
 	public void gameSetUp(Dice d) throws IOException {
@@ -86,14 +87,15 @@ public class Monopoly {
 
 	}
 	private void onMe() {
+		
 		//if current player is on me(any spot on board) then ask to buy or acution.
 		//if it is owned pay rent to other player check if they have houses or hotels pay.
 		//if player owns all three or two ask to put houses or hotels
 		//if player lands on Go to jail do it.
 		//if player passes go give money.
-//		if(firstPlayer == b.getCardAt(0)) {
-//			
-//		}
+		if(p.location == 0) {
+			AllBoardPlaces abp = b.getCardAt(0);
+		}
 	}
 
 	private void speedPlay() {
@@ -104,7 +106,9 @@ public class Monopoly {
 	private void normalGame(Dice d) {
 		playerList[firstPlayer].printPlayer();
 		System.out.println("Okay " + playerList[firstPlayer].name + ", the first roll is yours.");
-		d.rollDice(playerList[firstPlayer].name);
+		int location = p.location + d.rollDice(playerList[firstPlayer].name);
+		p.location = location;
+		
 		// need to add code to move piece after every roll, regardless if doubles
 	}
 }

@@ -231,6 +231,7 @@ public class Monopoly {
 		if(p.location == 40) {
 			AllBoardPlaces abp = b.getCardAt(40);
 		}
+		
 	}
 
 	private void speedPlay() {

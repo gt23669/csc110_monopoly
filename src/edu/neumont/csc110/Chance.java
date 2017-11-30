@@ -15,7 +15,6 @@ public class Chance {
 		} while (!usedListChance.contains(num));
 		usedListChance.add(num);
 
-		
 		return num;
 
 	}

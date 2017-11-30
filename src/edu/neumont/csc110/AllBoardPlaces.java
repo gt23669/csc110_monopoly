@@ -132,16 +132,16 @@ public enum AllBoardPlaces {
 		// build the string that represents the card object
 		StringBuilder stb = new StringBuilder();
 		stb.append(getName());
-		stb.append("How much it cost " + getBaseRent());
-		stb.append("One House Rent "+getOneHsRent());
-		stb.append("Two House Rent "+getTwoHsRent());
-		stb.append("Three House Rent "+getThreeHsRent());
-		stb.append(getFourHsRent());
-		stb.append(getHotelRent());
-		stb.append(getMortgageValue());
-		stb.append(getMortgageBuybackPrice());
-		stb.append(getHouseCost());
-		stb.append(getHotelCost());
+		stb.append(" How much it cost " + getBaseRent());
+		stb.append(" One House Rent "+getOneHsRent());
+		stb.append(" Two House Rent "+getTwoHsRent());
+		stb.append(" Three House Rent "+getThreeHsRent());
+		stb.append(" Four House Rent"+getFourHsRent());
+		stb.append(" Hotel Rent"+getHotelRent());
+		stb.append(" Morgage "+getMortgageValue());
+		stb.append(" Buy Back Morgagae "+getMortgageBuybackPrice());
+		stb.append(" House Cost "+getHouseCost());
+		stb.append(" Hotel Cost "+getHotelCost());
 		// return the string
 		return stb.toString();
 	}

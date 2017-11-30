@@ -8,11 +8,6 @@ public class PlayMonopoly {
 
 		Monopoly m = new Monopoly();
 		Dice d = new Dice();
-<<<<<<< HEAD
-=======
-
-//		System.out.println(AllBoardPlaces.GO.toString());
->>>>>>> e32ff77de255e6667723c5e3f66bcf5bed77071f
 		m.gameSetUp(d);
 	}
 

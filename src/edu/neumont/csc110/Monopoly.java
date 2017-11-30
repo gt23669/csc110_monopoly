@@ -92,7 +92,7 @@ public class Monopoly {
 		}
 
 	}
-	private void onMe() {
+	private void onMe() throws IOException {
 		
 		//if current player is on me(any spot on board) then ask to buy or acution.
 		//if it is owned pay rent to other player check if they have houses or hotels pay.
@@ -101,166 +101,328 @@ public class Monopoly {
 		//if player passes go give money.
 		if(p.location == 0) {
 			AllBoardPlaces abp = b.getCardAt(0);
+			p.cash += 200;
 		}
 		if(p.location == 1) {
 			AllBoardPlaces abp = b.getCardAt(1);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
+			//else put up for action
 		}
 		if(p.location == 2) {
 			AllBoardPlaces abp = b.getCardAt(2);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 3) {
 			AllBoardPlaces abp = b.getCardAt(3);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 4) {
 			AllBoardPlaces abp = b.getCardAt(4);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 5) {
 			AllBoardPlaces abp = b.getCardAt(5);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 6) {
 			AllBoardPlaces abp = b.getCardAt(6);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 7) {
 			AllBoardPlaces abp = b.getCardAt(7);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 8) {
 			AllBoardPlaces abp = b.getCardAt(8);	
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 9) {
 			AllBoardPlaces abp = b.getCardAt(9);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 10) {
 			AllBoardPlaces abp = b.getCardAt(10);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 11) {
 			AllBoardPlaces abp = b.getCardAt(11);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 12) {
 			AllBoardPlaces abp = b.getCardAt(12);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 13) {
 			AllBoardPlaces abp = b.getCardAt(13);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 14) {
 			AllBoardPlaces abp = b.getCardAt(14);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 15) {
 			AllBoardPlaces abp = b.getCardAt(15);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 16) {
 			AllBoardPlaces abp = b.getCardAt(16);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 17) {
 			AllBoardPlaces abp = b.getCardAt(18);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 18) {
 			AllBoardPlaces abp = b.getCardAt(18);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 19) {
 			AllBoardPlaces abp = b.getCardAt(19);	
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 20) {
 			AllBoardPlaces abp = b.getCardAt(20);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 21) {
 			AllBoardPlaces abp = b.getCardAt(21);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 22) {
 			AllBoardPlaces abp = b.getCardAt(22);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 23) {
 			AllBoardPlaces abp = b.getCardAt(23);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 24) {
 			AllBoardPlaces abp = b.getCardAt(24);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 25) {
 			AllBoardPlaces abp = b.getCardAt(25);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 26) {
 			AllBoardPlaces abp = b.getCardAt(26);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 27) {
 			AllBoardPlaces abp = b.getCardAt(27);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 28) {
 			AllBoardPlaces abp = b.getCardAt(28);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 29) {
 			AllBoardPlaces abp = b.getCardAt(29);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 30) {
 			AllBoardPlaces abp = b.getCardAt(30);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 31) {
 			AllBoardPlaces abp = b.getCardAt(31);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 32) {
 			AllBoardPlaces abp = b.getCardAt(32);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 33) {
 			AllBoardPlaces abp = b.getCardAt(33);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 34) {
 			AllBoardPlaces abp = b.getCardAt(34);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 35) {
 			AllBoardPlaces abp = b.getCardAt(35);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 36) {
 			AllBoardPlaces abp = b.getCardAt(36);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 37) {
 			AllBoardPlaces abp = b.getCardAt(37);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 38) {
 			AllBoardPlaces abp = b.getCardAt(38);	
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 39) {
 			AllBoardPlaces abp = b.getCardAt(39);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		if(p.location == 40) {
 			AllBoardPlaces abp = b.getCardAt(40);
 			System.out.println(abp);
+			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
+			if(input.equalsIgnoreCase("Yes")) {
+				p.cash =- 60;
+			}
 		}
 		
 	}

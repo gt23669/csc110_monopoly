@@ -7,11 +7,9 @@ public class PlayMonopoly {
 	public static void main(String[] args) throws IOException {
 		
 		Monopoly m = new Monopoly();
-		Board bd = new Board();
 		Dice d = new Dice();
 		
 		m.gameSetUp(d);
-//		this is a test comment for tortusgit
 	}
 
 }

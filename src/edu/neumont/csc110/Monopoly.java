@@ -51,9 +51,11 @@ public class Monopoly {
 			if (firstRoll[i] > maxRoll) {
 				maxRoll = firstRoll[i];
 				firstPlayer = i;
+//				System.out.println(maxRoll+"Maxroll");
 
 			} else if (firstRoll[i] == maxRoll) {
 				do {
+//					System.out.println("do while loop, game setup, reroll************");
 					firstRoll[i] = d.firstRoll(playerList[i]);
 
 					if (firstRoll[i] > maxRoll) {

@@ -9,7 +9,7 @@ public class PlayMonopoly {
 		Monopoly m = new Monopoly();
 		Dice d = new Dice();
 
-		System.out.println(AllBoardPlaces.GO.toString());
+//		System.out.println(AllBoardPlaces.GO.toString());
 		m.gameSetUp(d);
 	}
 

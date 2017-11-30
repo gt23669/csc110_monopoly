@@ -227,7 +227,8 @@ public class Monopoly {
 		playerList[firstPlayer].printPlayer();
 		System.out.println("Okay " + playerList[firstPlayer].name + ", the first roll is yours.");
 		int location = p.location + d.rollDice(playerList[firstPlayer].name);
-		p.location = location;
+		playerList[firstPlayer].location = playerList[firstPlayer].location+location;
+		playerList[firstPlayer].printPlayer();
 		
 		// need to add code to move piece after every roll, regardless if doubles
 	}

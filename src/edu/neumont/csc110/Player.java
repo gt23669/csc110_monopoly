@@ -5,7 +5,7 @@ public class Player {
 	public String name;
 	public PlayerTokens token;
 	public int cash = 1500;
-	public int location;
+	public int location=0;
 
 	public void printPlayer() {
 		System.out.println(name);

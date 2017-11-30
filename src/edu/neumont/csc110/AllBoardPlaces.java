@@ -1,5 +1,6 @@
 package edu.neumont.csc110;
 
+
 public enum AllBoardPlaces {
 	GO("Go", 0,0,0,0,0,0,0,0,0,0,0),
 	MEDITERRANEAN("Mediterranean Avenue", 60,2,10,30,90,190,250,30,30,50,50),
@@ -47,20 +48,20 @@ public enum AllBoardPlaces {
 
 	
 
-	private String name;
-	private int cardPrice;
-	private int baseRent;
-	private int oneHsRent;
-	private int twoHsRent;
-	private int threeHsRent;
-	private int fourHsRent;
-	private int hotelRent;
-	private int mortgageValue;
-	private int mortgageBuybackPrice;
-	private int houseCost;
-	private int hotelCost;
+	public String name;
+	public int cardPrice;
+	public int baseRent;
+	public int oneHsRent;
+	public int twoHsRent;
+	public int threeHsRent;
+	public int fourHsRent;
+	public int hotelRent;
+	public int mortgageValue;
+	public int mortgageBuybackPrice;
+	public int houseCost;
+	public int hotelCost;
 
-	private AllBoardPlaces(String name, int cardPrice, int baseRent, int oneHsRent,
+	AllBoardPlaces(String name, int cardPrice, int baseRent, int oneHsRent,
 			int twoHsRent, int threeHsRent, int fourHsRent, int hotelRent,
 			int morgageValue, int morgageBuybackPrice, int houseCost, int hotelCost) {
 		this.name = name;
@@ -77,7 +78,6 @@ public enum AllBoardPlaces {
 		this.hotelCost = hotelCost;
 		
 	}
-
 	/**
 	 * This returns the name of the board piece
 	 */
@@ -127,5 +127,23 @@ public enum AllBoardPlaces {
 	public int getHotelCost() {
 		return hotelCost;
 	} 	
+	@Override
+	public String toString() {
+		// build the string that represents the card object
+		StringBuilder stb = new StringBuilder();
+		stb.append(getName());
+		stb.append(getBaseRent());
+		stb.append(getOneHsRent());
+		stb.append(getTwoHsRent());
+		stb.append(getThreeHsRent());
+		stb.append(getFourHsRent());
+		stb.append(getHotelRent());
+		stb.append(getMortgageValue());
+		stb.append(getMortgageBuybackPrice());
+		stb.append(getHouseCost());
+		stb.append(getHotelCost());
+		// return the string
+		return stb.toString();
+	}
 
 }

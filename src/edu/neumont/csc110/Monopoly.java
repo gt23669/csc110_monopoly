@@ -3,7 +3,6 @@ package edu.neumont.csc110;
 import java.io.IOException;
 
 public class Monopoly {
-	PlayerToken pt = new PlayerToken();
 	Player[] playerList = null;
 	int firstPlayer;
 
@@ -56,6 +55,9 @@ public class Monopoly {
 			speedPlay();
 		}
 
+	}
+	private void onMe() {
+		
 	}
 
 	private void speedPlay() {

@@ -4,13 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Monopoly {
-<<<<<<< HEAD
-=======
-
->>>>>>> 4b6669f457fbc461b8fa0ce5c902851b66d19e1b
 	Player[] playerList = null;
 	int firstPlayer;
 	ArrayList<PlayerTokens> tokenList = new ArrayList();
+	Board b = new Board();
 	
 
 	public void gameSetUp(Dice d) throws IOException {
@@ -87,7 +84,14 @@ public class Monopoly {
 
 	}
 	private void onMe() {
-		
+		//if current player is on me(any spot on board) then ask to buy or acution.
+		//if it is owned pay rent to other player check if they have houses or hotels pay.
+		//if player owns all three or two ask to put houses or hotels
+		//if player lands on Go to jail do it.
+		//if player passes go give money.
+//		if(firstPlayer == b.getCardAt(0)) {
+//			
+//		}
 	}
 
 	private void speedPlay() {

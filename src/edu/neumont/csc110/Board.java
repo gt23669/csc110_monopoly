@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Board {
 
-	ArrayList<Card> board = new ArrayList<>();
+	ArrayList<AllBoardPlaces> board = new ArrayList<>();
 
 	public Board() {
 		createBoard();
@@ -14,12 +14,11 @@ public class Board {
 	private void createBoard() {
 		// FOR (this object) IN (this collection)
 		for (AllBoardPlaces piece : AllBoardPlaces.values()) {
-			Card card = new Card(piece);
-			board.add(card);
+			board.add(piece);
 		}
 	}
 
-	public Card getCardAt(int index) {
+	public AllBoardPlaces getCardAt(int index) {
 		return board.get(index);
 
 	}

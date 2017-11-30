@@ -4,10 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Monopoly {
-<<<<<<< HEAD
-=======
 
->>>>>>> 4b6669f457fbc461b8fa0ce5c902851b66d19e1b
 	Player[] playerList = null;
 	int firstPlayer;
 	ArrayList<PlayerTokens> tokenList = new ArrayList();

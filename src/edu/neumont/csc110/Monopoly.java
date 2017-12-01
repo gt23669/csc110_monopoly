@@ -408,7 +408,7 @@ public class Monopoly {
 				System.out.println("******************************");
 				playerList[currentPlayer].printPlayer();
 				System.out.println("******************************");
-				System.out.println();
+				System.out.println();	
 				System.out.println("Okay " + playerList[currentPlayer].name + ", the roll is yours.");
 				playerList[currentPlayer].location = playerList[currentPlayer].location + d.rollDice(playerList[currentPlayer]);
 				System.out.println(playerList[currentPlayer].location);
@@ -417,7 +417,7 @@ public class Monopoly {
 				// p = playerList[currentPlayer]; We need to change p.location to whatever this means. cryptic tutors...
 			}
 
-		}while(gameWin==false);
+		}while(turnCount<10);
 
 		// need to add code to move piece after every roll, regardless if doubles
 		boolean validYesno = false;

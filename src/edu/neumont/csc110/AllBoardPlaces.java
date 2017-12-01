@@ -6,7 +6,7 @@ public enum AllBoardPlaces {
 	MEDITERRANEAN("Mediterranean Avenue", 60,2,10,30,90,190,250,30,30,50,50),
 	COMMUNITY1("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 	BALIC("Balic Avenu", 60,4,20,60,180,320,450,50,50,50,50),
-	INCOME("Income Tax",0,0,0,0,0,0,0,0,0,0,0),
+	INCOME("Income Tax",200,.01,0,0,0,0,0,0,0,0,0),
 	READING("Reading Railroad",200,25,0,50,100,200,0,100,100,0,0),
 	ORIENTAL("Oriental Avenenu",100,6,30,90,270,400,550,50,50,50,50),
 	CHANCE1("Chance",0,0,0,0,0,0,0,0,0,0,0),
@@ -40,7 +40,7 @@ public enum AllBoardPlaces {
 	SHORT("Short Line",200,25,0,50,100,200,0,100,100,0,0),
 	CHANCE3("Chance",0,0,0,0,0,0,0,0,0,0,0),
 	PARK("Park Place",350,35,175,500,1100,1300,1500,175,175,200,200),
-	TAX("Lutury Tax",0,0,0,0,0,0,0,0,0,0,0),
+	TAX("Lutury Tax",0,75,0,0,0,0,0,0,0,0,0),
 	BOARDWALK("Boardwalk",400,50,200,600,1400,1700,2000,200,200,200,200);
 	
 	// name(name, buyPrice, baseRent, 1HsRent, 2HsRent, 3HsRent, 4HsRent,
@@ -50,7 +50,7 @@ public enum AllBoardPlaces {
 
 	public String name;
 	public int cardPrice;
-	public int baseRent;
+	public double baseRent;
 	public int oneHsRent;
 	public int twoHsRent;
 	public int threeHsRent;
@@ -61,7 +61,7 @@ public enum AllBoardPlaces {
 	public int houseCost;
 	public int hotelCost;
 
-	AllBoardPlaces(String name, int cardPrice, int baseRent, int oneHsRent,
+	AllBoardPlaces(String name, int cardPrice, double baseRent, int oneHsRent,
 			int twoHsRent, int threeHsRent, int fourHsRent, int hotelRent,
 			int morgageValue, int morgageBuybackPrice, int houseCost, int hotelCost) {
 		this.name = name;
@@ -88,7 +88,7 @@ public enum AllBoardPlaces {
 	public int getCardPrice() {
 		return cardPrice;
 	}
-	public int getBaseRent() {
+	public double getBaseRent() {
 		return baseRent;
 	}
 

@@ -10,7 +10,8 @@ public class PlayMonopoly {
 		Dice d = new Dice();
 		
 	
-		m.gameSetUp(d);
+//		m.gameSetUp(d,p);
+		d.rollDice(p);
 		
 	}
 

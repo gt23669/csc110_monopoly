@@ -532,14 +532,14 @@ public class Monopoly {
 				System.out.println("***********************************");
 				System.out.println();
 
-				onMe(currentPlayer);
+//				onMe(currentPlayer);
 //				System.out.println("You landed on board space "+playerList[currentPlayer].location);
 
 				System.out.println();
 				System.out.println("Okay " + playerList[currentPlayer].name + ", the roll is yours.");
-				playerList[currentPlayer].location = playerList[currentPlayer].location
-						+ d.rollDice(playerList[currentPlayer]);
-				System.out.println(playerList[currentPlayer].location);
+				System.out.println();
+				playerList[currentPlayer].location = playerList[currentPlayer].location+ d.rollDice(playerList[currentPlayer]);
+//				System.out.println(playerList[currentPlayer].location);
 				onMe(currentPlayer);
 				turnCount++;
 				// p = playerList[currentPlayer]; We need to change p.location to whatever this
@@ -555,7 +555,7 @@ public class Monopoly {
 		while (!validYesno) {
 			String yesno = ConsoleUI.promptForInput("Do you want to play again? Yes/No", false);
 			if (yesno.equalsIgnoreCase("yes")) {
-
+				gameSetUp(d);
 			}
 		}
 	}

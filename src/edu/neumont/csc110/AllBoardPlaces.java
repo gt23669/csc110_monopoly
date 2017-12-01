@@ -139,7 +139,7 @@ public enum AllBoardPlaces {
 		stb.append(" Four House Rent"+getFourHsRent());
 		stb.append(" Hotel Rent "+getHotelRent());
 		stb.append(" Morgage "+getMortgageValue());
-		stb.append(" Buy Back Morgagae "+getMortgageBuybackPrice());
+		stb.append(" Buy Back Morgage "+getMortgageBuybackPrice());
 		stb.append(" House Cost "+getHouseCost());
 		stb.append(" Hotel Cost "+getHotelCost());
 		// return the string

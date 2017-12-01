@@ -519,11 +519,7 @@ public class Monopoly {
 
 		boolean gameWin = false;
 		int currentPlayer = firstPlayer;
-
-		playerList[firstPlayer].printPlayer();
-		System.out.println();
-		System.out.println("Okay " + playerList[firstPlayer].name + ", the first roll is yours.");
-		p.location = p.location + d.rollDice(playerList[firstPlayer]);
+		int turnCount =0;
 
 		do {
 			for (int i = 0; i < playerList.length; i++) {
@@ -531,10 +527,13 @@ public class Monopoly {
 				if (currentPlayer >= playerList.length) {
 					currentPlayer = currentPlayer - playerList.length;
 				}
+				System.out.println("***********************************");
 				playerList[currentPlayer].printPlayer();
+				System.out.println("***********************************");
+				System.out.println();
 
 				onMe(currentPlayer);
-				System.out.println(p.location);
+//				System.out.println("You landed on board space "+playerList[currentPlayer].location);
 
 				System.out.println();
 				System.out.println("Okay " + playerList[currentPlayer].name + ", the roll is yours.");
@@ -542,15 +541,14 @@ public class Monopoly {
 						+ d.rollDice(playerList[currentPlayer]);
 				System.out.println(playerList[currentPlayer].location);
 				onMe(currentPlayer);
+				turnCount++;
 				// p = playerList[currentPlayer]; We need to change p.location to whatever this
 				// means. cryptic tutors...
 
 			}
 
-		} while (gameWin = false);
+		} while (turnCount<10);
 
-		while (gameWin == false)
-			;
 
 		// need to add code to move piece after every roll, regardless if doubles
 		boolean validYesno = false;

@@ -21,7 +21,6 @@ public class Communitychest {
 	private int chest(){
 		switch (randomCCCard()) {
 		case 1: System.out.println("Advance to Go (Collect $200)");
-		
 		}
 		return 0;
 	}

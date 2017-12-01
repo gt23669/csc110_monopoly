@@ -107,12 +107,12 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(1);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (true) {
+			if (input=true) {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 
 			}
-			if (false) {
+			if (input = false) {
 				// if no put up for action
 			}
 		}
@@ -125,11 +125,11 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(3);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (input=true) {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
+			if (input=false) {
 				// if no put up for action
 
 			}
@@ -137,10 +137,10 @@ public class Monopoly {
 		if (playerList[currentPlayer].location == 4) {// INCOME("Income Tax",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(4);
 			System.out.println(abp);
-			String input = ConsoleUI.promptForInput("Do you want to pay 10% or 200 Yes for 10% No for 200", false);
-			if (false) {
+			String input = ConsoleUI.promptForInput("Do you want to pay 10%(yes) or $200(no)?", false);
+			if (input.equalsIgnoreCase("yes")||input.equals("10")||input.equals("10%")) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash - playerList[currentPlayer].cash * abp.baseRent;
-			} else if (false) {
+			} if (!input.equalsIgnoreCase("yes")||!input.equals("10")||!input.equals("10%")) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 		}
@@ -148,7 +148,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(5);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -160,7 +160,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(6);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
@@ -179,7 +179,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(8);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
@@ -192,7 +192,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(9);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 
 			}
@@ -210,7 +210,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(11);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 
@@ -224,7 +224,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(12);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
@@ -238,7 +238,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(13);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -250,7 +250,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(14);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -262,7 +262,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(15);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -279,7 +279,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(18);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -291,7 +291,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(18);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -304,7 +304,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(19);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -320,7 +320,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(21);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -337,7 +337,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(23);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -349,7 +349,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(24);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -360,7 +360,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(25);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -372,7 +372,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(26);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -384,7 +384,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(27);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -395,7 +395,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(28);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -407,7 +407,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(29);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -426,7 +426,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(31);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -438,7 +438,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(32);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -455,7 +455,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(34);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -466,7 +466,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(35);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -483,7 +483,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(37);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -499,7 +499,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(39);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (false) {
+			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (false) {
@@ -749,7 +749,7 @@ public class Monopoly {
 		while (!validYesno) {
 			String yesno = ConsoleUI.promptForInput("Do you want to play again? Yes/No", false);
 			if (yesno.equalsIgnoreCase("yes")) {
-				gameSetUp(d);
+				gameSetUp(d, p);
 			}
 		}
 	}

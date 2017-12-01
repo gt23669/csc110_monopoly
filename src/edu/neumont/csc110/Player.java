@@ -6,7 +6,10 @@ public class Player {
 	public PlayerTokens token;
 	public double cash = 1500;
 	public int location;
+
 	public boolean inJail = false;
+	public int owned;
+
 
 	public void printPlayer() {
 		System.out.println(name);

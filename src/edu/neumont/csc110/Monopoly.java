@@ -434,6 +434,8 @@ public class Monopoly {
 	}
 
 	private void normalGame(Dice d) throws IOException {
+		boolean continuePlaying = true;
+		while (continuePlaying) {
 		playerList[firstPlayer].printPlayer();
 		System.out.println();
 		System.out.println("Okay " + playerList[firstPlayer].name + ", the first roll is yours.");
@@ -442,5 +444,13 @@ public class Monopoly {
 		onMe();
 		
 		// need to add code to move piece after every roll, regardless if doubles
+		boolean validYesno = false;
+		while(!validYesno) {
+		String yesno = ConsoleUI.promptForInput("Do you want to play again? Yes/No", false);
+		if (yesno.equalsIgnoreCase("yes")) {
+			
+		}
+		}
+		}
 	}
 }

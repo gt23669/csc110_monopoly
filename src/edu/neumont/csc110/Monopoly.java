@@ -108,7 +108,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				playerList[currentPlayer].cash =- abp.cardPrice;
+				playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			//else put up for action
 		}
@@ -116,12 +116,12 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(2);
 			System.out.println(abp);
 		}
-		if(playerList[currentPlayer].location == 3) {//BALIC("Balic Avenu", 60,4,20,60,180,320,450,50,50,50,50),
+		if(playerList[currentPlayer].location == 3) {//BALIC("Baltic Avenue", 60,4,20,60,180,320,450,50,50,50,50),
 			AllBoardPlaces abp = b.getCardAt(3);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				playerList[currentPlayer].cash =- abp.getCardPrice();
+				playerList[currentPlayer].cash -= abp.getCardPrice();
 			}
 		}
 		if(playerList[currentPlayer].location == 4) {//INCOME("Income Tax",0,0,0,0,0,0,0,0,0,0,0),
@@ -132,7 +132,7 @@ public class Monopoly {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash - playerList[currentPlayer].cash * .01;
 			}
 			else if (input.equalsIgnoreCase("No")) {
-				playerList[currentPlayer].cash =- 200;
+				playerList[currentPlayer].cash -= 200;
 			}
 		}
 		if(playerList[currentPlayer].location == 5) {//READING("Reading Railroad",200,25,0,50,100,200,0,100,100,0,0),
@@ -140,7 +140,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				playerList[currentPlayer].cash =- abp.cardPrice;
+				playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 6) {//ORIENTAL("Oriental Avenenu",100,6,30,90,270,400,550,50,50,50,50),
@@ -148,7 +148,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				playerList[currentPlayer].cash =- abp.cardPrice;
+				playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 7) {//CHANCE1("Chance",0,0,0,0,0,0,0,0,0,0,0),
@@ -160,7 +160,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				playerList[currentPlayer].cash =- abp.cardPrice;
+				playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 9) {//CONNECTICUT("Connecticut Avenue",120,8,40,100,300,450,600,60,60,50,50),
@@ -168,7 +168,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				playerList[currentPlayer].cash =- abp.cardPrice;
+				playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 10) {//JAIL("Jail",0,0,0,0,0,0,0,0,0,0,0),
@@ -180,7 +180,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				playerList[currentPlayer].cash =- abp.cardPrice;
+				playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 12) {//ELECTRIC("Electric Company",150,0,0,0,0,0,0,0,0,0,0),
@@ -188,7 +188,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				playerList[currentPlayer].cash =- abp.cardPrice;
+				playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 13) {//STATES("States Avenue",140,10,50,150,450,625,750,70,70,100,100),
@@ -196,7 +196,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 14) {//PENNSYLVANIARR("Pennsylvania Railraod",200,25,0,50,100,200,0,100,100,0,0),
@@ -204,7 +204,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 15) {//VIRGINIA("Virginia Avenue",160,12,60,180,500,700,900,80,80,100,100),
@@ -212,7 +212,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 16) {//COMMUNITY2("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
@@ -224,7 +224,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 18) {//TENNESSEE("Tennessee Avenue",180,14,70,200,550,750,950,90,90,100,100),
@@ -232,7 +232,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 19) {//NEWYORK("New York Avenue", 200,16,220,600,800,1000,100,100,100,100,100),
@@ -241,7 +241,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 20) {//FREE("Free Parking",0,0,0,0,0,0,0,0,0,0,0),
@@ -253,7 +253,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 22) {//CHANCE2("Chance",0,0,0,0,0,0,0,0,0,0,0),
@@ -265,7 +265,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 24) {//ILLINOIS("Illinois Avenue",240,20,100,300,750,925,1100,120,120,150,150),
@@ -273,7 +273,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 25) {//BANDO("B & O Railroad",200,25,0,50,100,200,0,100,100,0,0),
@@ -281,7 +281,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 26) {//ATLANTIC("Atlatic Avenue",260,22,110,330,800,975,1150,130,130,150,150),
@@ -289,7 +289,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 27) {//VENTNOR("Ventnor Avenue",260,22,110,330,800,975,1150,130,130,150,150),
@@ -297,7 +297,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 28) {//WATER("Water Works",150,0,0,0,0,0,0,0,0,0,0),
@@ -305,7 +305,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 29) {//MARVIN("Marvin Gardens",280,24,120,360,850,1025,1200,140,140,150,150),
@@ -313,7 +313,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 30) {//GOTJAIL("Go To Jail",0,0,0,0,0,0,0,0,0,0,0),
@@ -325,7 +325,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 32) {//NCAROLINA("North Carolina Avenue",300,26,130,390,900,1100,1275,150,150,200,200),
@@ -333,7 +333,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 33) {//COMMUNITY3("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
@@ -345,7 +345,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 35) {//SHORT("Short Line",200,25,0,50,100,200,0,100,100,0,0),
@@ -353,7 +353,7 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 36) {//CHANCE3("Chance",0,0,0,0,0,0,0,0,0,0,0),
@@ -365,20 +365,20 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		if(playerList[currentPlayer].location == 38) {//TAX("Lutury Tax",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(38);	
 			System.out.println(abp);
-			p.cash =- 75;
+			p.cash -= 75;
 		}
 		if(playerList[currentPlayer].location == 39) {//BOARDWALK("Boardwalk",400,50,200,600,1400,1700,2000,200,200,200,200);
 			AllBoardPlaces abp = b.getCardAt(39);
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you wan't to buy this Yes/No", false);
 			if(input.equalsIgnoreCase("Yes")) {
-				p.cash =- abp.cardPrice;
+				p.cash -= abp.cardPrice;
 			}
 		}
 		
@@ -392,27 +392,26 @@ public class Monopoly {
 	private void normalGame(Dice d) throws IOException {
 		boolean gameWin=false;
 		int currentPlayer = firstPlayer;
-//		playerList[firstPlayer].printPlayer();
-//		System.out.println();
-//		System.out.println("Okay " + playerList[firstPlayer].name + ", the first roll is yours.");
-//		playerList[currentPlayer].location = playerList[currentPlayer].location + d.rollDice(playerList[firstPlayer]);
-//		System.out.println(playerList[currentPlayer].location);
-//		onMe(currentPlayer);
+		int turnCount=0;
+//		
 		do {
 			for(int i = 0;i<playerList.length;i++) {
 				currentPlayer=firstPlayer+i;
 				if(currentPlayer >= playerList.length) {
 					currentPlayer=currentPlayer-playerList.length;
 				}
+				System.out.println("******************************");
 				playerList[currentPlayer].printPlayer();
+				System.out.println("******************************");
 				System.out.println();
 				System.out.println("Okay " + playerList[currentPlayer].name + ", the roll is yours.");
 				playerList[currentPlayer].location = playerList[currentPlayer].location + d.rollDice(playerList[currentPlayer]);
 				System.out.println(playerList[currentPlayer].location);
 				onMe(currentPlayer);
+				turnCount++;
 				// p = playerList[currentPlayer]; We need to change p.location to whatever this means. cryptic tutors...
 			}
-		}while(gameWin==false);
+		}while(turnCount<10);
 		// need to add code to move piece after every roll, regardless if doubles
 	}
 }

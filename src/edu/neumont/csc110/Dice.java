@@ -5,14 +5,18 @@ import java.util.Random;
 public class Dice {
 
 	Random gen = new Random();
+	int die1 = 0;
+	int die2 = 0;
+	int doubleCount = 0;
+	
 
 	public int firstRoll(Player p) {
 		boolean doubleRoll = false;
 		doubleRoll = false;
-		int die1 = gen.nextInt(5) + 1;
+		die1 = gen.nextInt(5) + 1;
 
 		// System.out.println(die1+"Random first die");
-		int die2 = gen.nextInt(5) + 1;
+		die2 = gen.nextInt(5) + 1;
 		// System.out.println(die2+"random second die");
 		int rollValue = die1 + die2;
 		do {
@@ -28,49 +32,35 @@ public class Dice {
 		} while (doubleRoll == true);
 	}
 
-	public int rollDice(String name) {
-		boolean jail = false;
-		boolean doubleRoll = false;
-		int doubleCount = 0;
-//		int testRoll = 0;
-		int die1 = 0;
-		int die2 = 0;
-		int rolledValue = die1 + die2;
+	public int rollDice(Player p) {
+	
+		int rolledValue =0;
+		
+		die1 = gen.nextInt(6) + 1;
+		die2 = gen.nextInt(6) + 1;
+		rolledValue = die1 + die2;
+		if(die1==die2) {
+			doubleCount++;
+		}
+		System.out.println(p.name + " Your roll was a " + die1 + " and " + die2 + ".");
 
-		do {
-			doubleRoll = false;
-			die1 = gen.nextInt(5) + 1;
-			die2 = gen.nextInt(5) + 1;
-//			testRoll++;
-			// die1 = 1;
-			// die2 = 1;
-			if (doubleCount == 3) {
-				jail();
-				break;
-			}
-			System.out.println(name + " Your roll was a " + die1 + " and " + die2 + ".");
-			rolledValue = die1 + die2;
-			if (die1 == die2) {
-				doubleRoll = true;
-				doubleCount++;
-				if(doubleCount==1) {
-					int doubleValue1=rolledValue;
-					System.out.println(doubleValue1+" doublevalue1");
-				}if(doubleCount==2) {
-					int doubleValue2=rolledValue;
-					System.out.println(doubleValue2+" doublevalue2");
-				}
-			}
-		} while (doubleRoll == true);
-		System.out.println(rolledValue+" rolled value");
+		if (doubleCount == 3) {
+			jail(p);
+			return 0;
+		}
 		return rolledValue;
-
+		
 	}
+	
+				
+		
+		
 
-	public boolean jail() {
-		boolean jail = false;
+	public void jail(Player p) {
+		
 		System.out.println("You have rolled 3 doubles, Go straight to jail, do not pass go, do not collect $200");
-		return jail = true;
+		p.location = 20;
+		
 	}
 
 }

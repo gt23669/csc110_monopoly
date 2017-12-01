@@ -4,7 +4,7 @@ public class Player {
 
 	public String name;
 	public PlayerTokens token;
-	public int cash = 1500;
+	public double cash = 1500;
 	public int location;
 
 	public void printPlayer() {

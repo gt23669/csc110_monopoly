@@ -9,8 +9,9 @@ public class PlayMonopoly {
 		Player p = new Player();
 		Dice d = new Dice();
 		
+	
 		m.gameSetUp(d);
-
+		
 	}
 
 }

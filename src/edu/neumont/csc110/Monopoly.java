@@ -171,7 +171,8 @@ public class Monopoly {
 		}
 		if (playerList[currentPlayer].location == 7) {// CHANCE1("Chance",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(7);
-			System.out.println(abp);
+			System.out.println("Chance");
+			Chance(currentPlayer);
 			
 		}
 		if (playerList[currentPlayer].location == 8) {// VERMONT("Vermont Avenue",100,6,30,90,270,400,550,50,50,50,50),
@@ -270,7 +271,8 @@ public class Monopoly {
 		}
 		if (playerList[currentPlayer].location == 16) {// COMMUNITY2("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(16);
-			System.out.println(abp);
+			System.out.println("Community Chest");
+			Communitychest(currentPlayer);
 		}
 		if (playerList[currentPlayer].location == 17) {// JAMES("St.James
 														// Pllace",180,14,70,200,550,750,950,90,90,100,100),
@@ -327,7 +329,8 @@ public class Monopoly {
 		}
 		if (playerList[currentPlayer].location == 22) {// CHANCE2("Chance",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(22);
-			System.out.println(abp);
+			System.out.println("Chance");
+			Chance(currentPlayer);
 		}
 		if (playerList[currentPlayer].location == 23) {// INDIANA("Indiana
 														// Avenue",220,18,90,250,700,875,1050,110,110,150,150),
@@ -444,7 +447,8 @@ public class Monopoly {
 		}
 		if (playerList[currentPlayer].location == 33) {// COMMUNITY3("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(33);
-			System.out.println(abp);
+			System.out.println("Community Chest");
+			Communitychest(currentPlayer);
 		}
 		if (playerList[currentPlayer].location == 34) {// PENNSYLVANIA("Pennsylvania
 														// Avenue",320,28,150,450,1000,1200,1400,160,160,200,200),
@@ -471,7 +475,8 @@ public class Monopoly {
 		}
 		if (playerList[currentPlayer].location == 36) {// CHANCE3("Chance",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(36);
-			System.out.println(abp);
+			System.out.println("Chance");
+			Chance(currentPlayer);
 		}
 		if (playerList[currentPlayer].location == 37) {// PARK("Park
 														// Place",350,35,175,500,1100,1300,1500,175,175,200,200),
@@ -503,98 +508,100 @@ public class Monopoly {
 		}
 
 	}
-	private void Communitychest(int currentPlayer) {
+	public void Communitychest(int currentPlayer) {
 		ArrayList<Integer> usedListCC = new ArrayList();
 		
 			// randomly shuffle deck
 			int num = 0;
 			Random gen = new Random();
 			do {
-				num = gen.nextInt(16) + 1;
+//				num = gen.nextInt(16) + 1;
+				num = 1;
 			} while (!usedListCC.contains(num));
 			usedListCC.add(num);
 		
 			switch (num) {
 			case 1: System.out.println("Advance to Go (Collect $200)");
+			playerList[currentPlayer].location=0;
 				break;
-			case 1:
+			case 2:
 				break;
-			case 1:
+			case 3:
 				break;
-			case 1:
+			case 4:
 				break;
-			case 1:
+			case 5:
 				break;
-			case 1:
+			case 6:
 				break;
-			case 1:
+			case 7:
 				break;
-			case 1:
+			case 8:
 				break;
-			case 1:
+			case 9:
 				break;
-			case 1:
+			case 10:
 				break;
-			case 1:
+			case 12:
 				break;
-			case 1:
+			case 13:
 				break;
-			case 1:
+			case 14:
 				break;
-			case 1:
+			case 15:
 				break;
-			case 1:
-				break;
-			case 1:
+			case 16:
 				break;
 			default: playerList[currentPlayer].location = 30;
 				break;
 		}
 	}
 	
-	private void Chance(int currentPlayer) {
+	public void Chance(int currentPlayer) {
 		ArrayList<Integer> usedListC = new ArrayList();
 		
 			// randomly shuffle deck
 			int num = 0;
 			Random gen = new Random();
 			do {
-				num = gen.nextInt(16) + 1;
+				num = 1;
+//				num = gen.nextInt(16) + 1;
 			} while (!usedListC.contains(num));
 			usedListC.add(num);
 		
 			switch (num) {
 			case 1: System.out.println("Advance to Go (Collect $200)");
+			playerList[currentPlayer].location=0;
 				break;
-			case 1:
+			case 2:
 				break;
-			case 1:
+			case 3:
 				break;
-			case 1:
+			case 4:
 				break;
-			case 1:
+			case 5:
 				break;
-			case 1:
+			case 6:
 				break;
-			case 1:
+			case 7:
 				break;
-			case 1:
+			case 8:
 				break;
-			case 1:
+			case 9:
 				break;
-			case 1:
+			case 10:
 				break;
-			case 1:
+			case 11:
 				break;
-			case 1:
+			case 12:
 				break;
-			case 1:
+			case 13:
 				break;
-			case 1:
+			case 14:
 				break;
-			case 1:
+			case 15:
 				break;
-			case 1:
+			case 16:
 				break;
 			default: playerList[currentPlayer].location = 30;
 				break;

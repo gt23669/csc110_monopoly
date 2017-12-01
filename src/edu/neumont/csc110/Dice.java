@@ -43,6 +43,7 @@ public class Dice {
 			doubleCount++;
 		}
 		System.out.println(p.name + " Your roll was a " + die1 + " and " + die2 + ".");
+		System.out.println();
 
 		if (doubleCount == 3) {
 			jail(p);

@@ -287,7 +287,7 @@ public class ConsoleUI {
 			System.out.println(prompt);
 			String rawInput = in.readLine();
 			returnValue = rawInput;
-			returnValue = returnValue.substring(0,1).toUpperCase()+returnValue.substring(1).toLowerCase();
+			
 			if (rawInput.length() >= 1 || allowEmpty) {
 				isValidInput = true;
 			} else {

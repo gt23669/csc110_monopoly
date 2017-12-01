@@ -2,6 +2,7 @@ package edu.neumont.csc110;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Monopoly {
 	Player[] playerList = null;
@@ -117,7 +118,8 @@ public class Monopoly {
 		}
 		if (playerList[currentPlayer].location == 2) { // COMMUNITY1("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(2);
-			System.out.println(abp);
+			System.out.println("Community Chest");
+			Communitychest(currentPlayer);
 		}
 		if (playerList[currentPlayer].location == 3) {// BALIC("Balic Avenu", 60,4,20,60,180,320,450,50,50,50,50),
 			AllBoardPlaces abp = b.getCardAt(3);
@@ -170,6 +172,7 @@ public class Monopoly {
 		if (playerList[currentPlayer].location == 7) {// CHANCE1("Chance",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(7);
 			System.out.println(abp);
+			
 		}
 		if (playerList[currentPlayer].location == 8) {// VERMONT("Vermont Avenue",100,6,30,90,270,400,550,50,50,50,50),
 			AllBoardPlaces abp = b.getCardAt(8);
@@ -500,6 +503,105 @@ public class Monopoly {
 		}
 
 	}
+	private void Communitychest(int currentPlayer) {
+		ArrayList<Integer> usedListCC = new ArrayList();
+		
+			// randomly shuffle deck
+			int num = 0;
+			Random gen = new Random();
+			do {
+				num = gen.nextInt(16) + 1;
+			} while (!usedListCC.contains(num));
+			usedListCC.add(num);
+		
+			switch (num) {
+			case 1: System.out.println("Advance to Go (Collect $200)");
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			default: playerList[currentPlayer].location = 30;
+				break;
+		}
+	}
+	
+	private void Chance(int currentPlayer) {
+		ArrayList<Integer> usedListC = new ArrayList();
+		
+			// randomly shuffle deck
+			int num = 0;
+			Random gen = new Random();
+			do {
+				num = gen.nextInt(16) + 1;
+			} while (!usedListC.contains(num));
+			usedListC.add(num);
+		
+			switch (num) {
+			case 1: System.out.println("Advance to Go (Collect $200)");
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			case 1:
+				break;
+			default: playerList[currentPlayer].location = 30;
+				break;
+		}
+	}
+	
+
 	private boolean jail() {
 		do {
 			if(inJail = true) {

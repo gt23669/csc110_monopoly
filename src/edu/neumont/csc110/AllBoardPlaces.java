@@ -133,7 +133,7 @@ public enum AllBoardPlaces {
 		StringBuilder stb = new StringBuilder();
 		stb.append(getName());
 		stb.append(" \nThis property cost " + getCardPrice());
-		stb.append(" \nThe Base rent is"+ getBaseRent());
+		stb.append(" \nThe Base rent is" + getBaseRent());
 		stb.append(" \nOne House Rent "+getOneHsRent());
 		stb.append(" \nTwo House Rent "+getTwoHsRent());
 		stb.append(" \nThree House Rent "+getThreeHsRent());

@@ -524,6 +524,11 @@ public class Monopoly {
 	}
 
 	private void normalGame(Dice d) throws IOException {
+
+		
+		
+		
+
 		boolean gameWin=false;
 		int currentPlayer = firstPlayer;
 <<<<<<< HEAD
@@ -558,7 +563,19 @@ public class Monopoly {
 				// p = playerList[currentPlayer]; We need to change p.location to whatever this means. cryptic tutors...
 >>>>>>> cd85e82c4015ceba161bfa9246f811e468eb7dbb
 			}
+<<<<<<< HEAD
 		}while(gameWin=false);
+=======
+		}while(gameWin==false);
+
+>>>>>>> ccd490a08c159ce536d55fc038268e3313d0b30b
 		// need to add code to move piece after every roll, regardless if doubles
+		boolean validYesno = false;
+		while(!validYesno) {
+		String yesno = ConsoleUI.promptForInput("Do you want to play again? Yes/No", false);
+		if (yesno.equalsIgnoreCase("yes")) {
+			
+		}
+		}
 	}
 }

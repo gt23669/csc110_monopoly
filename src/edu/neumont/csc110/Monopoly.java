@@ -82,14 +82,14 @@ public class Monopoly {
 		System.out.println("Which game would you like to play?");
 		String gameChoice = ConsoleUI.promptForInput("Normal(1) or speedplay(2)?", false);
 		if (gameChoice.equalsIgnoreCase("normal") || gameChoice.equals("1")) {
-			normalGame(d, p, b, a);
+			normalGame(d, p, b, a, numPlayers);
 		} else {
 			speedPlay();
 		}
 
 	}
 
-	public void onMe(int currentPlayer, Board b, Player p, Dice d, Auction a) throws IOException {
+	public void onMe(int currentPlayer, Board b, Player p, Dice d, Auction a, int numPlayers) throws IOException {
 
 		// if current player is on me(any spot on board) then ask to buy or auction.
 		// if it is owned pay rent to other player check if they have houses or hotels
@@ -120,7 +120,7 @@ public class Monopoly {
 		if (playerList[currentPlayer].location == 2) { // COMMUNITY1("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(2);
 			System.out.println("Community Chest");
-			Communitychest(currentPlayer);
+			Communitychest(currentPlayer, numPlayers);
 		}
 		if (playerList[currentPlayer].location == 3) {// BALIC("Balic Avenu", 60,4,20,60,180,320,450,50,50,50,50),
 			AllBoardPlaces abp = b.getCardAt(3);
@@ -171,7 +171,7 @@ public class Monopoly {
 		if (playerList[currentPlayer].location == 7) {// CHANCE1("Chance",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(7);
 			System.out.println("Chance");
-			Chance(currentPlayer);
+			Chance(currentPlayer, numPlayers);
 			
 		}
 		if (playerList[currentPlayer].location == 8) {// VERMONT("Vermont Avenue",100,6,30,90,270,400,550,50,50,50,50),
@@ -268,7 +268,7 @@ public class Monopoly {
 		if (playerList[currentPlayer].location == 16) {// COMMUNITY2("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(16);
 			System.out.println("Community Chest");
-			Communitychest(currentPlayer);
+			Communitychest(currentPlayer, numPlayers);
 		}
 		if (playerList[currentPlayer].location == 17) {// JAMES("St.James
 														// Pllace",180,14,70,200,550,750,950,90,90,100,100),
@@ -326,7 +326,7 @@ public class Monopoly {
 		if (playerList[currentPlayer].location == 22) {// CHANCE2("Chance",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(22);
 			System.out.println("Chance");
-			Chance(currentPlayer);
+			Chance(currentPlayer, numPlayers);
 		}
 		if (playerList[currentPlayer].location == 23) {// INDIANA("Indiana
 														// Avenue",220,18,90,250,700,875,1050,110,110,150,150),
@@ -448,7 +448,7 @@ public class Monopoly {
 		if (playerList[currentPlayer].location == 33) {// COMMUNITY3("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(33);
 			System.out.println("Community Chest");
-			Communitychest(currentPlayer);
+			Communitychest(currentPlayer, numPlayers);
 		}
 		if (playerList[currentPlayer].location == 34) {// PENNSYLVANIA("Pennsylvania
 														// Avenue",320,28,150,450,1000,1200,1400,160,160,200,200),
@@ -476,7 +476,7 @@ public class Monopoly {
 		if (playerList[currentPlayer].location == 36) {// CHANCE3("Chance",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(36);
 			System.out.println("Chance");
-			Chance(currentPlayer);
+			Chance(currentPlayer, numPlayers);
 		}
 		if (playerList[currentPlayer].location == 37) {// PARK("Park
 														// Place",350,35,175,500,1100,1300,1500,175,175,200,200),
@@ -768,7 +768,7 @@ public class Monopoly {
 
 	}
 
-	public void normalGame(Dice d, Player p, Board b, Auction a) throws IOException {
+	public void normalGame(Dice d, Player p, Board b, Auction a, int numPlayers) throws IOException {
 
 		boolean gameWin = false;
 		int currentPlayer = firstPlayer;
@@ -793,7 +793,7 @@ public class Monopoly {
 				System.out.println();
 				playerList[currentPlayer].location = playerList[currentPlayer].location+ d.rollDice(playerList[currentPlayer]);
 //				System.out.println(playerList[currentPlayer].location);
-				onMe(currentPlayer, b, p, d, a);
+				onMe(currentPlayer, b, p, d, a, numPlayers);
 				System.out.println("***********************************");
 				System.out.println("End turn");
 				playerList[currentPlayer].printPlayer();

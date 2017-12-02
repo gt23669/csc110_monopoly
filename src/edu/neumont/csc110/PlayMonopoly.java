@@ -8,10 +8,11 @@ public class PlayMonopoly {
 		Monopoly m = new Monopoly();
 		Player p = new Player();
 		Dice d = new Dice();
+		Board b = new Board();
 		
 	
-//		m.gameSetUp(d,p);
-		d.rollDice(p);
+		m.gameSetUp(d,p,b);
+//		d.rollDice(p);
 		
 	}
 

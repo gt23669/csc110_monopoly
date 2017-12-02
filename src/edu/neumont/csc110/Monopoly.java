@@ -8,11 +8,12 @@ public class Monopoly {
 	Player[] playerList = null;
 	int firstPlayer;
 	ArrayList<PlayerTokens> tokenList = new ArrayList();
-	Board b = new Board();
-	Player p = new Player();
+//	Board b = new Board();
+//	Player p = new Player();
+//	Dice d = new Dice();
 	boolean inJail = true;
 
-	public void gameSetUp(Dice d, Player p) throws IOException {
+	public void gameSetUp(Dice d, Player p, Board b) throws IOException {
 		tokenList.add(PlayerTokens.VENUSAUR);
 		tokenList.add(PlayerTokens.CHARIZARD);
 		tokenList.add(PlayerTokens.BLASTOISE);
@@ -81,14 +82,14 @@ public class Monopoly {
 		System.out.println("Which game would you like to play?");
 		String gameChoice = ConsoleUI.promptForInput("Normal(1) or speedplay(2)?", false);
 		if (gameChoice.equalsIgnoreCase("normal") || gameChoice.equals("1")) {
-			normalGame(d);
+			normalGame(d, p, b);
 		} else {
 			speedPlay();
 		}
 
 	}
 
-	private void onMe(int currentPlayer) throws IOException {
+	public void onMe(int currentPlayer, Board b, Player p, Dice d) throws IOException {
 
 		// if current player is on me(any spot on board) then ask to buy or auction.
 		// if it is owned pay rent to other player check if they have houses or hotels
@@ -203,7 +204,7 @@ public class Monopoly {
 		}
 		if (playerList[currentPlayer].location == 10) {// JAIL("Jail",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(10);
-			System.out.println(abp);
+			System.out.println("You have landed on jail. Do not worry, you are just visiting");
 		}
 		if (playerList[currentPlayer].location == 11) {// CHARLES("St.Charles
 														// Place",140,10,50,150,450,625,750,70,70,100,100),
@@ -416,10 +417,14 @@ public class Monopoly {
 		}
 		if (playerList[currentPlayer].location == 30) {// GOTJAIL("Go To Jail",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(30);
-			System.out.println(abp);
-			// if land on this goto jail
-			//playerList[currentPlayer] = p.inJail;
-			//jail();
+			System.out.println("You have landed on jail.");
+			System.out.println(playerList[currentPlayer].name+", Go straight to jail, do not pass go, do not collect $200");
+			playerList[currentPlayer].location = 10;
+			if(playerList[currentPlayer].inJail=true) {
+				jail(currentPlayer, d, p);
+			}
+			playerList[currentPlayer].inJail = true;
+			
 		}
 		if (playerList[currentPlayer].location == 31) {// PACIFIC("Pacific
 														// Avenue",300,26,130,390,900,110,1275,150,150,200,200),
@@ -694,14 +699,37 @@ public class Monopoly {
 	}
 	
 
-	private boolean jail(Player p, Dice d) {
-		do {
-			if(inJail = true) {
-				
+	public boolean jail(int currentPlayer, Dice d, Player p) throws IOException {
+		Random gen = new Random();
+		String askFor50=null;
+		int die1;
+		int die2;
+		int jailTurn=0;
+		if(jailTurn==3) {
+			System.out.println(playerList[currentPlayer].name+", you have been in jail for 3 turns. You must pay your $50 fine.");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash-50;
+		}
+		if(playerList[currentPlayer].cash>=50) {
+		askFor50=ConsoleUI.promptForInput("You are in jail. Do you want to pay $50(1) or roll for doubles(2)?", false);
+			if(askFor50.equals("50")||askFor50.equals("$50")||askFor50.equals("1")) {
+				System.out.println(playerList[currentPlayer].name+", you have opted to pay your way out.");
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash -50;
+				return false;
+			}
+			askFor50=ConsoleUI.promptForInput("You are in jail. Do you want to roll for doubles(2)?", false);
+		}if(askFor50.equalsIgnoreCase("roll for doubles")||askFor50.equalsIgnoreCase("doubles")||askFor50.equalsIgnoreCase("roll")||askFor50.equals("2")) {
+			die1 = gen.nextInt(5) + 1;
+			die2 = gen.nextInt(5) + 1;
+			System.out.println("first die is a "+die1);
+			System.out.println("second die is a "+die2);
+			if(die1==die2) {
+				System.out.println("Congrats, you have rolled doubles! You are now just visiting jail");
+				return false;
 			}
 			
-		}while(inJail = true);
-		return false;
+		}
+			jailTurn++;
+			return true;
 	}
 
 	private void speedPlay() {
@@ -709,7 +737,7 @@ public class Monopoly {
 
 	}
 
-	private void normalGame(Dice d) throws IOException {
+	public void normalGame(Dice d, Player p, Board b) throws IOException {
 
 		boolean gameWin = false;
 		int currentPlayer = firstPlayer;
@@ -734,7 +762,7 @@ public class Monopoly {
 				System.out.println();
 				playerList[currentPlayer].location = playerList[currentPlayer].location+ d.rollDice(playerList[currentPlayer]);
 //				System.out.println(playerList[currentPlayer].location);
-				onMe(currentPlayer);
+				onMe(currentPlayer, b, p, d);
 				turnCount++;
 				// p = playerList[currentPlayer]; We need to change p.location to whatever this
 				// means. cryptic tutors...
@@ -749,7 +777,7 @@ public class Monopoly {
 		while (!validYesno) {
 			String yesno = ConsoleUI.promptForInput("Do you want to play again? Yes/No", false);
 			if (yesno.equalsIgnoreCase("yes")) {
-				gameSetUp(d, p);
+				gameSetUp(d, p, b);
 			}
 		}
 	}

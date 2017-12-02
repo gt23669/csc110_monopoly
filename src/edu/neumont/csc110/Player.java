@@ -9,7 +9,7 @@ public class Player {
 
 	public boolean inJail = false;
 	public int owned;
-
+	public boolean jailCard = false;
 
 	public void printPlayer() {
 		System.out.println(name);

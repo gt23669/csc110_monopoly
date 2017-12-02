@@ -38,8 +38,8 @@ public class Monopoly {
 			System.out.println();
 			for (int j = 0; j < tokenList.size(); j++) {
 				System.out.println((j + 1) + "" + tokenList.get(j));
-				System.out.println();
 			}
+			System.out.println();
 			boolean goodToken = true;
 
 			System.out.println("You can enter a number for the respective token choice.");

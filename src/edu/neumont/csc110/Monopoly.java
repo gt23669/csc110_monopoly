@@ -89,7 +89,7 @@ public class Monopoly {
 
 	}
 
-	public void onMe(int currentPlayer, Board b, Player p, Dice d) throws IOException {
+	public void onMe(int currentPlayer, Board b, Player p, Dice d, Auction a) throws IOException {
 
 		// if current player is on me(any spot on board) then ask to buy or auction.
 		// if it is owned pay rent to other player check if they have houses or hotels
@@ -114,7 +114,7 @@ public class Monopoly {
 
 			}
 			if (input = false) {
-				// if no put up for action
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 2) { // COMMUNITY1("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
@@ -130,9 +130,8 @@ public class Monopoly {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (input=false) {
-				// if no put up for action
-
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 4) {// INCOME("Income Tax",0,0,0,0,0,0,0,0,0,0,0),
@@ -152,8 +151,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 6) {// ORIENTAL("Oriental
@@ -165,9 +164,8 @@ public class Monopoly {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
-
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 7) {// CHANCE1("Chance",0,0,0,0,0,0,0,0,0,0,0),
@@ -184,8 +182,8 @@ public class Monopoly {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 9) {// CONNECTICUT("Connecticut
@@ -197,9 +195,8 @@ public class Monopoly {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 
 			}
-			if (false) {
-				// if no put up for action
-
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 10) {// JAIL("Jail",0,0,0,0,0,0,0,0,0,0,0),
@@ -216,9 +213,8 @@ public class Monopoly {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 
 			}
-			if (false) {
-				// if no put up for action
-
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 12) {// ELECTRIC("Electric Company",150,0,0,0,0,0,0,0,0,0,0),
@@ -229,9 +225,8 @@ public class Monopoly {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
-
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 13) {// STATES("States
@@ -242,8 +237,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 14) {// PENNSYLVANIARR("Pennsylvania
@@ -254,8 +249,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 15) {// VIRGINIA("Virginia
@@ -266,8 +261,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 16) {// COMMUNITY2("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
@@ -283,8 +278,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 18) {// TENNESSEE("Tennessee
@@ -295,8 +290,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 19) {// NEWYORK("New York Avenue",
@@ -308,8 +303,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 20) {// FREE("Free Parking",0,0,0,0,0,0,0,0,0,0,0),
@@ -324,8 +319,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 22) {// CHANCE2("Chance",0,0,0,0,0,0,0,0,0,0,0),
@@ -341,8 +336,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 24) {// ILLINOIS("Illinois
@@ -353,8 +348,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 25) {// BANDO("B & O Railroad",200,25,0,50,100,200,0,100,100,0,0),
@@ -364,8 +359,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 26) {// ATLANTIC("Atlatic
@@ -376,8 +371,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 27) {// VENTNOR("Ventnor
@@ -388,8 +383,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 28) {// WATER("Water Works",150,0,0,0,0,0,0,0,0,0,0),
@@ -399,8 +394,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 29) {// MARVIN("Marvin
@@ -411,8 +406,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 30) {// GOTJAIL("Go To Jail",0,0,0,0,0,0,0,0,0,0,0),
@@ -434,8 +429,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 32) {// NCAROLINA("North Carolina
@@ -446,8 +441,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 33) {// COMMUNITY3("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
@@ -463,8 +458,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 35) {// SHORT("Short Line",200,25,0,50,100,200,0,100,100,0,0),
@@ -474,8 +469,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 36) {// CHANCE3("Chance",0,0,0,0,0,0,0,0,0,0,0),
@@ -491,8 +486,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 		if (playerList[currentPlayer].location == 38) {// TAX("Lutury Tax",0,0,0,0,0,0,0,0,0,0,0),
@@ -507,8 +502,8 @@ public class Monopoly {
 			if (true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
-			if (false) {
-				// if no put up for action
+			if (input = false) {
+				a.auction();
 			}
 		}
 
@@ -737,7 +732,7 @@ public class Monopoly {
 
 	}
 
-	public void normalGame(Dice d, Player p, Board b) throws IOException {
+	public void normalGame(Dice d, Player p, Board b, Auction a) throws IOException {
 
 		boolean gameWin = false;
 		int currentPlayer = firstPlayer;
@@ -762,7 +757,7 @@ public class Monopoly {
 				System.out.println();
 				playerList[currentPlayer].location = playerList[currentPlayer].location+ d.rollDice(playerList[currentPlayer]);
 //				System.out.println(playerList[currentPlayer].location);
-				onMe(currentPlayer, b, p, d);
+				onMe(currentPlayer, b, p, d, a);
 				turnCount++;
 				// p = playerList[currentPlayer]; We need to change p.location to whatever this
 				// means. cryptic tutors...

@@ -739,15 +739,24 @@ public class Monopoly {
 		if(jailTurn==3) {
 			System.out.println(playerList[currentPlayer].name+", you have been in jail for 3 turns. You must pay your $50 fine.");
 			playerList[currentPlayer].cash = playerList[currentPlayer].cash-50;
+			return false;
+		}
+		if(playerList[currentPlayer].jailCard==true) {
+			System.out.println(playerList[currentPlayer].name+", You currently have a 'Get of jail free' card. Would you like to use it?");
+			String input = ConsoleUI.promptForInput("yes(1) or no(2)", false);
+			if(input.equalsIgnoreCase("yes")||input.equals("1")) {
+				playerList[currentPlayer].jailCard=false;
+				playerList[currentPlayer].inJail=false;
+				return false;			}
 		}
 		if(playerList[currentPlayer].cash>=50) {
-		askFor50=ConsoleUI.promptForInput("You are in jail. Do you want to pay $50(1) or roll for doubles(2)?", false);
+		askFor50=ConsoleUI.promptForInput("You are in jail. Do you want to pay $50(1) to leave?", false);
 			if(askFor50.equals("50")||askFor50.equals("$50")||askFor50.equals("1")) {
 				System.out.println(playerList[currentPlayer].name+", you have opted to pay your way out.");
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -50;
 				return false;
 			}
-			askFor50=ConsoleUI.promptForInput("You are in jail. Do you want to roll for doubles(2)?", false);
+			askFor50=ConsoleUI.promptForInput("Do you want to roll for doubles(2)?", false);
 		}if(askFor50.equalsIgnoreCase("roll for doubles")||askFor50.equalsIgnoreCase("doubles")||askFor50.equalsIgnoreCase("roll")||askFor50.equals("2")) {
 			die1 = gen.nextInt(5) + 1;
 			die2 = gen.nextInt(5) + 1;
@@ -757,10 +766,15 @@ public class Monopoly {
 				System.out.println("Congrats, you have rolled doubles! You are now just visiting jail");
 				return false;
 			}
+			if(!(die1==die2)) {
+				System.out.println(playerList[currentPlayer].name+", you have failed to roll doubles. ");
+				jailTurn++;
+				return true;
+			}
 			
 		}
-			jailTurn++;
-			return true;
+		return true;
+			
 	}
 
 	private void speedPlay() {
@@ -792,6 +806,10 @@ public class Monopoly {
 				System.out.println("Okay " + playerList[currentPlayer].name + ", the roll is yours.");
 				System.out.println();
 				playerList[currentPlayer].location = playerList[currentPlayer].location+ d.rollDice(playerList[currentPlayer]);
+				if(playerList[currentPlayer].location>40) {
+					playerList[currentPlayer].location = playerList[currentPlayer].location-40;
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash+200;
+				}
 //				System.out.println(playerList[currentPlayer].location);
 				onMe(currentPlayer, b, p, d, a, numPlayers);
 				System.out.println("***********************************");

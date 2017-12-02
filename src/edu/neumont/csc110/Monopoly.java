@@ -13,7 +13,7 @@ public class Monopoly {
 //	Dice d = new Dice();
 	boolean inJail = true;
 
-	public void gameSetUp(Dice d, Player p, Board b) throws IOException {
+	public void gameSetUp(Dice d, Player p, Board b, Auction a) throws IOException {
 		tokenList.add(PlayerTokens.VENUSAUR);
 		tokenList.add(PlayerTokens.CHARIZARD);
 		tokenList.add(PlayerTokens.BLASTOISE);
@@ -82,7 +82,7 @@ public class Monopoly {
 		System.out.println("Which game would you like to play?");
 		String gameChoice = ConsoleUI.promptForInput("Normal(1) or speedplay(2)?", false);
 		if (gameChoice.equalsIgnoreCase("normal") || gameChoice.equals("1")) {
-			normalGame(d, p, b);
+			normalGame(d, p, b, a);
 		} else {
 			speedPlay();
 		}
@@ -139,9 +139,9 @@ public class Monopoly {
 			System.out.println(abp);
 			String input = ConsoleUI.promptForInput("Do you want to pay 10%(yes) or $200(no)?", false);
 			if (input.equalsIgnoreCase("yes")||input.equals("10")||input.equals("10%")) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash - playerList[currentPlayer].cash * abp.baseRent;
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - (playerList[currentPlayer].cash * .1);
 			} if (!input.equalsIgnoreCase("yes")||!input.equals("10")||!input.equals("10%")) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
+			  playerList[currentPlayer].cash -= 200;
 			}
 		}
 		if (playerList[currentPlayer].location == 5) {// READING("Reading Railroad",200,25,0,50,100,200,0,100,100,0,0),
@@ -517,8 +517,11 @@ public class Monopoly {
 			do {
 //				num = gen.nextInt(16) + 1;
 				num = 1;
+				if(!usedListCC.contains(num)) {					
+				usedListCC.add(num);
+				}
 			} while (!usedListCC.contains(num));
-			usedListCC.add(num);
+//			usedListCC.add(num);
 		
 			switch (num) {
 
@@ -600,10 +603,13 @@ public class Monopoly {
 			int num = 0;
 			Random gen = new Random();
 			do {
-				num = 1;
 //				num = gen.nextInt(16) + 1;
+				num = 1;
+				if(!usedListC.contains(num)) {					
+				usedListC.add(num);
+				}
 			} while (!usedListC.contains(num));
-			usedListC.add(num);
+//			usedListCC.add(num);
 		
 			switch (num) {
 
@@ -758,7 +764,13 @@ public class Monopoly {
 				playerList[currentPlayer].location = playerList[currentPlayer].location+ d.rollDice(playerList[currentPlayer]);
 //				System.out.println(playerList[currentPlayer].location);
 				onMe(currentPlayer, b, p, d, a);
+				System.out.println("***********************************");
+				System.out.println("End turn");
+				playerList[currentPlayer].printPlayer();
+				System.out.println("***********************************");
+				System.out.println();
 				turnCount++;
+				System.out.println(turnCount);
 				// p = playerList[currentPlayer]; We need to change p.location to whatever this
 				// means. cryptic tutors...
 
@@ -772,7 +784,7 @@ public class Monopoly {
 		while (!validYesno) {
 			String yesno = ConsoleUI.promptForInput("Do you want to play again? Yes/No", false);
 			if (yesno.equalsIgnoreCase("yes")) {
-				gameSetUp(d, p, b);
+				gameSetUp(d, p, b, a);
 			}
 		}
 	}

@@ -8,9 +8,9 @@ public class Monopoly {
 	Player[] playerList = null;
 	int firstPlayer;
 	ArrayList<PlayerTokens> tokenList = new ArrayList();
-//	Board b = new Board();
-//	Player p = new Player();
-//	Dice d = new Dice();
+	// Board b = new Board();
+	// Player p = new Player();
+	// Dice d = new Dice();
 	boolean inJail = true;
 
 	public void gameSetUp(Dice d, Player p, Board b, Auction a) throws IOException {
@@ -99,22 +99,32 @@ public class Monopoly {
 		// if player passes go give money.
 		if (playerList[currentPlayer].location == 0) {
 			AllBoardPlaces abp = b.getCardAt(0);
-			playerList[currentPlayer].cash=playerList[currentPlayer].cash + 200;
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
 		}
 
 		if (playerList[currentPlayer].location == 1) {// MEDITERRANEAN("Mediterranean Avenue",
 														// 60,2,10,30,90,190,250,30,30,50,50)
+			boolean isOwned = false;
+			Player owner = null;
 			AllBoardPlaces abp = b.getCardAt(1);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input==true) {
+			if (isOwned == false) {
 
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-
+				boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner= playerList[currentPlayer];
+					isOwned=true;
+				}
+				if (input == false) {
+					a.auction();
+				}
 			}
-			if (input == false) {
-				a.auction();
-			}
+			if(isOwned==true)
+				System.out.println("Mediterranean Avenue is owned by "+owner+" , you owe them "+abp.baseRent);
+				playerList[currentPlayer].cash=playerList[currentPlayer].cash- abp.baseRent;
+				owner.cash = owner.cash + abp.baseRent;
+			
 		}
 		if (playerList[currentPlayer].location == 2) { // COMMUNITY1("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(2);
@@ -125,7 +135,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(3);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input==true) {
+			if (input == true) {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
@@ -137,17 +147,18 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(4);
 			System.out.println("Income Tax");
 			String input = ConsoleUI.promptForInput("Do you want to pay 10%(yes) or $200(no)?", false);
-			if (input.equalsIgnoreCase("yes")||input.equals("10")||input.equals("10%")) {
+			if (input.equalsIgnoreCase("yes") || input.equals("10") || input.equals("10%")) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash - (playerList[currentPlayer].cash * .1);
-			} if (input.equalsIgnoreCase("no")||input.equals("200")||input.equals("$200")) {
-			  playerList[currentPlayer].cash -= 200;
+			}
+			if (input.equalsIgnoreCase("no") || input.equals("200") || input.equals("$200")) {
+				playerList[currentPlayer].cash -= 200;
 			}
 		}
 		if (playerList[currentPlayer].location == 5) {// READING("Reading Railroad",200,25,0,50,100,200,0,100,100,0,0),
 			AllBoardPlaces abp = b.getCardAt(5);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -159,7 +170,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(6);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
@@ -171,13 +182,13 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(7);
 			System.out.println("Chance");
 			Chance(currentPlayer, numPlayers);
-			
+
 		}
 		if (playerList[currentPlayer].location == 8) {// VERMONT("Vermont Avenue",100,6,30,90,270,400,550,50,50,50,50),
 			AllBoardPlaces abp = b.getCardAt(8);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
@@ -190,7 +201,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(9);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 
 			}
@@ -207,7 +218,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(11);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 
@@ -220,7 +231,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(12);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
@@ -245,7 +256,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(14);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -257,7 +268,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(15);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -274,7 +285,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(18);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -286,7 +297,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(18);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -299,7 +310,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(19);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -315,7 +326,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(21);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -332,7 +343,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(23);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -344,7 +355,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(24);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -355,7 +366,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(25);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -367,7 +378,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(26);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -379,7 +390,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(27);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -390,7 +401,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(28);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -402,7 +413,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(29);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -412,20 +423,21 @@ public class Monopoly {
 		if (playerList[currentPlayer].location == 30) {// GOTJAIL("Go To Jail",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(30);
 			System.out.println("You have landed on jail.");
-			System.out.println(playerList[currentPlayer].name+", Go straight to jail, do not pass go, do not collect $200");
+			System.out.println(
+					playerList[currentPlayer].name + ", Go straight to jail, do not pass go, do not collect $200");
 			playerList[currentPlayer].location = 10;
-			if(playerList[currentPlayer].inJail==true) {
+			if (playerList[currentPlayer].inJail == true) {
 				jail(currentPlayer, d, p);
 			}
 			playerList[currentPlayer].inJail = true;
-			
+
 		}
 		if (playerList[currentPlayer].location == 31) {// PACIFIC("Pacific
 														// Avenue",300,26,130,390,900,110,1275,150,150,200,200),
 			AllBoardPlaces abp = b.getCardAt(31);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -437,7 +449,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(32);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -454,7 +466,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(34);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -465,7 +477,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(35);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -482,7 +494,7 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(37);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -492,13 +504,13 @@ public class Monopoly {
 		if (playerList[currentPlayer].location == 38) {// TAX("Lutury Tax",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(38);
 			System.out.println(abp);
-			playerList[currentPlayer].cash = playerList[currentPlayer].cash -100;
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash - 100;
 		}
 		if (playerList[currentPlayer].location == 39) {// BOARDWALK("Boardwalk",400,50,200,600,1400,1700,2000,200,200,200,200);
 			AllBoardPlaces abp = b.getCardAt(39);
 			System.out.println(abp);
 			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input ==true) {
+			if (input == true) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
 			}
 			if (input == false) {
@@ -507,273 +519,284 @@ public class Monopoly {
 		}
 
 	}
+
 	public void Communitychest(int currentPlayer, int numPlayers) {
 		ArrayList<Integer> usedListCC = new ArrayList();
-		
-			// randomly shuffle deck
-			int num = 0;
-			Random gen = new Random();
-			do {
-				num = gen.nextInt(16) + 1;
-//				num = 1;
-				if(!usedListCC.contains(num)) {					
+
+		// randomly shuffle deck
+		int num = 0;
+		Random gen = new Random();
+		do {
+			num = gen.nextInt(16) + 1;
+			// num = 1;
+			if (!usedListCC.contains(num)) {
 				usedListCC.add(num);
-				}
-			} while (!usedListCC.contains(num));
-//			usedListCC.add(num);
-		
-			switch (num) {
+			}
+		} while (!usedListCC.contains(num));
+		// usedListCC.add(num);
 
-			case 1: 
-				System.out.println("Advance to Go (Collect $200)");
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
-				playerList[currentPlayer].location = playerList[currentPlayer].location = 0;
-				break;
-			case 2:
-				System.out.println("Bank error in your favor – Collect $200");
-				playerList[currentPlayer].cash =playerList[currentPlayer].cash + 200;
-				break;
-			case 3:
-				System.out.println("Doctor's fees {fee} – Pay $50");
-				playerList[currentPlayer].cash =playerList[currentPlayer].cash - 50;
-				break;
-			case 4:
-				System.out.println("From sale of stock you get $50");
-				playerList[currentPlayer].cash =playerList[currentPlayer].cash + 50;
-				break;
-			case 5:
-				System.out.println("Get out of Jail, Free");
-				playerList[currentPlayer].jailCard = true;
-				break;
-			case 6:
-				System.out.println("Go directly to jail – Do not pass Go – Do not collect $200");
-				playerList[currentPlayer].location = 10;
-				break;
-			case 7:
-				System.out.println("Grand Opera Night – Collect $50 from every player for opening night seats");
-				playerList[currentPlayer].cash =playerList[currentPlayer].cash + (50*numPlayers);
-				break;
-			case 8:
-				System.out.println("Holiday Fund matures - Collect $100");
-				playerList[currentPlayer].cash =playerList[currentPlayer].cash + 100;
-				break;
-			case 9:
-				System.out.println("Income tax refund – Collect $20");
-				playerList[currentPlayer].cash =playerList[currentPlayer].cash + 20;
-				break;
-			case 10:
-				System.out.println("It is your birthday - Collect $10 from each player");
-				playerList[currentPlayer].cash =playerList[currentPlayer].cash + (10*numPlayers);
-				break;
-			case 11:
-				System.out.println("Life insurance matures – Collect $100");
-				playerList[currentPlayer].cash =playerList[currentPlayer].cash + 100;
-				break;
-			case 12:
-				System.out.println("Pay hospital fees of $100");
-				playerList[currentPlayer].cash =playerList[currentPlayer].cash - 100;
-				break;
-			case 13:
-				System.out.println("Pay school fees of $150");
-				playerList[currentPlayer].cash =playerList[currentPlayer].cash - 150;
-				break;
-			case 14:
-				System.out.println("Receive $25 consultancy fee");
-				playerList[currentPlayer].cash =playerList[currentPlayer].cash + 25;
-				break;
-			case 15:
-				System.out.println("You are assessed for street repairs – $40 per house – $115 per hotel");//**************************
-				//check how many houses
-				break;
-			case 16:
-				System.out.println("You have won second prize in a beauty contest – Collect $10");
-				playerList[currentPlayer].cash =playerList[currentPlayer].cash + 10;
+		switch (num) {
 
-				break;
-			default: System.out.println("You hit default, Community Chest");
-				break;
+		case 1:
+			System.out.println("Advance to Go (Collect $200)");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
+			playerList[currentPlayer].location = playerList[currentPlayer].location = 0;
+			break;
+		case 2:
+			System.out.println("Bank error in your favor – Collect $200");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
+			break;
+		case 3:
+			System.out.println("Doctor's fees {fee} – Pay $50");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash - 50;
+			break;
+		case 4:
+			System.out.println("From sale of stock you get $50");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 50;
+			break;
+		case 5:
+			System.out.println("Get out of Jail, Free");
+			playerList[currentPlayer].jailCard = true;
+			break;
+		case 6:
+			System.out.println("Go directly to jail – Do not pass Go – Do not collect $200");
+			playerList[currentPlayer].location = 10;
+			break;
+		case 7:
+			System.out.println("Grand Opera Night – Collect $50 from every player for opening night seats");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + (50 * numPlayers);
+			break;
+		case 8:
+			System.out.println("Holiday Fund matures - Collect $100");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 100;
+			break;
+		case 9:
+			System.out.println("Income tax refund – Collect $20");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 20;
+			break;
+		case 10:
+			System.out.println("It is your birthday - Collect $10 from each player");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + (10 * numPlayers);
+			break;
+		case 11:
+			System.out.println("Life insurance matures – Collect $100");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 100;
+			break;
+		case 12:
+			System.out.println("Pay hospital fees of $100");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash - 100;
+			break;
+		case 13:
+			System.out.println("Pay school fees of $150");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash - 150;
+			break;
+		case 14:
+			System.out.println("Receive $25 consultancy fee");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 25;
+			break;
+		case 15:
+			System.out.println("You are assessed for street repairs – $40 per house – $115 per hotel");// **************************
+			// check how many houses
+			break;
+		case 16:
+			System.out.println("You have won second prize in a beauty contest – Collect $10");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 10;
+
+			break;
+		default:
+			System.out.println("You hit default, Community Chest");
+			break;
 		}
 	}
-	
+
 	public void Chance(int currentPlayer, int numPlayers) {
 		ArrayList<Integer> usedListC = new ArrayList();
-		
-			// randomly shuffle deck
-			int num = 0;
-			Random gen = new Random();
-			do {
-				num = gen.nextInt(16) + 1;
-//				num = 1;
-				if(!usedListC.contains(num)) {					
+
+		// randomly shuffle deck
+		int num = 0;
+		Random gen = new Random();
+		do {
+			num = gen.nextInt(16) + 1;
+			// num = 1;
+			if (!usedListC.contains(num)) {
 				usedListC.add(num);
-				}
-			} while (!usedListC.contains(num));
-//			usedListCC.add(num);
-		
-			switch (num) {
+			}
+		} while (!usedListC.contains(num));
+		// usedListCC.add(num);
 
-			case 1: 
-				System.out.println("Advance to Go (Collect $200)");
+		switch (num) {
+
+		case 1:
+			System.out.println("Advance to Go (Collect $200)");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
+			playerList[currentPlayer].location = playerList[currentPlayer].location = 0;
+			break;
+		case 2:
+			System.out.println("Advance to Illinois Ave. - If you pass Go, collect $200 ");
+			if (playerList[currentPlayer].location > 23) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
-				playerList[currentPlayer].location = playerList[currentPlayer].location = 0;
-				break;
-			case 2:
-				System.out.println("Advance to Illinois Ave. - If you pass Go, collect $200 ");
-				if(playerList[currentPlayer].location > 23) {
-					playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
-					playerList[currentPlayer].location = 23;
-				}
-				if(playerList[currentPlayer].location<23) {
-					playerList[currentPlayer].location = 23;
-				}
-				break;
-			case 3:
-				System.out.println("Advance to St. Charles Place – If you pass Go, collect $200");
-				if(playerList[currentPlayer].location > 11) {
-					playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
-					playerList[currentPlayer].location=11;
-				}
-				if(playerList[currentPlayer].location<11) {
-					playerList[currentPlayer].location=11;
-				}
-				break;
-			case 4:
-				System.out.println("Advance token to nearest Utility. If unowned, you may buy it from the Bank. If owned, throw dice and pay owner a total ten times the amount thrown.");
-				playerList[currentPlayer].location = playerList[currentPlayer].location = 12; //12/28
-				if(playerList[currentPlayer].location < 12) {
-					playerList[currentPlayer].location = 12;
-				}
-				if(playerList[currentPlayer].location>12&&playerList[currentPlayer].location<28) {
-					playerList[currentPlayer].location = 28;
-				}
-				if(playerList[currentPlayer].location>28&&playerList[currentPlayer].location<39) {
-					playerList[currentPlayer].location = 12;
-					playerList[currentPlayer].cash = playerList[currentPlayer].cash+200;
-				}
-				break;
-			case 5:
-				System.out.println("Advance token to the nearest Railroad and pay owner twice the rental to which he/she {he} is otherwise entitled. If Railroad is unowned, you may buy it from the Bank");
-				playerList[currentPlayer].location = playerList[currentPlayer].location = 15;//5/15/25/35
-				if(playerList[currentPlayer].location < 5) {
-					playerList[currentPlayer].location=5;
-				}
-				if(playerList[currentPlayer].location>5&&playerList[currentPlayer].location<15) {
-					playerList[currentPlayer].location=15;
-				}
-				if(playerList[currentPlayer].location>15&&playerList[currentPlayer].location<25) {
-					playerList[currentPlayer].location=25;
-				}
-				if(playerList[currentPlayer].location>25&&playerList[currentPlayer].location<39) {
-					playerList[currentPlayer].location=5;
-					playerList[currentPlayer].cash = playerList[currentPlayer].cash+200;
-					
-				}
-				break;
-			case 6:
-				System.out.println("Bank pays you dividend of $50 ");
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash + 50;
-				break;
-			case 7:
-				System.out.println("Get out of Jail Free");
-				playerList[currentPlayer].jailCard = true;
-				break;
-			case 8:
-				System.out.println("Go Back 3 Spaces");
-				playerList[currentPlayer].location = playerList[currentPlayer].location - 3;
-				break;
-			case 9:
-				System.out.println("Go directly to Jail – Do not pass Go, do not collect $200");
-				playerList[currentPlayer].location = 10;
-				playerList[currentPlayer].inJail = true;
-				break;
-			case 10:
-				System.out.println("Make general repairs on all your property – For each house pay $25 – For each hotel $100");//*****************
-				
-				break;
-			case 11:
-				System.out.println("Pay poor tax of $15");
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash - 15;
-				break;
-			case 12:
-				System.out.println("Take a trip to Reading Railroad – If you pass Go, collect $200 ");
-				if(playerList[currentPlayer].location < 5) {
-					playerList[currentPlayer].location = 5;
-				}
-				if(playerList[currentPlayer].location>5) {
-					playerList[currentPlayer].location =5;
-					playerList[currentPlayer].cash = playerList[currentPlayer].cash+200;
-				}
-				break;
-			case 13:
-				System.out.println("Take a walk on the Boardwalk – Advance token to Boardwalk");
-				if(playerList[currentPlayer].location<39) {
-					playerList[currentPlayer].location=39;
-				}
-				break;
-			case 14:
-				System.out.println("You have been elected Chairman of the Board – Pay each player $50");//******************************
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash - (50*numPlayers);
-				break;
-			case 15:
-				System.out.println("Your building loan matures – Collect $150");
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash + 150;
-				break;
-			case 16:
-				System.out.println("You have won a crossword competition - Collect $100");
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash + 100;
+				playerList[currentPlayer].location = 23;
+			}
+			if (playerList[currentPlayer].location < 23) {
+				playerList[currentPlayer].location = 23;
+			}
+			break;
+		case 3:
+			System.out.println("Advance to St. Charles Place – If you pass Go, collect $200");
+			if (playerList[currentPlayer].location > 11) {
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
+				playerList[currentPlayer].location = 11;
+			}
+			if (playerList[currentPlayer].location < 11) {
+				playerList[currentPlayer].location = 11;
+			}
+			break;
+		case 4:
+			System.out.println(
+					"Advance token to nearest Utility. If unowned, you may buy it from the Bank. If owned, throw dice and pay owner a total ten times the amount thrown.");
+			playerList[currentPlayer].location = playerList[currentPlayer].location = 12; // 12/28
+			if (playerList[currentPlayer].location < 12) {
+				playerList[currentPlayer].location = 12;
+			}
+			if (playerList[currentPlayer].location > 12 && playerList[currentPlayer].location < 28) {
+				playerList[currentPlayer].location = 28;
+			}
+			if (playerList[currentPlayer].location > 28 && playerList[currentPlayer].location < 39) {
+				playerList[currentPlayer].location = 12;
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
+			}
+			break;
+		case 5:
+			System.out.println(
+					"Advance token to the nearest Railroad and pay owner twice the rental to which he/she {he} is otherwise entitled. If Railroad is unowned, you may buy it from the Bank");
+			playerList[currentPlayer].location = playerList[currentPlayer].location = 15;// 5/15/25/35
+			if (playerList[currentPlayer].location < 5) {
+				playerList[currentPlayer].location = 5;
+			}
+			if (playerList[currentPlayer].location > 5 && playerList[currentPlayer].location < 15) {
+				playerList[currentPlayer].location = 15;
+			}
+			if (playerList[currentPlayer].location > 15 && playerList[currentPlayer].location < 25) {
+				playerList[currentPlayer].location = 25;
+			}
+			if (playerList[currentPlayer].location > 25 && playerList[currentPlayer].location < 39) {
+				playerList[currentPlayer].location = 5;
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
 
-				break;
-			default: System.out.println("You hit the default case, chance");;
-				break;
+			}
+			break;
+		case 6:
+			System.out.println("Bank pays you dividend of $50 ");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 50;
+			break;
+		case 7:
+			System.out.println("Get out of Jail Free");
+			playerList[currentPlayer].jailCard = true;
+			break;
+		case 8:
+			System.out.println("Go Back 3 Spaces");
+			playerList[currentPlayer].location = playerList[currentPlayer].location - 3;
+			break;
+		case 9:
+			System.out.println("Go directly to Jail – Do not pass Go, do not collect $200");
+			playerList[currentPlayer].location = 10;
+			playerList[currentPlayer].inJail = true;
+			break;
+		case 10:
+			System.out.println(
+					"Make general repairs on all your property – For each house pay $25 – For each hotel $100");// *****************
+
+			break;
+		case 11:
+			System.out.println("Pay poor tax of $15");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash - 15;
+			break;
+		case 12:
+			System.out.println("Take a trip to Reading Railroad – If you pass Go, collect $200 ");
+			if (playerList[currentPlayer].location < 5) {
+				playerList[currentPlayer].location = 5;
+			}
+			if (playerList[currentPlayer].location > 5) {
+				playerList[currentPlayer].location = 5;
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
+			}
+			break;
+		case 13:
+			System.out.println("Take a walk on the Boardwalk – Advance token to Boardwalk");
+			if (playerList[currentPlayer].location < 39) {
+				playerList[currentPlayer].location = 39;
+			}
+			break;
+		case 14:
+			System.out.println("You have been elected Chairman of the Board – Pay each player $50");// ******************************
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash - (50 * numPlayers);
+			break;
+		case 15:
+			System.out.println("Your building loan matures – Collect $150");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 150;
+			break;
+		case 16:
+			System.out.println("You have won a crossword competition - Collect $100");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 100;
+
+			break;
+		default:
+			System.out.println("You hit the default case, chance");
+			;
+			break;
 		}
 	}
-	
 
 	public boolean jail(int currentPlayer, Dice d, Player p) throws IOException {
 		Random gen = new Random();
-		String askFor50=null;
+		String askFor50 = null;
 		int die1;
 		int die2;
-		int jailTurn=0;
-		if(jailTurn==3) {
-			System.out.println(playerList[currentPlayer].name+", you have been in jail for 3 turns. You must pay your $50 fine.");
-			playerList[currentPlayer].cash = playerList[currentPlayer].cash-50;
+		int jailTurn = 0;
+		if (jailTurn == 3) {
+			System.out.println(playerList[currentPlayer].name
+					+ ", you have been in jail for 3 turns. You must pay your $50 fine.");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash - 50;
 			return false;
 		}
-		if(playerList[currentPlayer].jailCard==true) {
-			System.out.println(playerList[currentPlayer].name+", You currently have a 'Get of jail free' card. Would you like to use it?");
+		if (playerList[currentPlayer].jailCard == true) {
+			System.out.println(playerList[currentPlayer].name
+					+ ", You currently have a 'Get of jail free' card. Would you like to use it?");
 			String input = ConsoleUI.promptForInput("yes(1) or no(2)", false);
-			if(input.equalsIgnoreCase("yes")||input.equals("1")) {
-				playerList[currentPlayer].jailCard=false;
-				playerList[currentPlayer].inJail=false;
-				return false;			}
-		}
-		if(playerList[currentPlayer].cash>=50) {
-		askFor50=ConsoleUI.promptForInput("You are in jail. Do you want to pay $50(1) to leave?", false);
-			if(askFor50.equals("50")||askFor50.equals("$50")||askFor50.equals("1")) {
-				System.out.println(playerList[currentPlayer].name+", you have opted to pay your way out.");
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -50;
+			if (input.equalsIgnoreCase("yes") || input.equals("1")) {
+				playerList[currentPlayer].jailCard = false;
+				playerList[currentPlayer].inJail = false;
 				return false;
 			}
-			askFor50=ConsoleUI.promptForInput("Do you want to roll for doubles(2)?", false);
-		}if(askFor50.equalsIgnoreCase("roll for doubles")||askFor50.equalsIgnoreCase("doubles")||askFor50.equalsIgnoreCase("roll")||askFor50.equals("2")) {
+		}
+		if (playerList[currentPlayer].cash >= 50) {
+			askFor50 = ConsoleUI.promptForInput("You are in jail. Do you want to pay $50(1) to leave?", false);
+			if (askFor50.equals("50") || askFor50.equals("$50") || askFor50.equals("1")) {
+				System.out.println(playerList[currentPlayer].name + ", you have opted to pay your way out.");
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - 50;
+				return false;
+			}
+			askFor50 = ConsoleUI.promptForInput("Do you want to roll for doubles(2)?", false);
+		}
+		if (askFor50.equalsIgnoreCase("roll for doubles") || askFor50.equalsIgnoreCase("doubles")
+				|| askFor50.equalsIgnoreCase("roll") || askFor50.equals("2")) {
 			die1 = gen.nextInt(5) + 1;
 			die2 = gen.nextInt(5) + 1;
-			System.out.println("first die is a "+die1);
-			System.out.println("second die is a "+die2);
-			if(die1==die2) {
+			System.out.println("first die is a " + die1);
+			System.out.println("second die is a " + die2);
+			if (die1 == die2) {
 				System.out.println("Congrats, you have rolled doubles! You are now just visiting jail");
 				return false;
 			}
-			if(!(die1==die2)) {
-				System.out.println(playerList[currentPlayer].name+", you have failed to roll doubles. ");
+			if (!(die1 == die2)) {
+				System.out.println(playerList[currentPlayer].name + ", you have failed to roll doubles. ");
 				jailTurn++;
 				return true;
 			}
-			
+
 		}
 		return true;
-			
+
 	}
 
 	private void speedPlay() {
@@ -785,7 +808,7 @@ public class Monopoly {
 
 		boolean gameWin = false;
 		int currentPlayer = firstPlayer;
-		int turnCount =0;
+		int turnCount = 0;
 
 		do {
 			for (int i = 0; i < playerList.length; i++) {
@@ -798,18 +821,20 @@ public class Monopoly {
 				System.out.println("***********************************");
 				System.out.println();
 
-//				onMe(currentPlayer);
-//				System.out.println("You landed on board space "+playerList[currentPlayer].location);
+				// onMe(currentPlayer);
+				// System.out.println("You landed on board space
+				// "+playerList[currentPlayer].location);
 
 				System.out.println();
 				System.out.println("Okay " + playerList[currentPlayer].name + ", the roll is yours.");
 				System.out.println();
-				playerList[currentPlayer].location = playerList[currentPlayer].location+ d.rollDice(playerList[currentPlayer]);
-				if(playerList[currentPlayer].location>40) {
-					playerList[currentPlayer].location = playerList[currentPlayer].location-40;
-					playerList[currentPlayer].cash = playerList[currentPlayer].cash+200;
+				playerList[currentPlayer].location = playerList[currentPlayer].location
+						+ d.rollDice(playerList[currentPlayer]);
+				if (playerList[currentPlayer].location > 40) {
+					playerList[currentPlayer].location = playerList[currentPlayer].location - 40;
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
 				}
-//				System.out.println(playerList[currentPlayer].location);
+				// System.out.println(playerList[currentPlayer].location);
 				onMe(currentPlayer, b, p, d, a, numPlayers);
 				System.out.println("***********************************");
 				System.out.println("End turn");
@@ -823,8 +848,7 @@ public class Monopoly {
 
 			}
 
-		} while (turnCount<20);
-
+		} while (turnCount < 20);
 
 		// need to add code to move piece after every roll, regardless if doubles
 		boolean validYesno = false;

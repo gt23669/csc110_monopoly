@@ -108,6 +108,7 @@ public class Monopoly {
 
 			if(isOwnedMA==true) {
 				System.out.println(owner+" ownes this property. "+ playerList[currentPlayer].name+", you owe them $"+abp.baseRent+" in rent.");
+				System.out.println();
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
 				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
 			
@@ -562,7 +563,7 @@ public class Monopoly {
 			break;
 		case 7:
 			System.out.println("Grand Opera Night – Collect $50 from every player for opening night seats");
-			playerList[currentPlayer].cash = playerList[currentPlayer].cash + (50 * numPlayers);
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + (50 * (numPlayers-1));
 			break;
 		case 8:
 			System.out.println("Holiday Fund matures - Collect $100");

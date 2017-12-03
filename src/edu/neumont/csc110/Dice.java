@@ -36,10 +36,10 @@ public class Dice {
 	
 		int rolledValue =0;
 		
-//		die1 = gen.nextInt(6) + 1;
-//		die2 = gen.nextInt(6) + 1;
-		die1 = 1;
-		die2 = 0;
+		die1 = gen.nextInt(6) + 1;
+		die2 = gen.nextInt(6) + 1;
+//		die1 = 1;
+//		die2 = 0;
 		rolledValue = die1 + die2;
 		if(die1==die2) {
 			doubleCount++;

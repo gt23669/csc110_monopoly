@@ -8,10 +8,10 @@ public class Monopoly {
 	Player[] playerList = null;
 	int firstPlayer;
 	ArrayList<PlayerTokens> tokenList = new ArrayList();
-	// Board b = new Board();
-	// Player p = new Player();
-	// Dice d = new Dice();
 	boolean inJail = true;
+	String owner = null;
+	Player ownerIndex = null;
+	boolean isOwnedMA = false;
 
 	public void gameSetUp(Dice d, Player p, Board b, Auction a) throws IOException {
 		tokenList.add(PlayerTokens.VENUSAUR);
@@ -101,30 +101,28 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(0);
 			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
 		}
-
 		if (playerList[currentPlayer].location == 1) {// MEDITERRANEAN("Mediterranean Avenue",
 														// 60,2,10,30,90,190,250,30,30,50,50)
-			boolean isOwned = false;
-			Player owner = null;
 			AllBoardPlaces abp = b.getCardAt(1);
 			System.out.println(abp);
-			if (isOwned == false) {
 
-				boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
+			if(isOwnedMA==true) {
+				System.out.println(owner+" ownes this property. "+ playerList[currentPlayer].name+", you owe them $"+abp.baseRent+" in rent.");
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+			
+			}else if (isOwnedMA == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
 					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
-					owner= playerList[currentPlayer];
-					isOwned=true;
-				}
-				if (input == false) {
+					owner = playerList[currentPlayer].name;
+					isOwnedMA = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
 					a.auction();
 				}
 			}
-			if(isOwned==true)
-				System.out.println("Mediterranean Avenue is owned by "+owner+" , you owe them "+abp.baseRent);
-				playerList[currentPlayer].cash=playerList[currentPlayer].cash- abp.baseRent;
-				owner.cash = owner.cash + abp.baseRent;
-			
 		}
 		if (playerList[currentPlayer].location == 2) { // COMMUNITY1("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(2);
@@ -830,7 +828,7 @@ public class Monopoly {
 				System.out.println();
 				playerList[currentPlayer].location = playerList[currentPlayer].location
 						+ d.rollDice(playerList[currentPlayer]);
-				if (playerList[currentPlayer].location > 40) {
+				if (playerList[currentPlayer].location > 39) {
 					playerList[currentPlayer].location = playerList[currentPlayer].location - 40;
 					playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
 				}

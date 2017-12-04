@@ -232,7 +232,7 @@ public class Monopoly {
 					isOwnedMA = true;
 					ownerIndexMA = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -261,7 +261,7 @@ public class Monopoly {
 					isOwnedBA = true;
 					ownerIndexBA = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -296,7 +296,7 @@ public class Monopoly {
 					isOwnedRR = true;
 					ownerIndexRR = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -321,7 +321,7 @@ public class Monopoly {
 					isOwnedOR = true;
 					ownerIndexOR = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -351,7 +351,7 @@ public class Monopoly {
 					isOwnedVA = true;
 					ownerIndexVA = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -376,7 +376,7 @@ public class Monopoly {
 					isOwnedCA = true;
 					ownerIndexCA = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -411,7 +411,7 @@ public class Monopoly {
 					isOwnedSTC = true;
 					ownerIndexSTC = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -435,7 +435,7 @@ public class Monopoly {
 					isOwnedEC = true;
 					ownerIndexEC = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -460,7 +460,7 @@ public class Monopoly {
 					isOwnedSA = true;
 					ownerIndexSA = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -485,7 +485,7 @@ public class Monopoly {
 					isOwnedVAve = true;
 					ownerIndexVAve = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -510,7 +510,7 @@ public class Monopoly {
 					isOwnedPR = true;
 					ownerIndexPR = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -540,7 +540,7 @@ public class Monopoly {
 					isOwnedSJ = true;
 					ownerIndexSJ = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -565,7 +565,7 @@ public class Monopoly {
 					isOwnedTA = true;
 					ownerIndexTA = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -590,7 +590,7 @@ public class Monopoly {
 					isOwnedNY = true;
 					ownerIndexNY = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -619,7 +619,7 @@ public class Monopoly {
 					isOwnedKA = true;
 					ownerIndexKA = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -649,7 +649,7 @@ public class Monopoly {
 					isOwnedIndA = true;
 					ownerIndexIndA = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -674,7 +674,7 @@ public class Monopoly {
 					isOwnedIllA = true;
 					ownerIndexIllA = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -698,7 +698,7 @@ public class Monopoly {
 					isOwnedBOR = true;
 					ownerIndexBOR = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -723,7 +723,7 @@ public class Monopoly {
 					isOwnedAA = true;
 					ownerIndexAA = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -748,7 +748,7 @@ public class Monopoly {
 					isOwnedVetA = true;
 					ownerIndexVetA = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -772,7 +772,7 @@ public class Monopoly {
 					isOwnedWW = true;
 					ownerIndexWW = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -797,7 +797,7 @@ public class Monopoly {
 					isOwnedMG = true;
 					ownerIndexMG = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -831,7 +831,7 @@ public class Monopoly {
 					isOwnedPA = true;
 					ownerIndexPA = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -856,7 +856,7 @@ public class Monopoly {
 					isOwnedNCA = true;
 					ownerIndexNCA = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -886,7 +886,7 @@ public class Monopoly {
 					isOwnedPennA = true;
 					ownerIndexPennA = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -910,7 +910,7 @@ public class Monopoly {
 					isOwnedSL = true;
 					ownerIndexSL = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -940,7 +940,7 @@ public class Monopoly {
 					isOwnedPP = true;
 					ownerIndexPP = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -969,7 +969,7 @@ public class Monopoly {
 					isOwnedBW = true;
 					ownerIndexBW = playerList[currentPlayer];
 				} else {
-					a.auction();
+					a.auction(playerList,b,numPlayers, abp);
 				}
 			}
 		}
@@ -1154,7 +1154,7 @@ public class Monopoly {
 			playerList[currentPlayer].location = playerList[currentPlayer].location - 3;
 			break;
 		case 9:
-			System.out.println("Go directly to Jail – Do not pass Go, do not collect $200");
+			System.out.println("Go directly to Jail – Do not pass Go, do not collect $200");//*********fix to end turn********
 			playerList[currentPlayer].location = 10;
 			playerList[currentPlayer].inJail = true;
 			break;

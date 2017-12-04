@@ -36,20 +36,24 @@ public class Dice {
 	public int rollDice(Player p) {
 	
 		int rolledValue =0;
-		if(p==p) {
+		//if(p==p) {
 		die1 = gen.nextInt(6) + 1;
 		die2 = gen.nextInt(6) + 1;
+//		die1 = 2;
+//		die2 =2;
 //		die1 = 30;
 //		die2 = 0;
 		rolledValue = die1 + die2;
 		if(die1==die2) {
 			doubleCount++;
+		}else {
+			doubleCount = 0;
 		}
 		System.out.println(p.name + " Your roll was a " + die1 + " and " + die2 + ".");
 		System.out.println();
 		tempMove(rolledValue, p, m);
 		
-		}
+		//}
 
 		if (doubleCount == 3) {
 			System.out.println("You have rolled 3 doubles! Go straight to jail, do not pass go and, do not collect $200.");

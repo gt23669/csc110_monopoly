@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Auction {
 
+
 	public void auction(Player playerList[], Board b, int numPlayers, AllBoardPlaces abp) throws IOException {
 		int bidLow = 0;
 		int bidHigh = 0;
@@ -27,6 +28,6 @@ public class Auction {
 				}
 			}
 			
-		}
-
+	}
 }
+

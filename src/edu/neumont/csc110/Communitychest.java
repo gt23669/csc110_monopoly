@@ -12,6 +12,7 @@ public class Communitychest {
 		Random gen = new Random();
 		do {
 			num = gen.nextInt(16) + 1;
+			usedListCC.add(num);
 		} while (!usedListCC.contains(num));
 		usedListCC.add(num);
 

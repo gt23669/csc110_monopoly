@@ -9,8 +9,10 @@ public class Player {
 	public String owner;
 
 	public boolean inJail = false;
+	public int inJailTurn = 0;
 	public int owned;
 	public boolean jailCard = false;
+	public boolean doubleJail = false;
 
 	public void printPlayer() {
 		System.out.println(name);

@@ -983,8 +983,8 @@ public class Monopoly {
 		int num = 0;
 		Random gen = new Random();
 		do {
-//			num = gen.nextInt(16) + 1;
-			 num = 12;
+			num = gen.nextInt(16) + 1;
+//			 num = 12;
 			if (!usedListCC.contains(num)) {
 				usedListCC.add(num);
 			}
@@ -1185,7 +1185,7 @@ public class Monopoly {
 			break;
 		case 14:
 			System.out.println("You have been elected Chairman of the Board – Pay each player $50");// ******************************
-			playerList[currentPlayer].cash = playerList[currentPlayer].cash - (50 * numPlayers);
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash - (50 * numPlayers-1);
 			break;
 		case 15:
 			System.out.println("Your building loan matures – Collect $150");
@@ -1209,6 +1209,9 @@ public class Monopoly {
 		int die1;
 		int die2;
 		int jailTurn = 0;
+	if(playerList[currentPlayer].doubleJail==true) {
+		return true;
+	}
 		if (jailTurn == 3) {
 			System.out.println(playerList[currentPlayer].name
 					+ ", you have been in jail for 3 turns. You must pay your $50 fine.");
@@ -1225,13 +1228,15 @@ public class Monopoly {
 				return false;
 			}
 		}
-		if (jailTurn == 1) {
+		if (playerList[currentPlayer].inJail==true) {
 			if (playerList[currentPlayer].cash >= 50) {
 				askFor50 = ConsoleUI.promptForInput("You are in jail. Do you want to pay $50(1) to leave?", false);
-				if (askFor50.equals("50") || askFor50.equals("$50") || askFor50.equals("1")) {
+				if (askFor50.equals("50") || askFor50.equals("$50") || askFor50.equals("1")||askFor50.equalsIgnoreCase("yes")) {
 					System.out.println(playerList[currentPlayer].name + ", you have opted to pay your way out.");
-					playerList[currentPlayer].cash = playerList[currentPlayer].cash - 50;
 					playerList[currentPlayer].inJail = false;
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - 50;
+					double cash = playerList[currentPlayer].cash;
+					System.out.println("You now have $"+cash+".");
 					return playerList[currentPlayer].inJail;
 				}
 				askFor50 = ConsoleUI.promptForInput("Do you want to roll for doubles(2)?", false);
@@ -1254,9 +1259,11 @@ public class Monopoly {
 			}
 		}
 		jailTurn++;
-		return true;
-
+		return inJail;
 	}
+		
+
+	
 
 	private void speedPlay() {
 		// TODO Auto-generated method stub
@@ -1277,6 +1284,7 @@ public class Monopoly {
 				}
 				System.out.println("***********************************");
 				playerList[currentPlayer].printPlayer();
+				System.out.println(playerList[currentPlayer].inJail);
 				System.out.println("***********************************");
 				System.out.println();
 
@@ -1298,7 +1306,7 @@ public class Monopoly {
 				}
 				if (playerList[currentPlayer].inJail == true) {
 					jail(currentPlayer, d, p);
-					if (jail(currentPlayer, d, p) == false) {
+					if (playerList[currentPlayer].inJail == false) {
 						playerList[currentPlayer].location = playerList[currentPlayer].location
 								+ d.rollDice(playerList[currentPlayer]);
 					}
@@ -1308,14 +1316,15 @@ public class Monopoly {
 				System.out.println("***********************************");
 				System.out.println("End turn");
 				playerList[currentPlayer].printPlayer();
+				System.out.println(playerList[currentPlayer].inJail);
 				System.out.println("***********************************");
-				System.out.println();
-				turnCount++;
-				System.out.println("turn number: " + turnCount);
 				System.out.println();
 				String pause = ConsoleUI.promptForInput("", true);
 
 			}
+			turnCount++;
+			System.out.println("turn number: " + turnCount);
+			System.out.println();
 
 		} while (turnCount < 100);
 

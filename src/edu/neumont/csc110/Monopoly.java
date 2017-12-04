@@ -9,9 +9,120 @@ public class Monopoly {
 	int firstPlayer;
 	ArrayList<PlayerTokens> tokenList = new ArrayList();
 	boolean inJail = true;
-	String owner = null;
-	Player ownerIndex = null;
+
+	String ownerMA = null;
+	Player ownerIndexMA = null;
 	boolean isOwnedMA = false;
+	
+	String ownerBA = null;
+	Player ownerIndexBA = null;
+	boolean isOwnedBA = false;
+	
+	String ownerRR = null;
+	Player ownerIndexRR = null;
+	boolean isOwnedRR = false;
+	
+	String ownerOR = null;
+	Player ownerIndexOR = null;
+	boolean isOwnedOR = false;
+	
+	String ownerVA = null;
+	Player ownerIndexVA = null;
+	boolean isOwnedVA = false;
+	
+	String ownerCA = null;
+	Player ownerIndexCA = null;
+	boolean isOwnedCA = false;
+	
+	String ownerSTC = null;
+	Player ownerIndexSTC = null;
+	boolean isOwnedSTC = false;
+	
+	String ownerEC = null;
+	Player ownerIndexEC = null;
+	boolean isOwnedEC = false;
+	
+	String ownerSA = null;
+	Player ownerIndexSA = null;
+	boolean isOwnedSA = false;
+	
+	String ownerVAve = null;
+	Player ownerIndexVAve = null;
+	boolean isOwnedVAve = false;
+	
+	String ownerPR = null;
+	Player ownerIndexPR = null;
+	boolean isOwnedPR = false;
+	
+	String ownerSJ = null;
+	Player ownerIndexSJ = null;
+	boolean isOwnedSJ = false;
+	
+	String ownerTA = null;
+	Player ownerIndexTA = null;
+	boolean isOwnedTA = false;
+	
+	String ownerNY = null;
+	Player ownerIndexNY = null;
+	boolean isOwnedNY = false;
+	
+	String ownerKA = null;
+	Player ownerIndexKA = null;
+	boolean isOwnedKA = false;
+	
+	String ownerIndA = null;
+	Player ownerIndexIndA = null;
+	boolean isOwnedIndA = false;
+	
+	String ownerIllA = null;
+	Player ownerIndexIllA = null;
+	boolean isOwnedIllA = false;
+	
+	String ownerBOR = null;
+	Player ownerIndexBOR = null;
+	boolean isOwnedBOR = false;
+	
+	String ownerAA = null;
+	Player ownerIndexAA = null;
+	boolean isOwnedAA = false;
+	
+	String ownerVetA = null;
+	Player ownerIndexVetA = null;
+	boolean isOwnedVetA = false;
+	
+	String ownerWW = null;
+	Player ownerIndexWW = null;
+	boolean isOwnedWW = false;
+	
+	String ownerMG = null;
+	Player ownerIndexMG = null;
+	boolean isOwnedMG = false;
+	
+	String ownerPA = null;
+	Player ownerIndexPA = null;
+	boolean isOwnedPA = false;
+	
+	String ownerNCA = null;
+	Player ownerIndexNCA = null;
+	boolean isOwnedNCA = false;
+	
+	String ownerPennA = null;
+	Player ownerIndexPennA = null;
+	boolean isOwnedPennA = false;
+	
+	String ownerSL = null;
+	Player ownerIndexSL = null;
+	boolean isOwnedSL = false;
+	
+	String ownerPP = null;
+	Player ownerIndexPP = null;
+	boolean isOwnedPP = false;
+	
+	String ownerBW = null;
+	Player ownerIndexBW = null;
+	boolean isOwnedBW = false;
+	
+	
 
 	public void gameSetUp(Dice d, Player p, Board b, Auction a) throws IOException {
 		tokenList.add(PlayerTokens.VENUSAUR);
@@ -102,24 +213,28 @@ public class Monopoly {
 			playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
 		}
 		if (playerList[currentPlayer].location == 1) {// MEDITERRANEAN("Mediterranean Avenue",
+			String ownerMA= null;
+			Player ownerIndexMA = null;
+			boolean isOwnedMA = false;
 														// 60,2,10,30,90,190,250,30,30,50,50)
 			AllBoardPlaces abp = b.getCardAt(1);
 			System.out.println(abp);
 
-			if(isOwnedMA==true) {
-				System.out.println(owner+" ownes this property. "+ playerList[currentPlayer].name+", you owe them $"+abp.baseRent+" in rent.");
+			if (isOwnedMA == true) {
+				System.out.println(ownerIndexMA + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
 				System.out.println();
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
-				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
-			
-			}else if (isOwnedMA == false) {
+				ownerIndexMA.cash = ownerIndexMA.cash + abp.baseRent;
+
+			} else if (isOwnedMA == false) {
 				boolean input = ConsoleUI.promptForBool(
 						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
 					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
-					owner = playerList[currentPlayer].name;
+					ownerMA = playerList[currentPlayer].name;
 					isOwnedMA = true;
-					ownerIndex = playerList[currentPlayer];
+					ownerIndexMA = playerList[currentPlayer];
 				} else {
 					a.auction();
 				}
@@ -131,15 +246,29 @@ public class Monopoly {
 			Communitychest(currentPlayer, numPlayers);
 		}
 		if (playerList[currentPlayer].location == 3) {// BALIC("Balic Avenu", 60,4,20,60,180,320,450,50,50,50,50),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(3);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
 
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 4) {// INCOME("Income Tax",0,0,0,0,0,0,0,0,0,0,0),
@@ -154,27 +283,56 @@ public class Monopoly {
 			}
 		}
 		if (playerList[currentPlayer].location == 5) {// READING("Reading Railroad",200,25,0,50,100,200,0,100,100,0,0),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(5);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 6) {// ORIENTAL("Oriental
 														// Avenenu",100,6,30,90,270,400,550,50,50,50,50),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(6);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
 
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 7) {// CHANCE1("Chance",0,0,0,0,0,0,0,0,0,0,0),
@@ -184,94 +342,197 @@ public class Monopoly {
 
 		}
 		if (playerList[currentPlayer].location == 8) {// VERMONT("Vermont Avenue",100,6,30,90,270,400,550,50,50,50,50),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(8);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
 
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 9) {// CONNECTICUT("Connecticut
 														// Avenue",120,8,40,100,300,450,600,60,60,50,50),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(9);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
 
-			}
-			if (input == false) {
-				a.auction();
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 10) {// JAIL("Jail",0,0,0,0,0,0,0,0,0,0,0),
+			
 			AllBoardPlaces abp = b.getCardAt(10);
-			System.out.println("You have landed on jail. Do not worry, you are just visiting");
+			if (playerList[currentPlayer].inJail == false) {
+				System.out.println("You have landed on jail. Do not worry, you are just visiting");
+			}
 		}
 		if (playerList[currentPlayer].location == 11) {// CHARLES("St.Charles
 														// Place",140,10,50,150,450,625,750,70,70,100,100),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(11);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
 
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-
-			}
-			if (input == false) {
-				a.auction();
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 12) {// ELECTRIC("Electric Company",150,0,0,0,0,0,0,0,0,0,0),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(12);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
 
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 13) {// STATES("States
 														// Avenue",140,10,50,150,450,625,750,70,70,100,100),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(13);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 14) {// PENNSYLVANIARR("Pennsylvania
 														// Railraod",200,25,0,50,100,200,0,100,100,0,0),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(14);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 15) {// VIRGINIA("Virginia
 														// Avenue",160,12,60,180,500,700,900,80,80,100,100),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(15);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 16) {// COMMUNITY2("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
@@ -281,39 +542,84 @@ public class Monopoly {
 		}
 		if (playerList[currentPlayer].location == 17) {// JAMES("St.James
 														// Pllace",180,14,70,200,550,750,950,90,90,100,100),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(18);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 18) {// TENNESSEE("Tennessee
 														// Avenue",180,14,70,200,550,750,950,90,90,100,100),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(18);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 19) {// NEWYORK("New York Avenue",
 														// 200,16,220,600,800,1000,100,100,100,100,100),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 
 			AllBoardPlaces abp = b.getCardAt(19);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 20) {// FREE("Free Parking",0,0,0,0,0,0,0,0,0,0,0),
@@ -322,14 +628,29 @@ public class Monopoly {
 		}
 		if (playerList[currentPlayer].location == 21) {// KENTUCKY("Kentucky
 														// Avenue",220,18,90,250,700,875,1050,110,110,150,150),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(21);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 22) {// CHANCE2("Chance",0,0,0,0,0,0,0,0,0,0,0),
@@ -339,84 +660,189 @@ public class Monopoly {
 		}
 		if (playerList[currentPlayer].location == 23) {// INDIANA("Indiana
 														// Avenue",220,18,90,250,700,875,1050,110,110,150,150),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(23);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 24) {// ILLINOIS("Illinois
 														// Avenue",240,20,100,300,750,925,1100,120,120,150,150),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(24);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 25) {// BANDO("B & O Railroad",200,25,0,50,100,200,0,100,100,0,0),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(25);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 26) {// ATLANTIC("Atlatic
 														// Avenue",260,22,110,330,800,975,1150,130,130,150,150),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(26);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 27) {// VENTNOR("Ventnor
 														// Avenue",260,22,110,330,800,975,1150,130,130,150,150),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(27);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 28) {// WATER("Water Works",150,0,0,0,0,0,0,0,0,0,0),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(28);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 29) {// MARVIN("Marvin
 														// Gardens",280,24,120,360,850,1025,1200,140,140,150,150),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(29);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 30) {// GOTJAIL("Go To Jail",0,0,0,0,0,0,0,0,0,0,0),
@@ -433,26 +859,56 @@ public class Monopoly {
 		}
 		if (playerList[currentPlayer].location == 31) {// PACIFIC("Pacific
 														// Avenue",300,26,130,390,900,110,1275,150,150,200,200),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(31);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 32) {// NCAROLINA("North Carolina
 														// Avenue",300,26,130,390,900,1100,1275,150,150,200,200),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(32);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 33) {// COMMUNITY3("Community Chest", 0,0,0,0,0,0,0,0,0,0,0),
@@ -462,25 +918,55 @@ public class Monopoly {
 		}
 		if (playerList[currentPlayer].location == 34) {// PENNSYLVANIA("Pennsylvania
 														// Avenue",320,28,150,450,1000,1200,1400,160,160,200,200),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(34);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 35) {// SHORT("Short Line",200,25,0,50,100,200,0,100,100,0,0),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(35);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 36) {// CHANCE3("Chance",0,0,0,0,0,0,0,0,0,0,0),
@@ -490,14 +976,29 @@ public class Monopoly {
 		}
 		if (playerList[currentPlayer].location == 37) {// PARK("Park
 														// Place",350,35,175,500,1100,1300,1500,175,175,200,200),
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(37);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 		if (playerList[currentPlayer].location == 38) {// TAX("Lutury Tax",0,0,0,0,0,0,0,0,0,0,0),
@@ -506,14 +1007,29 @@ public class Monopoly {
 			playerList[currentPlayer].cash = playerList[currentPlayer].cash - 100;
 		}
 		if (playerList[currentPlayer].location == 39) {// BOARDWALK("Boardwalk",400,50,200,600,1400,1700,2000,200,200,200,200);
+			String owner = null;
+			Player ownerIndex = null;
+			boolean isOwned = false;
 			AllBoardPlaces abp = b.getCardAt(39);
 			System.out.println(abp);
-			boolean input = ConsoleUI.promptForBool("Do You Want To Buy? Yes/No", "Yes", "No");
-			if (input == true) {
-				playerList[currentPlayer].cash = playerList[currentPlayer].cash -= abp.cardPrice;
-			}
-			if (input == false) {
-				a.auction();
+			if (isOwned == true) {
+				System.out.println(owner + " ownes this property. " + playerList[currentPlayer].name
+						+ ", you owe them $" + abp.baseRent + " in rent.");
+				System.out.println();
+				playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.baseRent;
+				ownerIndex.cash = ownerIndex.cash + abp.baseRent;
+
+			} else if (isOwned == false) {
+				boolean input = ConsoleUI.promptForBool(
+						playerList[currentPlayer].name + " Would you like to buy this property(yes)?", "yes", "no");
+				if (input == true) {
+					playerList[currentPlayer].cash = playerList[currentPlayer].cash - abp.cardPrice;
+					owner = playerList[currentPlayer].name;
+					isOwned = true;
+					ownerIndex = playerList[currentPlayer];
+				} else {
+					a.auction();
+				}
 			}
 		}
 
@@ -563,7 +1079,7 @@ public class Monopoly {
 			break;
 		case 7:
 			System.out.println("Grand Opera Night – Collect $50 from every player for opening night seats");
-			playerList[currentPlayer].cash = playerList[currentPlayer].cash + (50 * (numPlayers-1));
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash + (50 * (numPlayers - 1));
 			break;
 		case 8:
 			System.out.println("Holiday Fund matures - Collect $100");
@@ -632,12 +1148,12 @@ public class Monopoly {
 			break;
 		case 2:
 			System.out.println("Advance to Illinois Ave. - If you pass Go, collect $200 ");
-			if (playerList[currentPlayer].location > 23) {
+			if (playerList[currentPlayer].location > 24) {
 				playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
-				playerList[currentPlayer].location = 23;
+				playerList[currentPlayer].location = 24;
 			}
-			if (playerList[currentPlayer].location < 23) {
-				playerList[currentPlayer].location = 23;
+			if (playerList[currentPlayer].location < 24) {
+				playerList[currentPlayer].location = 24;
 			}
 			break;
 		case 3:
@@ -841,7 +1357,8 @@ public class Monopoly {
 				System.out.println("***********************************");
 				System.out.println();
 				turnCount++;
-				System.out.println(turnCount);
+				System.out.println("turn number: " + turnCount);
+				System.out.println();
 				// p = playerList[currentPlayer]; We need to change p.location to whatever this
 				// means. cryptic tutors...
 

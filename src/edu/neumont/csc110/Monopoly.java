@@ -1209,9 +1209,6 @@ public class Monopoly {
 		int die1;
 		int die2;
 		int jailTurn = 0;
-	if(playerList[currentPlayer].doubleJail==true) {
-		return true;
-	}
 		if (jailTurn == 3) {
 			System.out.println(playerList[currentPlayer].name
 					+ ", you have been in jail for 3 turns. You must pay your $50 fine.");
@@ -1259,11 +1256,9 @@ public class Monopoly {
 			}
 		}
 		jailTurn++;
-		return inJail;
-	}
-		
+		return true;
 
-	
+	}
 
 	private void speedPlay() {
 		// TODO Auto-generated method stub
@@ -1319,7 +1314,7 @@ public class Monopoly {
 				System.out.println(playerList[currentPlayer].inJail);
 				System.out.println("***********************************");
 				System.out.println();
-				String pause = ConsoleUI.promptForInput("", true);
+				String pause = ConsoleUI.promptForInput("Press any button to continue...", true);
 
 			}
 			turnCount++;

@@ -36,10 +36,10 @@ public class Dice {
 	
 		int rolledValue =0;
 		
-		die1 = gen.nextInt(6) + 1;
-		die2 = gen.nextInt(6) + 1;
-//		die1 = 1;
-//		die2 = 0;
+//		die1 = gen.nextInt(6) + 1;
+//		die2 = gen.nextInt(6) + 1;
+		die1 = 30;
+		die2 = 0;
 		rolledValue = die1 + die2;
 		if(die1==die2) {
 			doubleCount++;
@@ -62,7 +62,8 @@ public class Dice {
 	public void jail(Player p) {
 		
 		System.out.println("You have rolled 3 doubles, Go straight to jail, do not pass go, do not collect $200");
-		p.location = 20;
+		p.location = 10;
+		p.inJail=true;
 		
 	}
 

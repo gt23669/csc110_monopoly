@@ -40,7 +40,7 @@ public enum AllBoardPlaces {
 	SHORT("Short Line",200,25,0,50,100,200,0,100,100,0,0),
 	CHANCE3("Chance",0,0,0,0,0,0,0,0,0,0,0),
 	PARK("Park Place",350,35,175,500,1100,1300,1500,175,175,200,200),
-	TAX("Lutury Tax",0,0,0,0,0,0,0,0,0,0,0),
+	TAX("Luxury Tax",0,0,0,0,0,0,0,0,0,0,0),
 	BOARDWALK("Boardwalk",400,50,200,600,1400,1700,2000,200,200,200,200);
 	
 	// name(name, buyPrice, baseRent, 1HsRent, 2HsRent, 3HsRent, 4HsRent,
@@ -75,7 +75,6 @@ public enum AllBoardPlaces {
 		this.mortgageValue = morgageValue;
 		this.mortgageBuybackPrice = morgageBuybackPrice;
 		this.houseCost = houseCost;
-		this.hotelCost = hotelCost;
 		
 	}
 	/**
@@ -134,7 +133,6 @@ public enum AllBoardPlaces {
 		stb.append(getName());
 		stb.append(" \nThis property cost " + getCardPrice());
 		stb.append(" \nThe Base rent is " + getBaseRent());
-		stb.append(" \nThe Base rent is "+ getBaseRent());
 		stb.append(" \nOne House Rent "+getOneHsRent());
 		stb.append(" \nTwo House Rent "+getTwoHsRent());
 		stb.append(" \nThree House Rent "+getThreeHsRent());

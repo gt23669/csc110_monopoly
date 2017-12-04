@@ -1185,7 +1185,7 @@ public class Monopoly {
 			break;
 		case 14:
 			System.out.println("You have been elected Chairman of the Board – Pay each player $50");// ******************************
-			playerList[currentPlayer].cash = playerList[currentPlayer].cash - (50 * numPlayers-1);
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash - (50 * (numPlayers -1));
 			break;
 		case 15:
 			System.out.println("Your building loan matures – Collect $150");

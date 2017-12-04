@@ -984,7 +984,7 @@ public class Monopoly {
 		Random gen = new Random();
 		do {
 			num = gen.nextInt(16) + 1;
-//			 num = 12;
+			// num = 12;
 			if (!usedListCC.contains(num)) {
 				usedListCC.add(num);
 			}
@@ -1017,6 +1017,7 @@ public class Monopoly {
 		case 6:
 			System.out.println("Go directly to jail – Do not pass Go – Do not collect $200");
 			playerList[currentPlayer].location = 10;
+			playerList[currentPlayer].inJail = true;
 			break;
 		case 7:
 			System.out.println("Grand Opera Night – Collect $50 from every player for opening night seats");
@@ -1184,8 +1185,8 @@ public class Monopoly {
 			}
 			break;
 		case 14:
-			System.out.println("You have been elected Chairman of the Board – Pay each player $50");// ******************************
-			playerList[currentPlayer].cash = playerList[currentPlayer].cash - (50 * (numPlayers -1));
+			System.out.println("You have been elected Chairman of the Board – Pay each player $50");
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash - (50 * (numPlayers - 1));
 			break;
 		case 15:
 			System.out.println("Your building loan matures – Collect $150");
@@ -1225,15 +1226,16 @@ public class Monopoly {
 				return false;
 			}
 		}
-		if (playerList[currentPlayer].inJail==true) {
+		if (playerList[currentPlayer].inJail == true) {
 			if (playerList[currentPlayer].cash >= 50) {
 				askFor50 = ConsoleUI.promptForInput("You are in jail. Do you want to pay $50(1) to leave?", false);
-				if (askFor50.equals("50") || askFor50.equals("$50") || askFor50.equals("1")||askFor50.equalsIgnoreCase("yes")) {
+				if (askFor50.equals("50") || askFor50.equals("$50") || askFor50.equals("1")
+						|| askFor50.equalsIgnoreCase("yes")) {
 					System.out.println(playerList[currentPlayer].name + ", you have opted to pay your way out.");
 					playerList[currentPlayer].inJail = false;
 					playerList[currentPlayer].cash = playerList[currentPlayer].cash - 50;
 					double cash = playerList[currentPlayer].cash;
-					System.out.println("You now have $"+cash+".");
+					System.out.println("You now have $" + cash + ".");
 					return playerList[currentPlayer].inJail;
 				}
 				askFor50 = ConsoleUI.promptForInput("Do you want to roll for doubles(2)?", false);
@@ -1296,8 +1298,8 @@ public class Monopoly {
 					if (playerList[currentPlayer].location > 39) {
 						playerList[currentPlayer].location = playerList[currentPlayer].location - 40;
 						playerList[currentPlayer].cash = playerList[currentPlayer].cash + 200;
-					} 
-					
+					}
+
 				}
 				if (playerList[currentPlayer].inJail == true) {
 					jail(currentPlayer, d, p);

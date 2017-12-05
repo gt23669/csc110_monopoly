@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Auction {
 
-	public Player auction(Player playerList[], Board b, int numPlayers, AllBoardPlaces abp, Player p) throws IOException {
+	public Player auction(ArrayList<Player> playerList, Board b, int numPlayers, AllBoardPlaces abp, Player p) throws IOException {
 		Monopoly m;
 		int bidLow = 0;
 		int bidHigh = 0;

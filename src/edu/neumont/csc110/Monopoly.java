@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.sun.org.apache.bcel.internal.generic.ALOAD;
-
 public class Monopoly {
 	Player[] playerList = null;
 	int firstPlayer;
@@ -990,35 +988,34 @@ public class Monopoly {
 	}
 
 	public void buyHouses(int currentPlayer) {
-		if (AllBoardPlaces.MEDITERRANEAN.owned == true && AllBoardPlaces.BALIC.owned == true) {
+		if(isOwnedMA == true && isOwnedBA == true) {
+			
+				
+			}
+		if(isOwnedOR == true && isOwnedVA == true && isOwnedCA == true) {
+				
+			}
+		if(isOwnedSTC == true && isOwnedVAve == true && isOwnedSA == true) {
+				
+			}
 
-		}
-		if (AllBoardPlaces.ORIENTAL.owned == true && AllBoardPlaces.VERMONT.owned == true
-				&& AllBoardPlaces.CONNECTICUT.owned == true) {
+		if(isOwnedSJ == true && isOwnedTA == true && isOwnedNY == true) {
+				
+			}
+		if(isOwnedKA == true && isOwnedIndA == true && isOwnedIllA == true) {
+				
+			}
 
-		}
-		if (AllBoardPlaces.CHARLES.owned == true && AllBoardPlaces.STATES.owned == true
-				&& AllBoardPlaces.VIRGINIA.owned == true) {
+		if(isOwnedAA == true && isOwnedVetA == true && isOwnedMG == true) {
+				
+			}
 
-		}
-		if (AllBoardPlaces.JAMES.owned == true && AllBoardPlaces.TENNESSEE.owned == true
-				&& AllBoardPlaces.NEWYORK.owned == true) {
+		if(isOwnedPA == true && isOwnedNCA == true && isOwnedPennA == true) {
+				
+			}
 
-		}
-		if (AllBoardPlaces.KENTUCKY.owned == true && AllBoardPlaces.INDIANA.owned == true
-				&& AllBoardPlaces.ILLINOIS.owned == true) {
-
-		}
-		if (AllBoardPlaces.ATLANTIC.owned == true && AllBoardPlaces.VENTNOR.owned == true
-				&& AllBoardPlaces.MARVIN.owned == true) {
-
-		}
-		if (AllBoardPlaces.PACIFIC.owned == true && AllBoardPlaces.NCAROLINA.owned == true
-				&& AllBoardPlaces.PENNSYLVANIA.owned == true) {
-
-		}
-		if (AllBoardPlaces.PARK.owned == true && AllBoardPlaces.BOARDWALK.owned == true) {
-
+		if(isOwnedPP == true && isOwnedBW == true) {
+			
 		}
 	}
 

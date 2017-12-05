@@ -59,7 +59,9 @@ public enum AllBoardPlaces {
 	public int mortgageValue;
 	public int mortgageBuybackPrice;
 	public int houseCost;
+	public int houseNum;
 	public int hotelCost;
+	public int hotelNum;
 	public boolean owned;
 	public Player owner;
 
@@ -87,12 +89,12 @@ public enum AllBoardPlaces {
 	/**
 	 * This returns the name of the board piece
 	 */
-//	public int gethouseNum() {
-//		return houseNum;
-//	}
-//	public int gethotelNum() {
-//		return hotelNum;
-//	}
+	public int gethouseNum() {
+		return houseNum;
+	}
+	public int gethotelNum() {
+		return hotelNum;
+	}
 	
 	public String getOwned() {
 		return name;

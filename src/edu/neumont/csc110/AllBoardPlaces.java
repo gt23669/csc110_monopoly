@@ -89,19 +89,25 @@ public enum AllBoardPlaces {
 	/**
 	 * This returns the name of the board piece
 	 */
+
 	public int gethouseNum() {
 		return houseNum;
 	}
-	public int gethotelNum() {
+
+
+	public int getHouseNum() {
+		return houseNum;
+	}
+	public int getHotelNum() {
 		return hotelNum;
 	}
 	
-	public String getOwned() {
-		return name;
+	public boolean getOwned() {
+		return owned;
 	}
 
-	public int getOwner() {
-		return cardPrice;
+	public Player getOwner() {
+		return owner;
 	}
 	
 	public String getName() {
@@ -140,7 +146,7 @@ public enum AllBoardPlaces {
 	}
 
 	public int getMortgageBuybackPrice() {
-		return mortgageBuybackPrice;
+		return (int)(mortgageBuybackPrice+(mortgageBuybackPrice*.1));
 	}
 
 	public int getHouseCost() {

@@ -7,6 +7,7 @@ public class Player {
 	public double cash = 1500;
 	public int location;
 	public String owner;
+	public boolean didRollDoubles;
 
 	public boolean inJail = false;
 	public int inJailTurn = 0;

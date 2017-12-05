@@ -39,15 +39,17 @@ public class Dice {
 		//if(p==p) {
 		die1 = gen.nextInt(6) + 1;
 		die2 = gen.nextInt(6) + 1;
-		die1 = 0;
-		die2 =1;
+//		die1 = 1;
+//		die2 =1;
 //		die1 = 30;
 //		die2 = 0;
 		rolledValue = die1 + die2;
 		if(die1==die2) {
+			p.didRollDoubles = true;
 			doubleCount++;
 		}else {
 			doubleCount = 0;
+			p.didRollDoubles=false;
 		}
 		System.out.println(p.name + " Your roll was a " + die1 + " and " + die2 + ".");
 		System.out.println();
@@ -56,6 +58,8 @@ public class Dice {
 		//}
 
 		if (doubleCount == 3) {
+			p.didRollDoubles=false;
+			doubleCount=0;
 			System.out.println("You have rolled 3 doubles! Go straight to jail, do not pass go and, do not collect $200.");
 			p.doubleJail = true;
 			jail(p);

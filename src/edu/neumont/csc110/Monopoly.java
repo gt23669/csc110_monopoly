@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.sun.org.apache.bcel.internal.generic.ALOAD;
+
 public class Monopoly {
 	Player[] playerList = null;
 	int firstPlayer;
@@ -987,6 +989,39 @@ public class Monopoly {
 
 	}
 
+	public void buyHouses(int currentPlayer) {
+		if (AllBoardPlaces.MEDITERRANEAN.owned == true && AllBoardPlaces.BALIC.owned == true) {
+
+		}
+		if (AllBoardPlaces.ORIENTAL.owned == true && AllBoardPlaces.VERMONT.owned == true
+				&& AllBoardPlaces.CONNECTICUT.owned == true) {
+
+		}
+		if (AllBoardPlaces.CHARLES.owned == true && AllBoardPlaces.STATES.owned == true
+				&& AllBoardPlaces.VIRGINIA.owned == true) {
+
+		}
+		if (AllBoardPlaces.JAMES.owned == true && AllBoardPlaces.TENNESSEE.owned == true
+				&& AllBoardPlaces.NEWYORK.owned == true) {
+
+		}
+		if (AllBoardPlaces.KENTUCKY.owned == true && AllBoardPlaces.INDIANA.owned == true
+				&& AllBoardPlaces.ILLINOIS.owned == true) {
+
+		}
+		if (AllBoardPlaces.ATLANTIC.owned == true && AllBoardPlaces.VENTNOR.owned == true
+				&& AllBoardPlaces.MARVIN.owned == true) {
+
+		}
+		if (AllBoardPlaces.PACIFIC.owned == true && AllBoardPlaces.NCAROLINA.owned == true
+				&& AllBoardPlaces.PENNSYLVANIA.owned == true) {
+
+		}
+		if (AllBoardPlaces.PARK.owned == true && AllBoardPlaces.BOARDWALK.owned == true) {
+
+		}
+	}
+
 	public void Communitychest(int currentPlayer, int numPlayers) {
 		ArrayList<Integer> usedListCC = new ArrayList();
 
@@ -1252,7 +1287,7 @@ public class Monopoly {
 				askFor50 = ConsoleUI.promptForInput("Do you want to roll for doubles(2)?", false);
 			}
 			if (askFor50.equalsIgnoreCase("roll for doubles") || askFor50.equalsIgnoreCase("doubles")
-					|| askFor50.equalsIgnoreCase("roll") || askFor50.equals("2")) {
+					|| askFor50.equalsIgnoreCase("roll") || askFor50.equals("2")||askFor50.equalsIgnoreCase("yes")) {
 				die1 = gen.nextInt(5) + 1;
 				die2 = gen.nextInt(5) + 1;
 				System.out.println("first die is a " + die1);
@@ -1290,6 +1325,7 @@ public class Monopoly {
 				if (currentPlayer >= playerList.length) {
 					currentPlayer = currentPlayer - playerList.length;
 				}
+				do {
 				System.out.println("***********************************");
 				playerList[currentPlayer].printPlayer();
 				System.out.println(playerList[currentPlayer].inJail);
@@ -1328,6 +1364,7 @@ public class Monopoly {
 				System.out.println("***********************************");
 				System.out.println();
 				String pause = ConsoleUI.promptForInput("Press any button to continue...", true);
+				}while(playerList[currentPlayer].didRollDoubles==true);
 //				if(pause.equalsIgnoreCase("stbs")) {
 //					AllBoardPlaces abp = b.toStringShort();
 //				}

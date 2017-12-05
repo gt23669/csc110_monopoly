@@ -991,7 +991,7 @@ public class Monopoly {
 
 	public void buyHouses(int currentPlayer) {
 		if (AllBoardPlaces.MEDITERRANEAN.owned == true && AllBoardPlaces.BALIC.owned == true) {
-
+			
 		}
 		if (AllBoardPlaces.ORIENTAL.owned == true && AllBoardPlaces.VERMONT.owned == true
 				&& AllBoardPlaces.CONNECTICUT.owned == true) {
@@ -1067,7 +1067,12 @@ public class Monopoly {
 			break;
 		case 7:
 			System.out.println("Grand Opera Night – Collect $50 from every player for opening night seats");
-			playerList[currentPlayer].cash = playerList[currentPlayer].cash + (50 * (numPlayers - 1));
+			for(int i = 0;i<playerList.length;i++) {
+				if(i!=currentPlayer) {
+					playerList[i].cash = playerList[i].cash+50;
+				}
+			}
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash - (50 * (numPlayers - 1));
 			break;
 		case 8:
 			System.out.println("Holiday Fund matures - Collect $100");
@@ -1079,7 +1084,12 @@ public class Monopoly {
 			break;
 		case 10:
 			System.out.println("It is your birthday - Collect $10 from each player");
-			playerList[currentPlayer].cash = playerList[currentPlayer].cash + (10 * numPlayers);
+			for(int i = 0;i<playerList.length;i++) {
+				if(i!=currentPlayer) {
+					playerList[i].cash = playerList[i].cash+10;
+				}
+			}
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash - (10 * (numPlayers - 1));
 			break;
 		case 11:
 			System.out.println("Life insurance matures – Collect $100");
@@ -1099,7 +1109,7 @@ public class Monopoly {
 			break;
 		case 15:
 			System.out.println("You are assessed for street repairs – $40 per house – $115 per hotel");// **************************
-			// check how many houses
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash - (40*playerList[currentPlayer].houseNum+(115*playerList[currentPlayer].hotelNum));
 			break;
 		case 16:
 			System.out.println("You have won second prize in a beauty contest – Collect $10");
@@ -1120,7 +1130,7 @@ public class Monopoly {
 		Random gen = new Random();
 		do {
 			num = gen.nextInt(16) + 1;
-			// num = 1;
+//			 num = 14;
 			if (!usedListC.contains(num)) {
 				usedListC.add(num);
 			}
@@ -1208,7 +1218,7 @@ public class Monopoly {
 		case 10:
 			System.out.println(
 					"Make general repairs on all your property – For each house pay $25 – For each hotel $100");// *****************
-
+			playerList[currentPlayer].cash = playerList[currentPlayer].cash - (25*playerList[currentPlayer].houseNum+(100*playerList[currentPlayer].hotelNum));
 			break;
 		case 11:
 			System.out.println("Pay poor tax of $15");
@@ -1232,6 +1242,11 @@ public class Monopoly {
 			break;
 		case 14:
 			System.out.println("You have been elected Chairman of the Board – Pay each player $50");
+			for(int i = 0;i<playerList.length;i++) {
+				if(i!=currentPlayer) {
+					playerList[i].cash = playerList[i].cash+50;
+				}
+			}
 			playerList[currentPlayer].cash = playerList[currentPlayer].cash - (50 * (numPlayers - 1));
 			break;
 		case 15:

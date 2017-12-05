@@ -16,6 +16,8 @@ public class Player {
 	public boolean doubleJail = false;
 	public int auctionBid=0;
 	public int playerIndex = 0;
+	public int houseNum=0;
+	public int hotelNum=0;
 
 	public void printPlayer() {
 		System.out.println(name);

@@ -13,6 +13,8 @@ public class Player {
 	public int owned;
 	public boolean jailCard = false;
 	public boolean doubleJail = false;
+	public int auctionBid=0;
+	public int playerIndex = 0;
 
 	public void printPlayer() {
 		System.out.println(name);

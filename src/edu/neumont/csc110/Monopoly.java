@@ -281,7 +281,9 @@ public class Monopoly {
 			System.out.println("Income Tax");
 			String input = ConsoleUI.promptForInput("Do you want to pay 10%(yes) or $200(no)?", false);
 			if (input.equalsIgnoreCase("yes") || input.equals("10") || input.equals("10%")) {
+
 				playerList[currentPlayer].cash =(int)playerList[currentPlayer].cash - (playerList[currentPlayer].cash * .1);
+
 			}
 			if (input.equalsIgnoreCase("no") || input.equals("200") || input.equals("$200")) {
 				playerList[currentPlayer].cash -= 200;
@@ -1080,18 +1082,30 @@ public class Monopoly {
 						case 1:
 							playerList[currentPlayer].cash = playerList[currentPlayer].cash
 									- AllBoardPlaces.VERMONT.houseCost;
+
+							AllBoardPlaces.ORIENTAL.houseNum = 1;
+
 							break;
 						case 2:
 							playerList[currentPlayer].cash = playerList[currentPlayer].cash
 									- (AllBoardPlaces.VERMONT.houseCost * 2);
+
+							AllBoardPlaces.ORIENTAL.houseNum = 2;
+
 							break;
 						case 3:
 							playerList[currentPlayer].cash = playerList[currentPlayer].cash
 									- (AllBoardPlaces.VERMONT.houseCost * 3);
+
+							AllBoardPlaces.ORIENTAL.houseNum = 3;
+
 							break;
 						case 4:
 							playerList[currentPlayer].cash = playerList[currentPlayer].cash
 									- (AllBoardPlaces.VERMONT.houseCost * 4);
+
+							AllBoardPlaces.ORIENTAL.houseNum = 4;
+
 							break;
 
 						}
@@ -1101,18 +1115,30 @@ public class Monopoly {
 							case 1:
 								playerList[currentPlayer].cash = playerList[currentPlayer].cash
 										- AllBoardPlaces.CONNECTICUT.houseCost;
+
+								AllBoardPlaces.ORIENTAL.houseNum = 1;
+
 								break;
 							case 2:
 								playerList[currentPlayer].cash = playerList[currentPlayer].cash
 										- (AllBoardPlaces.CONNECTICUT.houseCost * 2);
+
+								AllBoardPlaces.ORIENTAL.houseNum = 2;
+
 								break;
 							case 3:
 								playerList[currentPlayer].cash = playerList[currentPlayer].cash
 										- (AllBoardPlaces.CONNECTICUT.houseCost * 3);
+
+								AllBoardPlaces.ORIENTAL.houseNum = 3;
+
 								break;
 							case 4:
 								playerList[currentPlayer].cash = playerList[currentPlayer].cash
 										- (AllBoardPlaces.CONNECTICUT.houseCost * 4);
+
+								AllBoardPlaces.ORIENTAL.houseNum = 4;
+
 								break;
 
 							}
@@ -1123,22 +1149,433 @@ public class Monopoly {
 
 			}
 			if (isOwnedSTC == true && isOwnedVAve == true && isOwnedSA == true) {
-				
+
+				int whatPlace = ConsoleUI.promptForInt("What place are you puting your houses 1 , 2 , or 3", 1, 3);
+				if (whatPlace == 1) {
+					int number = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+					switch (number) {
+					case 1:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- AllBoardPlaces.CHARLES.houseCost;
+						AllBoardPlaces.CHARLES.houseNum = 1;
+						break;
+					case 2:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.CHARLES.houseCost * 2);
+						AllBoardPlaces.CHARLES.houseNum = 2;
+						break;
+					case 3:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.CHARLES.houseCost * 3);
+						AllBoardPlaces.CHARLES.houseNum = 3;
+						break;
+					case 4:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.CHARLES.houseCost * 4);
+						AllBoardPlaces.CHARLES.houseNum = 4;
+						break;
+
+					}
+					if (whatPlace == 2) {
+						int number2 = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+						switch (number2) {
+						case 1:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- AllBoardPlaces.STATES.houseCost;
+							AllBoardPlaces.STATES.houseNum = 1;
+							break;
+						case 2:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.STATES.houseCost * 2);
+							AllBoardPlaces.STATES.houseNum = 2;
+							break;
+						case 3:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.STATES.houseCost * 3);
+							AllBoardPlaces.STATES.houseNum = 3;
+							break;
+						case 4:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.STATES.houseCost * 4);
+							AllBoardPlaces.STATES.houseNum = 4;
+							break;
+
+						}
+						if (whatPlace == 3) {
+							int number3 = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+							switch (number3) {
+							case 1:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- AllBoardPlaces.VIRGINIA.houseCost;
+								AllBoardPlaces.VIRGINIA.houseNum = 1;
+								break;
+							case 2:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.VIRGINIA.houseCost * 2);
+								AllBoardPlaces.VIRGINIA.houseNum = 2;
+								break;
+							case 3:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.VIRGINIA.houseCost * 3);
+								AllBoardPlaces.VIRGINIA.houseNum = 3;
+								break;
+							case 4:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.VIRGINIA.houseCost * 4);
+								AllBoardPlaces.VIRGINIA.houseNum = 4;
+								break;
+
+							}
+						}
+
+					}
+				}
+
 
 			}
 
 			if (isOwnedSJ == true && isOwnedTA == true && isOwnedNY == true) {
 
+
 			}
 			if (isOwnedKA == true && isOwnedIndA == true && isOwnedIllA == true) {
+
+				int whatPlace = ConsoleUI.promptForInt("What place are you puting your houses 1 , 2 , or 3", 1, 3);
+				if (whatPlace == 1) {
+					int number = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+					switch (number) {
+					case 1:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- AllBoardPlaces.JAMES.houseCost;
+						AllBoardPlaces.JAMES.houseNum = 1;
+						break;
+					case 2:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.JAMES.houseCost * 2);
+						AllBoardPlaces.JAMES.houseNum = 2;
+						break;
+					case 3:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.JAMES.houseCost * 3);
+						AllBoardPlaces.JAMES.houseNum = 3;
+						break;
+					case 4:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.JAMES.houseCost * 4);
+						AllBoardPlaces.JAMES.houseNum = 4;
+						break;
+
+					}
+					if (whatPlace == 2) {
+						int number2 = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+						switch (number2) {
+						case 1:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- AllBoardPlaces.TENNESSEE.houseCost;
+							AllBoardPlaces.TENNESSEE.houseNum = 1;
+							break;
+						case 2:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.TENNESSEE.houseCost * 2);
+							AllBoardPlaces.TENNESSEE.houseNum = 2;
+							break;
+						case 3:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.TENNESSEE.houseCost * 3);
+							AllBoardPlaces.TENNESSEE.houseNum = 3;
+							break;
+						case 4:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.TENNESSEE.houseCost * 4);
+							AllBoardPlaces.TENNESSEE.houseNum = 4;
+							break;
+
+						}
+						if (whatPlace == 3) {
+							int number3 = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+							switch (number3) {
+							case 1:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- AllBoardPlaces.NEWYORK.houseCost;
+								AllBoardPlaces.NEWYORK.houseNum = 1;
+								break;
+							case 2:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.NEWYORK.houseCost * 2);
+								AllBoardPlaces.NEWYORK.houseNum = 2;
+								break;
+							case 3:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.NEWYORK.houseCost * 3);
+								AllBoardPlaces.NEWYORK.houseNum = 3;
+								break;
+							case 4:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.NEWYORK.houseCost * 4);
+								AllBoardPlaces.NEWYORK.houseNum = 4;
+								break;
+
+							}
+						}
+
+					}
+				}
+
+			}
+			if (isOwnedKA == true && isOwnedIndA == true && isOwnedIllA == true) {
+				int whatPlace = ConsoleUI.promptForInt("What place are you puting your houses 1 , 2 , or 3", 1, 3);
+				if (whatPlace == 1) {
+					int number = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+					switch (number) {
+					case 1:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- AllBoardPlaces.KENTUCKY.houseCost;
+						AllBoardPlaces.KENTUCKY.houseNum = 1;
+						break;
+					case 2:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.KENTUCKY.houseCost * 2);
+						AllBoardPlaces.KENTUCKY.houseNum = 2;
+						break;
+					case 3:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.KENTUCKY.houseCost * 3);
+						AllBoardPlaces.KENTUCKY.houseNum = 3;
+						break;
+					case 4:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.KENTUCKY.houseCost * 4);
+						AllBoardPlaces.KENTUCKY.houseNum = 4;
+						break;
+
+					}
+					if (whatPlace == 2) {
+						int number2 = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+						switch (number2) {
+						case 1:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- AllBoardPlaces.INDIANA.houseCost;
+							AllBoardPlaces.INDIANA.houseNum = 1;
+							break;
+						case 2:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.INDIANA.houseCost * 2);
+							AllBoardPlaces.INDIANA.houseNum = 2;
+							break;
+						case 3:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.INDIANA.houseCost * 3);
+							AllBoardPlaces.INDIANA.houseNum = 3;
+							break;
+						case 4:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.INDIANA.houseCost * 4);
+							AllBoardPlaces.INDIANA.houseNum = 4;
+							break;
+
+						}
+						if (whatPlace == 3) {
+							int number3 = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+							switch (number3) {
+							case 1:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- AllBoardPlaces.ILLINOIS.houseCost;
+								AllBoardPlaces.ILLINOIS.houseNum = 1;
+								break;
+							case 2:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.ILLINOIS.houseCost * 2);
+								AllBoardPlaces.ILLINOIS.houseNum = 2;
+								break;
+							case 3:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.ILLINOIS.houseCost * 3);
+								AllBoardPlaces.ILLINOIS.houseNum = 3;
+								break;
+							case 4:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.ILLINOIS.houseCost * 4);
+								AllBoardPlaces.ILLINOIS.houseNum = 4;
+								break;
+
+							}
+						}
+
+					}
+				}
+
 
 			}
 
 			if (isOwnedAA == true && isOwnedVetA == true && isOwnedMG == true) {
 
+				int whatPlace = ConsoleUI.promptForInt("What place are you puting your houses 1 , 2 , or 3", 1, 3);
+				if (whatPlace == 1) {
+					int number = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+					switch (number) {
+					case 1:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- AllBoardPlaces.ATLANTIC.houseCost;
+						AllBoardPlaces.ATLANTIC.houseNum = 1;
+						break;
+					case 2:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.ATLANTIC.houseCost * 2);
+						AllBoardPlaces.ATLANTIC.houseNum = 2;
+						break;
+					case 3:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.ATLANTIC.houseCost * 3);
+						AllBoardPlaces.ATLANTIC.houseNum = 3;
+						break;
+					case 4:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.ATLANTIC.houseCost * 4);
+						AllBoardPlaces.ATLANTIC.houseNum = 4;
+						break;
+
+					}
+					if (whatPlace == 2) {
+						int number2 = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+						switch (number2) {
+						case 1:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- AllBoardPlaces.VENTNOR.houseCost;
+							AllBoardPlaces.VENTNOR.houseNum = 1;
+							break;
+						case 2:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.VENTNOR.houseCost * 2);
+							AllBoardPlaces.VENTNOR.houseNum = 2;
+							break;
+						case 3:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.VENTNOR.houseCost * 3);
+							AllBoardPlaces.VENTNOR.houseNum = 3;
+							break;
+						case 4:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.VENTNOR.houseCost * 4);
+							AllBoardPlaces.VENTNOR.houseNum = 4;
+							break;
+
+						}
+						if (whatPlace == 3) {
+							int number3 = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+							switch (number3) {
+							case 1:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- AllBoardPlaces.MARVIN.houseCost;
+								AllBoardPlaces.MARVIN.houseNum = 1;
+								break;
+							case 2:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.MARVIN.houseCost * 2);
+								AllBoardPlaces.MARVIN.houseNum = 2;
+								break;
+							case 3:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.MARVIN.houseCost * 3);
+								AllBoardPlaces.MARVIN.houseNum = 3;
+								break;
+							case 4:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.MARVIN.houseCost * 4);
+								AllBoardPlaces.MARVIN.houseNum = 4;
+								break;
+
+							}
+						}
+
+					}
+				}
+
+
 			}
 
 			if (isOwnedPA == true && isOwnedNCA == true && isOwnedPennA == true) {
+
+				int whatPlace = ConsoleUI.promptForInt("What place are you puting your houses 1 , 2 , or 3", 1, 3);
+				if (whatPlace == 1) {
+					int number = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+					switch (number) {
+					case 1:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- AllBoardPlaces.PACIFIC.houseCost;
+						AllBoardPlaces.PACIFIC.houseNum = 1;
+						break;
+					case 2:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.PACIFIC.houseCost * 2);
+						AllBoardPlaces.PACIFIC.houseNum = 2;
+						break;
+					case 3:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.PACIFIC.houseCost * 3);
+						AllBoardPlaces.PACIFIC.houseNum = 3;
+						break;
+					case 4:
+						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+								- (AllBoardPlaces.PACIFIC.houseCost * 4);
+						AllBoardPlaces.PACIFIC.houseNum = 4;
+						break;
+
+					}
+					if (whatPlace == 2) {
+						int number2 = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+						switch (number2) {
+						case 1:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- AllBoardPlaces.NCAROLINA.houseCost;
+							AllBoardPlaces.NCAROLINA.houseNum = 1;
+							break;
+						case 2:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.NCAROLINA.houseCost * 2);
+							AllBoardPlaces.NCAROLINA.houseNum = 2;
+							break;
+						case 3:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.NCAROLINA.houseCost * 3);
+							AllBoardPlaces.NCAROLINA.houseNum = 3;
+							break;
+						case 4:
+							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+									- (AllBoardPlaces.NCAROLINA.houseCost * 4);
+							AllBoardPlaces.NCAROLINA.houseNum = 4;
+							break;
+
+						}
+						if (whatPlace == 3) {
+							int number3 = ConsoleUI.promptForInt("How many houses would you like 1 - 4", 1, 4);
+							switch (number3) {
+							case 1:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- AllBoardPlaces.PENNSYLVANIA.houseCost;
+								AllBoardPlaces.PENNSYLVANIA.houseNum = 1;
+								break;
+							case 2:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.PENNSYLVANIA.houseCost * 2);
+								AllBoardPlaces.PENNSYLVANIA.houseNum = 2;
+								break;
+							case 3:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.PENNSYLVANIA.houseCost * 3);
+								AllBoardPlaces.PENNSYLVANIA.houseNum = 3;
+								break;
+							case 4:
+								playerList[currentPlayer].cash = playerList[currentPlayer].cash
+										- (AllBoardPlaces.PENNSYLVANIA.houseCost * 4);
+								AllBoardPlaces.PENNSYLVANIA.houseNum = 4;
+								break;
+
+							}
+						}
+
+					}
+				}
+
 
 			}
 
@@ -1149,6 +1586,7 @@ public class Monopoly {
 					switch (number) {
 					case 1:
 						playerList[currentPlayer].cash = playerList[currentPlayer].cash
+
 								- AllBoardPlaces.MEDITERRANEAN.houseCost;
 						AllBoardPlaces.MEDITERRANEAN.houseNum = 1;
 						break;
@@ -1167,6 +1605,7 @@ public class Monopoly {
 								- (AllBoardPlaces.MEDITERRANEAN.houseCost * 4);
 						AllBoardPlaces.MEDITERRANEAN.houseNum = 4;
 						break;
+						
 
 					}
 					if (whatPlace == false) {
@@ -1174,6 +1613,7 @@ public class Monopoly {
 						switch (number2) {
 						case 1:
 							playerList[currentPlayer].cash = playerList[currentPlayer].cash
+
 									- AllBoardPlaces.BALIC.houseCost;
 							AllBoardPlaces.BALIC.houseNum = 1;
 							break;
@@ -1192,7 +1632,7 @@ public class Monopoly {
 									- (AllBoardPlaces.BALIC.houseCost * 4);
 							AllBoardPlaces.BALIC.houseNum = 4;
 							break;
-
+							
 						}
 					}
 				}

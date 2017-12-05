@@ -39,8 +39,8 @@ public class Dice {
 		//if(p==p) {
 //		die1 = gen.nextInt(6) + 1;
 //		die2 = gen.nextInt(6) + 1;
-		die1 = 1;
-		die2 =6;
+		die1 = 2;
+		die2 =2;
 //		die1 = 30;
 //		die2 = 0;
 		rolledValue = die1 + die2;

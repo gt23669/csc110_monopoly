@@ -140,7 +140,7 @@ public enum AllBoardPlaces {
 	}
 
 	public int getMortgageBuybackPrice() {
-		return mortgageBuybackPrice;
+		return (int)(mortgageBuybackPrice+(mortgageBuybackPrice*.1));
 	}
 
 	public int getHouseCost() {

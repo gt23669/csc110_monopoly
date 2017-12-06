@@ -9,6 +9,7 @@ public class Player {
 	public String owner;
 	public boolean didRollDoubles;
 	public boolean jailTurn0 = false;
+	public int ownRR = 0;
 
 	public boolean inJail = false;
 	public int inJailTurn = 0;

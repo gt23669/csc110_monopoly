@@ -234,6 +234,7 @@ public class Monopoly {
 				ownerIndexMA.cash = ownerIndexMA.cash + abp.baseRent;
 
 			} else if (isOwnedMA == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -264,6 +265,7 @@ public class Monopoly {
 				ownerIndexBA.cash = ownerIndexBA.cash + abp.baseRent;
 
 			} else if (isOwnedBA == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -294,13 +296,36 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(5);
 			System.out.println(abp);
 			if (isOwnedRR == true) {
+				if(ownerIndexRR.ownRR ==2) {
+					System.out.println(ownerRR + " ownes this property. " + playerList.get(currentPlayer).name
+							+ ", you owe them $" + (abp.baseRent+25) + " in rent.");
+					playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - (abp.baseRent+25);
+					ownerIndexRR.cash = ownerIndexRR.cash + (abp.baseRent+25);
+			
+				}
+				if(ownerIndexRR.ownRR ==3) {
+					System.out.println(ownerRR + " ownes this property. " + playerList.get(currentPlayer).name
+							+ ", you owe them $" + (abp.baseRent+75) + " in rent.");
+					playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - (abp.baseRent+75);
+					ownerIndexRR.cash = ownerIndexRR.cash + (abp.baseRent+75);
+					
+				}
+				if(ownerIndexRR.ownRR ==4) {
+					System.out.println(ownerRR + " ownes this property. " + playerList.get(currentPlayer).name
+							+ ", you owe them $" + (abp.baseRent+175) + " in rent.");
+					playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - (abp.baseRent+175);
+					ownerIndexRR.cash = ownerIndexRR.cash + (abp.baseRent+175);
+					
+				}
+				if(ownerIndexRR.ownRR ==1) {
 				System.out.println(ownerRR + " ownes this property. " + playerList.get(currentPlayer).name
 						+ ", you owe them $" + abp.baseRent + " in rent.");
 				System.out.println();
 				playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - abp.baseRent;
 				ownerIndexRR.cash = ownerIndexRR.cash + abp.baseRent;
-
+				}
 			} else if (isOwnedRR == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -308,8 +333,11 @@ public class Monopoly {
 					ownerRR = playerList.get(currentPlayer).name;
 					isOwnedRR = true;
 					ownerIndexRR = playerList.get(currentPlayer);
+					ownerIndexRR.ownRR=ownerIndexRR.ownRR+1;
 				} else {
 					a.auction(playerList, b, numPlayers, abp, p);
+					ownerIndexRR.ownRR=ownerIndexRR.ownRR+1;
+
 				}
 			}
 		}
@@ -326,6 +354,7 @@ public class Monopoly {
 				ownerIndexOR.cash = ownerIndexOR.cash + abp.baseRent;
 
 			} else if (isOwnedOR == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -356,6 +385,7 @@ public class Monopoly {
 				ownerIndexVA.cash = ownerIndexVA.cash + abp.baseRent;
 
 			} else if (isOwnedVA == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -381,6 +411,7 @@ public class Monopoly {
 				ownerIndexCA.cash = ownerIndexCA.cash + abp.baseRent;
 
 			} else if (isOwnedCA == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -416,6 +447,7 @@ public class Monopoly {
 				ownerIndexSTC.cash = ownerIndexSTC.cash + abp.baseRent;
 
 			} else if (isOwnedSTC == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -440,6 +472,7 @@ public class Monopoly {
 				ownerIndexEC.cash = ownerIndexEC.cash + abp.baseRent;
 
 			} else if (isOwnedEC == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -465,6 +498,7 @@ public class Monopoly {
 				ownerIndexSA.cash = ownerIndexSA.cash + abp.baseRent;
 
 			} else if (isOwnedSA == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -490,6 +524,7 @@ public class Monopoly {
 				ownerIndexVAve.cash = ownerIndexVAve.cash + abp.baseRent;
 
 			} else if (isOwnedVAve == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -508,13 +543,37 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(15);
 			System.out.println(abp);
 			if (isOwnedPR == true) {
+				if(ownerIndexPR.ownRR ==2) {
+					System.out.println(ownerRR + " ownes this property. " + playerList.get(currentPlayer).name
+							+ ", you owe them $" + (abp.baseRent+25) + " in rent.");
+					playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - (abp.baseRent+25);
+					ownerIndexPR.cash = ownerIndexPR.cash + (abp.baseRent+25);
+					
+				}
+				if(ownerIndexPR.ownRR ==3) {
+					System.out.println(ownerRR + " ownes this property. " + playerList.get(currentPlayer).name
+							+ ", you owe them $" + (abp.baseRent+75) + " in rent.");
+					playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - (abp.baseRent+75);
+					ownerIndexPR.cash = ownerIndexPR.cash + (abp.baseRent+75);
+					
+				}
+				if(ownerIndexPR.ownRR ==4) {
+					System.out.println(ownerRR + " ownes this property. " + playerList.get(currentPlayer).name
+							+ ", you owe them $" + (abp.baseRent+175) + " in rent.");
+					playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - (abp.baseRent+175);
+					ownerIndexPR.cash = ownerIndexPR.cash + (abp.baseRent+175);
+					
+				}
+				if(ownerIndexPR.ownRR ==1) {
 				System.out.println(ownerPR + " ownes this property. " + playerList.get(currentPlayer).name
 						+ ", you owe them $" + abp.baseRent + " in rent.");
 				System.out.println();
 				playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - abp.baseRent;
 				ownerIndexPR.cash = ownerIndexPR.cash + abp.baseRent;
+				}
 
 			} else if (isOwnedPR == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -522,8 +581,11 @@ public class Monopoly {
 					ownerPR = playerList.get(currentPlayer).name;
 					isOwnedPR = true;
 					ownerIndexPR = playerList.get(currentPlayer);
+					ownerIndexPR.ownRR=ownerIndexPR.ownRR+1;
 				} else {
 					a.auction(playerList, b, numPlayers, abp, p);
+					ownerIndexPR.ownRR=ownerIndexPR.ownRR+1;
+
 				}
 			}
 		}
@@ -545,6 +607,7 @@ public class Monopoly {
 				ownerIndexSJ.cash = ownerIndexSJ.cash + abp.baseRent;
 
 			} else if (isOwnedSJ == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -570,6 +633,7 @@ public class Monopoly {
 				ownerIndexTA.cash = ownerIndexTA.cash + abp.baseRent;
 
 			} else if (isOwnedTA == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -595,6 +659,7 @@ public class Monopoly {
 				ownerIndexNY.cash = ownerIndexNY.cash + abp.baseRent;
 
 			} else if (isOwnedNY == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -624,6 +689,7 @@ public class Monopoly {
 				ownerIndexKA.cash = ownerIndexKA.cash + abp.baseRent;
 
 			} else if (isOwnedKA == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -654,6 +720,7 @@ public class Monopoly {
 				ownerIndexIndA.cash = ownerIndexIndA.cash + abp.baseRent;
 
 			} else if (isOwnedIndA == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -679,6 +746,7 @@ public class Monopoly {
 				ownerIndexIllA.cash = ownerIndexIllA.cash + abp.baseRent;
 
 			} else if (isOwnedIllA == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -696,13 +764,36 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(25);
 			System.out.println(abp);
 			if (isOwnedBOR == true) {
+				if(ownerIndexBOR.ownRR ==2) {
+					System.out.println(ownerRR + " ownes this property. " + playerList.get(currentPlayer).name
+							+ ", you owe them $" + (abp.baseRent+25) + " in rent.");
+					playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - (abp.baseRent+25);
+					ownerIndexBOR.cash = ownerIndexBOR.cash + (abp.baseRent+25);
+					
+				}
+				if(ownerIndexBOR.ownRR ==3) {
+					System.out.println(ownerRR + " ownes this property. " + playerList.get(currentPlayer).name
+							+ ", you owe them $" + (abp.baseRent+75) + " in rent.");
+					playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - (abp.baseRent+75);
+					ownerIndexBOR.cash = ownerIndexBOR.cash + (abp.baseRent+75);
+					
+				}
+				if(ownerIndexBOR.ownRR ==4) {
+					System.out.println(ownerRR + " ownes this property. " + playerList.get(currentPlayer).name
+							+ ", you owe them $" + (abp.baseRent+175) + " in rent.");
+					playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - (abp.baseRent+175);
+					ownerIndexBOR.cash = ownerIndexBOR.cash + (abp.baseRent+175);
+					
+				}
+				if(ownerIndexBOR.ownRR ==1) {
 				System.out.println(ownerBOR + " ownes this property. " + playerList.get(currentPlayer).name
 						+ ", you owe them $" + abp.baseRent + " in rent.");
 				System.out.println();
 				playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - abp.baseRent;
-				ownerIndexBOR.cash = ownerIndexBOR.cash + abp.baseRent;
+				}
 
 			} else if (isOwnedBOR == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -710,8 +801,11 @@ public class Monopoly {
 					ownerBOR = playerList.get(currentPlayer).name;
 					isOwnedBOR = true;
 					ownerIndexBOR = playerList.get(currentPlayer);
+					ownerIndexBOR.ownRR=ownerIndexBOR.ownRR+1;
 				} else {
 					a.auction(playerList, b, numPlayers, abp, p);
+					ownerIndexBOR.ownRR=ownerIndexBOR.ownRR+1;
+
 				}
 			}
 		}
@@ -728,6 +822,7 @@ public class Monopoly {
 				ownerIndexAA.cash = ownerIndexAA.cash + abp.baseRent;
 
 			} else if (isOwnedAA == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -753,6 +848,7 @@ public class Monopoly {
 				ownerIndexVetA.cash = ownerIndexVetA.cash + abp.baseRent;
 
 			} else if (isOwnedVetA == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -777,6 +873,7 @@ public class Monopoly {
 				ownerIndexWW.cash = ownerIndexWW.cash + abp.baseRent;
 
 			} else if (isOwnedWW == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -802,6 +899,7 @@ public class Monopoly {
 				ownerIndexMG.cash = ownerIndexMG.cash + abp.baseRent;
 
 			} else if (isOwnedMG == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -836,6 +934,7 @@ public class Monopoly {
 				ownerIndexPA.cash = ownerIndexPA.cash + abp.baseRent;
 
 			} else if (isOwnedPA == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -861,6 +960,7 @@ public class Monopoly {
 				ownerIndexNCA.cash = ownerIndexNCA.cash + abp.baseRent;
 
 			} else if (isOwnedNCA == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -891,6 +991,7 @@ public class Monopoly {
 				ownerIndexPennA.cash = ownerIndexPennA.cash + abp.baseRent;
 
 			} else if (isOwnedPennA == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -908,13 +1009,36 @@ public class Monopoly {
 			AllBoardPlaces abp = b.getCardAt(35);
 			System.out.println(abp);
 			if (isOwnedSL == true) {
+				if(ownerIndexSL.ownRR ==2) {
+					System.out.println(ownerRR + " ownes this property. " + playerList.get(currentPlayer).name
+							+ ", you owe them $" + (abp.baseRent+25) + " in rent.");
+					playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - (abp.baseRent+25);
+					ownerIndexSL.cash = ownerIndexSL.cash + (abp.baseRent+25);
+					
+				}
+				if(ownerIndexSL.ownRR ==3) {
+					System.out.println(ownerRR + " ownes this property. " + playerList.get(currentPlayer).name
+							+ ", you owe them $" + (abp.baseRent+75) + " in rent.");
+					playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - (abp.baseRent+75);
+					ownerIndexSL.cash = ownerIndexSL.cash + (abp.baseRent+75);
+					
+				}
+				if(ownerIndexSL.ownRR ==4) {
+					System.out.println(ownerRR + " ownes this property. " + playerList.get(currentPlayer).name
+							+ ", you owe them $" + (abp.baseRent+175) + " in rent.");
+					playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - (abp.baseRent+175);
+					ownerIndexSL.cash = ownerIndexSL.cash + (abp.baseRent+175);
+					
+				}
+				if(ownerIndexSL.ownRR ==1) {
 				System.out.println(ownerSL + " ownes this property. " + playerList.get(currentPlayer).name
 						+ ", you owe them $" + abp.baseRent + " in rent.");
 				System.out.println();
 				playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - abp.baseRent;
 				ownerIndexSL.cash = ownerIndexSL.cash + abp.baseRent;
-
+				}
 			} else if (isOwnedSL == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -922,8 +1046,11 @@ public class Monopoly {
 					ownerSL = playerList.get(currentPlayer).name;
 					isOwnedSL = true;
 					ownerIndexSL = playerList.get(currentPlayer);
+					ownerIndexSL.ownRR=ownerIndexSL.ownRR+1;
 				} else {
 					a.auction(playerList, b, numPlayers, abp, p);
+					ownerIndexSL.ownRR=ownerIndexSL.ownRR+1;
+
 				}
 			}
 		}
@@ -945,6 +1072,7 @@ public class Monopoly {
 				ownerIndexPP.cash = ownerIndexPP.cash + abp.baseRent;
 
 			} else if (isOwnedPP == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {
@@ -974,6 +1102,7 @@ public class Monopoly {
 				ownerIndexBW.cash = ownerIndexBW.cash + abp.baseRent;
 
 			} else if (isOwnedBW == false) {
+				System.out.println();
 				boolean input = ConsoleUI.promptForBool(
 						playerList.get(currentPlayer).name + " Would you like to buy this property(yes)?", "yes", "no");
 				if (input == true) {

@@ -8,6 +8,7 @@ public class Player {
 	public int location;
 	public String owner;
 	public boolean didRollDoubles;
+	public boolean jailTurn0 = false;
 
 	public boolean inJail = false;
 	public int inJailTurn = 0;

@@ -1876,8 +1876,11 @@ public class Monopoly {
 		int die1;
 		int die2;
 		int jailTurn = 0;
+//		System.out.println(playerList.get(currentPlayer).jailTurn0");
+		if(playerList.get(currentPlayer).jailTurn0==false) {
 		if (jailTurn == 3) {
-			System.out.println(playerList.get(currentPlayer).name
+				System.out.println(playerList.get(currentPlayer).name
+			
 					+ ", you have been in jail for 3 turns. You must pay your $50 fine.");
 			playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - 50;
 			return false;
@@ -1922,6 +1925,10 @@ public class Monopoly {
 			}
 		}
 		jailTurn++;
+		
+		}
+		playerList.get(currentPlayer).jailTurn0=false;
+//		System.out.println(playerList.get(currentPlayer).didRollDoubles);
 		return true;
 
 	}

@@ -58,6 +58,7 @@ public class Dice {
 		//}
 
 		if (doubleCount == 3) {
+			p.jailTurn0 = true;
 			p.didRollDoubles=false;
 			doubleCount=0;
 			System.out.println("You have rolled 3 doubles! Go straight to jail, do not pass go and, do not collect $200.");

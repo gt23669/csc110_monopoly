@@ -18,19 +18,19 @@ public class Auction {
 		do{
 			for(int i =0;i<numPlayers;i++) {
 		
-			System.out.println(playerList[i].name+" Would you like to bid?");
+			System.out.println(playerList.get(i).name+" Would you like to bid?");
 			input=ConsoleUI.promptForBool("", "yes", "no");
 			boolean goodBid = true;
 				do{
 					if(input == true) {
-					bidLow = ConsoleUI.promptForInt("How much do you bid?", 1, (int)playerList[i].cash);
-					playerList[i].auctionBid=bidLow;
-					System.out.println(playerList[i].auctionBid+"(your bid)");
+					bidLow = ConsoleUI.promptForInt("How much do you bid?", 1, (int)playerList.get(i).cash);
+					playerList.get(i).auctionBid=bidLow;
+					System.out.println(playerList.get(i).auctionBid+"(your bid)");
 					if(bidLow>bidHigh) {
 						bidHigh=bidLow;
 						System.out.println("Highest bid is "+ bidHigh);
-						highName = playerList[i].name;
-						abp.owner = playerList[i];
+						highName = playerList.get(i).name;
+						abp.owner = playerList.get(i);
 						abp.owned = true;
 						goodBid=true;
 						

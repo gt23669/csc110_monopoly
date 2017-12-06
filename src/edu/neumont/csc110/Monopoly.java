@@ -201,28 +201,13 @@ public class Monopoly {
 
 	public void onMe(int currentPlayer, Board b, Player p, Dice d, Auction a, int numPlayers) throws IOException {
 
-		// if current player is on me(any spot on board) then ask to buy or auction.
-		// if it is owned pay rent to other player check if they have houses or hotels
-		// pay.
-		// if player owns all three or two ask to put houses or hotels
-		// if player lands on Go to jail do it.
-		// if player passes go give money.
+	
 		if (playerList.get(currentPlayer).location == 0) {
 			AllBoardPlaces abp = b.getCardAt(0);
 			playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash + 200;
 		}
 		if (playerList.get(currentPlayer).location == 1) {// MEDITERRANEAN("Mediterranean Avenue",
-			// if(isOwnedMA==true&&playerList.get(currentPlayer).name!=ownerMA) {
-			// do { // 60,2,10,30,90,190,250,30,30,50,50)
-			// for(int i=0;i<numPlayers;i++) {
-			//
-			// }if ((ownerIndexMA!=playerList.get(currentPlayer))){
-			// ownerMA=playerList[currentPlayer+1].name;
-			// playerList[currentPlayer+1]=ownerIndexMA ;
-			// }
-			//
-			// }while((ownerIndexMA!=playerList.get(currentPlayer)));
-			// }
+			
 			AllBoardPlaces abp = b.getCardAt(1);
 			System.out.println(abp);
 
@@ -1773,7 +1758,6 @@ public class Monopoly {
 	public void Communitychest(int currentPlayer, int numPlayers) {
 		ArrayList<Integer> usedListCC = new ArrayList();
 
-		// randomly shuffle deck
 		int num = 0;
 		Random gen = new Random();
 		do {
@@ -1783,7 +1767,7 @@ public class Monopoly {
 				usedListCC.add(num);
 			}
 		} while (!usedListCC.contains(num));
-		// usedListCC.add(num);
+	
 
 		switch (num) {
 

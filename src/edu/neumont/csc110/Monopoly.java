@@ -1787,6 +1787,7 @@ public class Monopoly {
 				playerList.get(currentPlayer).location = 12;
 				playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash + 200;
 			}
+			
 			break;
 		case 5:
 			System.out.println(

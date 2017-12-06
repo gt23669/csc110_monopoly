@@ -1811,7 +1811,7 @@ public class Monopoly {
 			break;
 		case 10:
 			System.out.println("It is your birthday - Collect $10 from each player");
-			playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash + (10 * numPlayers);
+			playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash + (10 * numPlayers-1);
 			break;
 		case 11:
 			System.out.println("Life insurance matures – Collect $100");

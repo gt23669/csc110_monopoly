@@ -12,6 +12,7 @@ public class Auction {
 		int highBidPlayer = 0;
 		boolean input = false;
 		String highName = null;
+		
 		System.out.println();
 		System.out.println(abp.name+" is up for auction.");
 		
@@ -33,6 +34,7 @@ public class Auction {
 						abp.owner = playerList.get(i);
 						abp.owned = true;
 						goodBid=true;
+//						highBidPlayer = playerList.get(i);
 						
 					}
 					if(bidLow<bidHigh) {
@@ -44,11 +46,11 @@ public class Auction {
 				if(input ==false&&!(abp.owner==null)) {
 					System.out.println("The high bid was "+bidHigh);
 					System.out.println(highName+" is the owner");
-					
 				}
 				}
 			
 			}while(input ==true);
+		abp.owner.cash = abp.owner.cash-bidHigh;
 		return abp.owner;
 		}
 	}

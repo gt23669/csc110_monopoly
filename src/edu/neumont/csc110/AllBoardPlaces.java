@@ -49,7 +49,7 @@ public enum AllBoardPlaces {
 	
 
 	public String name;
-	public int cardPrice;
+	final public int cardPrice;
 	public int baseRent;
 	public int oneHsRent;
 	public int twoHsRent;

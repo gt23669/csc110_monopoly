@@ -14,7 +14,7 @@ public class Player {
 	public boolean inJail = false;
 	public int inJailTurn = 0;
 	public int owned;
-	public boolean jailCard = false;
+	public boolean jailCard = true;
 	public boolean doubleJail = false;
 	public int auctionBid=0;
 	public int playerIndex = 0;

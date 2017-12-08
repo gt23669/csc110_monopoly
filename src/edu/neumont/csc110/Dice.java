@@ -39,7 +39,7 @@ public class Dice {
 		//if(p==p) {
 		die1 = gen.nextInt(6) + 1;
 		die2 = gen.nextInt(6) + 1;
-//		die1 = 1;
+//		die1 = 3;
 //		die2 =4;
 //		die1 = 30;
 //		die2 = 0;

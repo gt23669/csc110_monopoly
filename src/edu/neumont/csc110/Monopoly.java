@@ -355,7 +355,7 @@ public class Monopoly {
 		if (playerList.get(currentPlayer).location == 7) {// CHANCE1("Chance",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(7);
 			System.out.println("Chance");
-			Chance(currentPlayer, numPlayers);
+			Chance(currentPlayer, numPlayers,b,p,d,a);
 
 		}
 		if (playerList.get(currentPlayer).location == 8) {// VERMONT("Vermont Avenue",100,6,30,90,270,400,550,50,50,50,50),
@@ -690,7 +690,7 @@ public class Monopoly {
 		if (playerList.get(currentPlayer).location == 22) {// CHANCE2("Chance",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(22);
 			System.out.println("Chance");
-			Chance(currentPlayer, numPlayers);
+			Chance(currentPlayer, numPlayers,b,p,d, a);
 		}
 		if (playerList.get(currentPlayer).location == 23) {// INDIANA("Indiana
 														// Avenue",220,18,90,250,700,875,1050,110,110,150,150),
@@ -1042,7 +1042,7 @@ public class Monopoly {
 		if (playerList.get(currentPlayer).location == 36) {// CHANCE3("Chance",0,0,0,0,0,0,0,0,0,0,0),
 			AllBoardPlaces abp = b.getCardAt(36);
 			System.out.println("Chance");
-			Chance(currentPlayer, numPlayers);
+			Chance(currentPlayer, numPlayers,b,p,d,a);
 		}
 		if (playerList.get(currentPlayer).location == 37) {// PARK("Park
 														// Place",350,35,175,500,1100,1300,1500,175,175,200,200),
@@ -1831,7 +1831,7 @@ public class Monopoly {
 			break;
 		case 15:
 			System.out.println("You are assessed for street repairs – $40 per house – $115 per hotel");// **************************
-			// check how many houses
+			playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - ((40*playerList.get(currentPlayer).houseNum)+(115*playerList.get(currentPlayer).hotelNum));
 			break;
 		case 16:
 			System.out.println("You have won second prize in a beauty contest – Collect $10");
@@ -1844,15 +1844,15 @@ public class Monopoly {
 		}
 	}
 
-	public void Chance(int currentPlayer, int numPlayers) {
+	public void Chance(int currentPlayer, int numPlayers,Board b,Player p,Dice d,Auction a) throws IOException {
 		ArrayList<Integer> usedListC = new ArrayList();
 
 		// randomly shuffle deck
 		int num = 0;
 		Random gen = new Random();
 		do {
-			num = gen.nextInt(16) + 1;
-			// num = 1;
+//			num = gen.nextInt(16) + 1;
+			 num = 7;
 			if (!usedListC.contains(num)) {
 				usedListC.add(num);
 			}
@@ -1885,6 +1885,7 @@ public class Monopoly {
 			if (playerList.get(currentPlayer).location < 11) {
 				playerList.get(currentPlayer).location = 11;
 			}
+			onMe(currentPlayer, b, p, d, a, numPlayers);
 			break;
 		case 4:
 			System.out.println(
@@ -1899,6 +1900,18 @@ public class Monopoly {
 			if (playerList.get(currentPlayer).location > 28 && playerList.get(currentPlayer).location < 39) {
 				playerList.get(currentPlayer).location = 12;
 				playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash + 200;
+			}
+			if(isOwnedEC==true) {
+				int tempRoll = d.rollDice(p);
+				tempRoll = (tempRoll*10);
+				playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash-tempRoll;
+				ownerIndexEC.cash = ownerIndexEC.cash+tempRoll;
+			}
+			if(isOwnedWW==true) {
+				int tempRoll = d.rollDice(p);
+				tempRoll = (tempRoll*10);
+				playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash-tempRoll;
+				ownerIndexWW.cash = ownerIndexWW.cash+tempRoll;
 			}
 			
 			break;
@@ -1934,15 +1947,15 @@ public class Monopoly {
 			playerList.get(currentPlayer).location = playerList.get(currentPlayer).location - 3;
 			break;
 		case 9:
-			System.out.println("Go directly to Jail – Do not pass Go, do not collect $200");// *********fix to end
-																							// turn********
+			System.out.println("Go directly to Jail – Do not pass Go, do not collect $200");
+			playerList.get(currentPlayer).jailTurn0=true;									
 			playerList.get(currentPlayer).location = 10;
 			playerList.get(currentPlayer).inJail = true;
 			break;
 		case 10:
 			System.out.println(
 					"Make general repairs on all your property – For each house pay $25 – For each hotel $100");// *****************
-
+			playerList.get(currentPlayer).cash = playerList.get(currentPlayer).cash - ((25*playerList.get(currentPlayer).houseNum)+(100*playerList.get(currentPlayer).hotelNum));
 			break;
 		case 11:
 			System.out.println("Pay poor tax of $15");
@@ -2114,7 +2127,13 @@ public class Monopoly {
 			turnCount++;
 			System.out.println("turn number: " + turnCount);
 			System.out.println();
-
+//			if(playerList.get(currentPlayer).cash<0)
+//				System.out.println(playerList.get(currentPlayer).name+", you have $0 to your name. You lose.");
+//				playerList.remove(currentPlayer);
+//			if(playerList.get(currentPlayer).cash<0) {
+//				Player playerRemove = playerList.get(currentPlayer);
+//				playerList.remove(playerRemove);
+//			}
 		} while (turnCount < 100);
 
 		// need to add code to move piece after every roll, regardless if doubles

@@ -19,8 +19,7 @@ public class Auction {
 		do{
 			for(int i =0;i<numPlayers;i++) {
 		
-			System.out.println(playerList.get(i).name+" Would you like to bid?");
-			input=ConsoleUI.promptForBool("", "yes", "no");
+			input=ConsoleUI.promptForBool(playerList.get(i).name+" Would you like to bid?", "yes", "no");
 			boolean goodBid = true;
 				do{
 					if(input == true) {
